@@ -28,7 +28,7 @@ public class register
 			return "over";
 		}
 		/*下面验证是否注册名重复*/
-		Connection a1 = new initialize().getlink();//调用函数进行初始化
+		Connection a1 = new initialize().getlink("project");//调用函数进行初始化
 		boolean isrepeat = false;
 		String sql1 = "select * from user where Name=\""+this.name+"\"";
 		try
@@ -62,8 +62,8 @@ public class register
 				ResultSet rs2 = stmt2.executeQuery(sql2);
 				while(rs2.next()!=false)
 				{
-					idnum = Integer.parseInt(rs2.getString(1))+1;
-					s1 = rs2.getString(1);
+					idnum = Integer.parseInt(rs2.getString(2))+1;
+					s1 = rs2.getString(2);
 				}
 				sql3 = "update nowinformation set idnow="+"\""+String.valueOf(idnum)+"\""+"where idnow="+"\""+s1+"\"";                
 				stmt2.executeUpdate(sql3);

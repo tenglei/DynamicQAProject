@@ -1,51 +1,51 @@
 package com.hit.web.model;
 
-import com.opensymphony.xwork2.ActionSupport;
+//import com.opensymphony.xwork2.ActionSupport;
 
-public class User extends ActionSupport {
-	private String name;
-	private String password;
-	private String email;
-	private int id;
-	private String friends;
+public class User  {
+	private String Name;
+	private String Password;
+	private String Email;
+	private String UserID;
+	private String Friends;
 
 	public String getName() {
-		return name;
+		return Name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String Name) {
+		this.Name = Name;
 	}
 
 	public String getPassword() {
-		return password;
+		return Password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String Password) {
+		this.Password = Password;
 	}
 
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String Email) {
+		this.Email = Email;
 	}
 
-	public int getId() {
-		return id;
+	public String getUserId() {
+		return UserID;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String UserID) {
+		this.UserID = UserID;
 	}
 
 	public String getFriends() {
-		return friends;
+		return Friends;
 	}
 
-	public void setFriends(String friends) {
-		this.friends = friends;
+	public void setFriends(String Friends) {
+		this.Friends = Friends;
 	}
 }

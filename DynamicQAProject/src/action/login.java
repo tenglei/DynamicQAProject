@@ -12,7 +12,7 @@ public class login
 		String truepassword = "";
 		if(this.logininfor.length()!=0 && this.loginpassword.length()!=0)//全部非空，开始判断
 		{
-			Connection a1 = new initialize().getlink();//调用函数进行初始化
+			Connection a1 = new initialize().getlink("project");//调用函数进行初始化
 			boolean isfound = false;
 			String sql1 = "select * from user where Name=\""+this.logininfor+"\"";//先按照姓名搜索
 			try

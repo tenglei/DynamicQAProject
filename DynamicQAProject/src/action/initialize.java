@@ -3,7 +3,7 @@ package action;
 import java.sql.*;
 
 public class initialize {
-	public Connection getlink()
+	public Connection getlink(String name)
 	{
 		Connection conn = null;
 		try
@@ -16,7 +16,8 @@ public class initialize {
 		}
 		try
 		{
-			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project","root","qweasd");
+			String url = "jdbc:mysql://127.0.0.1:3306/"+name+"?useSSL=true";
+			conn = DriverManager.getConnection(url,"root","qweasd");
 		}
 		catch (SQLException e)
 		{
