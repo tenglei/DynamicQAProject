@@ -78,9 +78,9 @@ public class register
 	        	String sql4="insert into user(Name,PassWord,Email,UserID) values(?,?,?,?)";
 	            PreparedStatement ps=a1.prepareStatement(sql4);
 	            
-	            System.out.println(this.name);
-	            System.out.println(this.password);
-	            System.out.println(this.email);
+	           // System.out.println(this.name);
+	            //System.out.println(this.password);
+	            //System.out.println(this.email);
 	            
 	            ps.setString(1, this.name);
 	            ps.setString(2, this.password);

@@ -56,6 +56,7 @@ public class testmysql
 		System.out.println(idnum);
 	}
 	*/
+	/*
 	public static void buildbase2(String authorname)
 	{
 		int QAnum = 0;//先得到问卷号码,并且更新问卷的号码
@@ -81,13 +82,27 @@ public class testmysql
 			Connection conn2 = new initialize().getlink(authorname+String.valueOf(QAnum));
 			try{
 				Statement stat2 = conn2.createStatement();
-				stat2.executeUpdate("create table property(QAid varchar(10),authorid varchar(2),classname varchar(10),totalscore int,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(80))");
+				stat2.executeUpdate("create table property(QAid varchar(10),authorid varchar(4),classname varchar(10),totalscore int,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(80))");
 				stat2.executeUpdate("create table choice(question varchar(255),Ach varchar(80),Bch varchar(80),Cch varchar(80),Dch varchar(80), answer varchar(1),score int)");
 				stat2.executeUpdate("create table fill(blanknum int,question varchar(255),answer varchar(80),score int)");
 				stat2.executeUpdate("create table QA(question varchar(255),answer varchar(255),keywords varchar(80),score int)");
 				stat2.executeUpdate("create table list(mingci int,name varchar(80),score int)");
+				
+				String sql4="insert into property(QAid,authorid,classname,totalscore,choicenum,fillnum,QAnum,totalans) values(?,?,?,?,?,?,?,?)";
+				PreparedStatement ps=conn2.prepareStatement(sql4);
+				ps.setString(1,"qwe2");
+				ps.setString(2,"11");
+				ps.setString(3, "asd");
+				ps.setInt(4, 0);//总的分值暂定是0
+				ps.setInt(5, 0);
+				ps.setInt(6, 0);
+				ps.setInt(7, 0);
+				ps.setInt(8, 0);
+				ps.executeUpdate();
+				
 				stat2.close();
 				conn2.close();
+				System.out.println("aaa");
 			}
 			catch (SQLException e) 
 			{
@@ -99,8 +114,26 @@ public class testmysql
 			e.printStackTrace();
 		}
 	}
+	*/
+	public static String delete()
+	{
+		Connection conn = new initialize().getlink("project");
+		try
+		{
+			Statement stat = conn.createStatement();
+			String sql = "drop database "+"ybk";
+			stat.executeUpdate(sql);
+			stat.close();
+			conn.close();
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		return "deletesuccess";
+	}
 	public static void main(String[] args)
 	{
-		buildbase2("xuefeng");
+		delete();
 	}
 }
