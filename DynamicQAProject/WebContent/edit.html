@@ -41,9 +41,9 @@
 				<div class="collapse navbar-toggleable-md" id="tmNavbar">
 
 					<ul class="nav navbar-nav">
-						<li class="nav-item"><a class="nav-link" href="#tm-section-1">选择题</a></li>
-						<li class="nav-item"><a class="nav-link" href="#tm-section-1">填空题</a></li>
-						<li class="nav-item"><a class="nav-link" id="add_row"
+						<li class="nav-item"><a class="nav-link" id="wenda_row" href="#tm-section-1">选择题</a></li>
+						<li class="nav-item"><a class="nav-link" href="#tm-section-1" id="tiankong_row">填空题</a></li>
+						<li class="nav-item"><a class="nav-link" id="wenda"
 							href="#tm-section-1">问答题</a></li>
 					</ul>
 
@@ -56,27 +56,32 @@
 
 		</div>
 	</div>
-<div class="container">
-	<div class="tm-page-content">
+	<div class="container">
+		<div class="tm-page-content">
 
-		<div class="row clearfix">
-			<div class="col-md-12 table-responsive">
-				<table class="table table-bordered table-hover table-sortable"
-					id="tab_logic">
-					<tbody>
-						<tr id='addr0' data-id="0" class="hidden">			
-							<td data-name="desc"><textarea name="desc0"
-									placeholder="Description" class="form-control"></textarea></td>
-							<td data-name="del">
-											<button class ="btn btn-danger glyphicon-remove row-remove">删除</button>
+			<div class="row clearfix">
+				<div class="col-md-12 table-responsive">
+					<table class="table table-bordered table-hover table-sortable"
+						id="tab_logic">			
+						<thead>
+								<tr id='bddr0' data-id="0" hidden="hidden">
+								<td data-name="ques"> <input type="text" name="ques0" class="form-control" placeholder="题目"> </td>
+								</tr>
+						</thead>	
+						<tbody>
+							<tr id='addr0' data-id="0" hidden="hidden">
+								<td data-name="desc"><textarea name="desc0"
+										placeholder="Description" class="form-control"></textarea></td>
+								<td data-name="del">
+									<button class="btn row-remove">删除</button>
 
-							</td>
-						</tr>
-					</tbody>
-				</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
-</div>
 
 		<!-- #home -->
 

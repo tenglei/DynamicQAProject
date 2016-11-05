@@ -12,7 +12,7 @@ function AddElement(mytype) {
 		TemO.appendChild(newline);
 	}
 $(document).ready(function() {
-    $("#add_row").on("click", function() {
+    $("#wenda").on("click", function() {
         // Dynamic Rows Code
         
         // Get max row id and set new id
@@ -28,14 +28,43 @@ $(document).ready(function() {
             id: "addr"+newid,
             "data-id": newid
         });
-        
-        // loop through each td and create new elements with name of newid
+        var pr = $("<tr></tr>", {
+            id: "bddr"+newid,
+            "data-id": newid
+        });
+        // loop through each td and create new elements with name of newi
+        $.each($("#tab_logic thead tr:nth(0) td"), function() {
+            var cur_tdh = $(this);
+            
+            
+            var children = cur_tdh.children();
+            
+            // add new td and element if it has a name
+            if ($(this).data("name") != undefined) {
+                var td = $("<td></td>", {
+                    "data-name": $(cur_tdh).data("name")
+                });
+                var c = $(cur_tdh).find($(children[0]).prop('tagName')).clone().val("");
+                c.attr("name", $(cur_tdh).data("name") + newid);
+                c.appendTo($(td));
+                td.appendTo($(pr));
+               
+               
+               
+            } else {
+            	alert("else");
+                var td = $("<td></td>", {
+                    'text': $('#tab_logic tr').length
+                }).appendTo($(pr));
+            }            
+
+        });
         $.each($("#tab_logic tbody tr:nth(0) td"), function() {
             var cur_td = $(this);
             
             var children = cur_td.children();
             
-            // add new td and element if it has a nane
+            // add new td and element if it has a name
             if ($(this).data("name") != undefined) {
                 var td = $("<td></td>", {
                     "data-name": $(cur_td).data("name")
@@ -45,7 +74,9 @@ $(document).ready(function() {
                 c.attr("name", $(cur_td).data("name") + newid);
                 c.appendTo($(td));
                 td.appendTo($(tr));
+               
             } else {
+            	alert("else");
                 var td = $("<td></td>", {
                     'text': $('#tab_logic tr').length
                 }).appendTo($(tr));
@@ -63,11 +94,15 @@ $(document).ready(function() {
         */
         
         // add the new row
+        $(pr).appendTo($('#tab_logic'));
         $(tr).appendTo($('#tab_logic'));
-        
         $(tr).find("td button.row-remove").on("click", function() {
              $(this).closest("tr").remove();
-        });
+             $(pr).closest("tr").remove();
+        }
+        );
+        
+       
 });
 
 
@@ -93,5 +128,5 @@ $(document).ready(function() {
 
 
 
-    $("#add_row").trigger("click");
+    //$("#add_row").trigger("click");
 });
