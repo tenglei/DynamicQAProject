@@ -61,17 +61,17 @@
 
 			<div class="row clearfix">
 				<div class="col-md-12 table-responsive">
-					<table class="table table-bordered table-hover table-sortable"
+					<table  class="table table-bordered table-hover table-sortable"
 						id="tab_logic">			
 						<thead>
-								<tr id='bddr0' data-id="0" hidden="hidden">
-								<td data-name="ques"> <input type="text" name="ques0" class="form-control" placeholder="题目"> </td>
+								<tr id='bddr0' data-id="0" hidden="hidden" >
+								<td data-name="ques" align="center">  <input type="text" name="ques0" class="form-control" placeholder="题目"> </td>
 								</tr>
 						</thead>	
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
 								<td data-name="desc"><textarea name="desc0"
-										placeholder="Description" class="form-control"></textarea></td>
+										placeholder="问题描述" class="form-control"></textarea></td>
 								<td data-name="del">
 									<button class="btn row-remove">删除</button>
 
@@ -79,6 +79,44 @@
 							</tr>
 						</tbody>
 					</table>
+					<table class="table table-bordered table-hover table-sortable"
+						id="tab_select">			
+						<thead>
+								<tr id='bddr0' data-id="0" hidden="hidden">
+								<td data-name="ques"> <input type="text" name="ques0" class="form-control" placeholder="题目"> </td>
+								</tr>
+						</thead>	
+						<tbody>
+							<tr id='addr0' data-id="0" hidden="hidden">
+								<td data-name="select0"><textarea name="select00"
+										placeholder="选项一" class="form-control"></textarea></td>
+							    <td data-name="select1"><textarea name="select01"
+										placeholder="选项二" class="form-control"></textarea></td>
+							    <td data-name="select2"><textarea name="select02"
+										placeholder="选项三" class="form-control"></textarea></td>
+							    <td data-name="select3"><textarea name="select03"
+										placeholder="选项四" class="form-control"></textarea></td> 
+								<td data-name="del">
+									<button class="btn row-remove">删除</button>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table table-bordered table-hover table-sortable"
+						id="tab_select">				
+						<tbody>
+							<tr id='addr0' data-id="0" hidden="hidden">
+								<td data-name="select0"><textarea name="select00"
+										placeholder="请输入填空题题目（技术限制，需要全部手动输入）" class="form-control"></textarea></td>
+								<td data-name="del">
+									<button class="btn row-remove">删除</button>
+
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
 				</div>
 			</div>
 		</div>
