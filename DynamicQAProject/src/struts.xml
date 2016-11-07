@@ -13,7 +13,11 @@
 		
 		<action name="login" class = "action.login" method = "login_user">
 			<result name="loginfailed">/welcome.html</result>
-			<result name="loginsuccess">/index.html</result>
+			<result name="loginsuccess">/a.jsp</result>
+		</action>
+		
+		<action name="addnewqa" class = "action.initialize_QA" method = "buildbase">
+			<result name="successbuild">/edit.jsp</result>
 		</action>
 	</package>
 </struts>

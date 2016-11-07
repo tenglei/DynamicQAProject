@@ -115,6 +115,7 @@ public class testmysql
 		}
 	}
 	*/
+	/*
 	public static String delete()
 	{
 		Connection conn = new initialize().getlink("project");
@@ -132,8 +133,18 @@ public class testmysql
 		}
 		return "deletesuccess";
 	}
-	public static void main(String[] args)
+	*/
+	public String fanhui(String p)
 	{
-		delete();
+		if(p.length() == 3)
+		{
+			return "shit";
+		}
+		else
+		{
+			return "fuck you";
+		}
 	}
+	
+
 }

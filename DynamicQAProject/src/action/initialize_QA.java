@@ -8,11 +8,30 @@ public class initialize_QA
 	private String authorname;
 	private String authorid;
 	private String biaoqian;
+	private String basename;
 	public String buildbase()
 	{
+		System.out.println("得到的用户名是：");
+		System.out.println(this.authorname);
+		
 		int QAnum = 0;//先得到问卷号码,并且更新问卷的号码
 		String a = "";
 		Connection conn = new initialize().getlink("project");
+		try
+		{
+			String sql3 = "select * from user where Name=\""+this.authorname+"\"";
+			Statement stat3 = conn.createStatement();
+			ResultSet rs3 = stat3.executeQuery(sql3);
+			while(rs3.next()!=false)
+			{
+				this.authorid = rs3.getString(4);
+				this.biaoqian = rs3.getString(5);
+			}
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
 		try 
 		{
 			String sql = "select * from nowinformation";
@@ -29,11 +48,12 @@ public class initialize_QA
 			stat.executeUpdate(sql3);//创建了数据库
 			stat.close();
 			conn.close();
+			this.basename = this.authorname+String.valueOf(QAnum);
 			//以下初始化数据库中所有的表
 			Connection conn2 = new initialize().getlink(this.authorname+String.valueOf(QAnum));
 			try{
 				Statement stat2 = conn2.createStatement();
-				stat2.executeUpdate("create table property(QAid varchar(10),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(80))");
+				stat2.executeUpdate("create table property(QAid varchar(30),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(80))");
 				stat2.executeUpdate("create table choice(question varchar(255),Ach varchar(80),Bch varchar(80),Cch varchar(80),Dch varchar(80), answer varchar(1),score float)");
 				stat2.executeUpdate("create table fill(blanknum int,question varchar(255),answer varchar(80),score float)");
 				stat2.executeUpdate("create table QA(question varchar(255),answer varchar(255),keywords varchar(80),score float)");
@@ -88,4 +108,10 @@ public class initialize_QA
 		System.out.println("Success!");
 	}
 	*/
+	public String getBasename() {
+		return basename;
+	}
+	public void setBasename(String basename) {
+		this.basename = basename;
+	}
 }

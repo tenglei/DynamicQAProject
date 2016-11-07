@@ -6,8 +6,9 @@ public class login
 {
 	private String logininfor;
 	private String loginpassword;
-	
-	public String login_user()
+	private String welcomename;
+
+	public String login_user() 
 	{
 		String truepassword = "";
 		if(this.logininfor.length()!=0 && this.loginpassword.length()!=0)//全部非空，开始判断
@@ -54,7 +55,8 @@ public class login
 				return "loginfailed";//没有找到，失败
 			}
 			else if(this.loginpassword.equals(truepassword)==true)//
-			{
+			{				
+				this.welcomename = this.logininfor;
 				return "loginsuccess";//匹配，成功
 			}
 			else
@@ -66,6 +68,10 @@ public class login
 		{
 			return "loginfailed";//有信息没有输入，失败
 		}
+	}
+	public String fuzhu()
+	{
+		return "back";
 	}
 	public void setlogininfor(String logininfor)
 	{
@@ -85,5 +91,11 @@ public class login
 	public String getloginpassword()
 	{
 		return this.loginpassword;
+	}
+	public String getWelcomename() {
+		return welcomename;
+	}
+	public void setWelcomename(String welcomename) {
+		this.welcomename = welcomename;
 	}
 }
