@@ -14,6 +14,7 @@ function AddElement(mytype) {
 $(document).ready(function() {
 	
 	var newid = 0;
+	
     $("#wenda").on("click", function() {
         // Dynamic Rows Code
         
@@ -34,7 +35,7 @@ $(document).ready(function() {
             "data-id": newid
         });
         // loop through each td and create new elements with name of newi
-        $.each($("#tab_logic thead tr:nth(0) td"), function() {
+        $.each($("#tab_logic tbody:eq(0) tr:nth(0) td"), function() {
             var cur_tdh = $(this);
             
             
@@ -60,7 +61,7 @@ $(document).ready(function() {
             }            
 
         });
-        $.each($("#tab_logic tbody tr:nth(0) td"), function() {
+        $.each($("#tab_logic tbody:eq(1) tr:nth(0) td"), function() {
             var cur_td = $(this);
             
             var children = cur_td.children();
@@ -102,6 +103,14 @@ $(document).ready(function() {
              $(pr).closest("tr").remove();
         }
         );
+        $(tr).find("td button.row-add").on("click", function() {
+        	var t= document.getElementById("tab_logic");
+        	t.action="wenda.action";
+        	t.submit();
+        	$(this).closest("tr").remove();
+            $(pr).closest("tr").remove();
+       }
+       );
         
        
 });
@@ -125,7 +134,7 @@ $(document).ready(function() {
             "data-id": newid
         });
         // loop through each td and create new elements with name of newi
-        $.each($("#tab_select thead tr:nth(0) td"), function() {
+        $.each($("#tab_select tbody:eq(0) tr:nth(0) td"), function() {
             var cur_tdh = $(this);
             
             
@@ -146,12 +155,12 @@ $(document).ready(function() {
             } else {
             	alert("else");
                 var td = $("<td></td>", {
-                    'text': $('#tab_logic tr').length
+                    'text': $('#tab_select tr').length
                 }).appendTo($(pr));
             }            
 
         });
-        $.each($("#tab_select tbody tr:nth(0) td"), function() {
+        $.each($("#tab_select tbody:eq(1) tr:nth(0) td"), function() {
             var cur_td = $(this);
             
             var children = cur_td.children();
@@ -193,6 +202,14 @@ $(document).ready(function() {
              $(pr).closest("tr").remove();
         }
         );
+        $(tr).find("td button.row-add").on("click", function() {
+        	var t= document.getElementById("tab_logic");
+        	t.action="xuanze.action";
+        	t.submit();
+        	$(this).closest("tr").remove();
+            $(pr).closest("tr").remove();
+       }
+       );
         
        
 });
@@ -201,7 +218,7 @@ $(document).ready(function() {
         // Dynamic Rows Code
         
         // Get max row id and set new id
-        $.each($("#tab_logic tr"), function() {
+        $.each($("#tab_tiankong tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
                 newid = parseInt($(this).data("id"));
             }
@@ -212,8 +229,36 @@ $(document).ready(function() {
             id: "addr"+newid,
             "data-id": newid
         });
+        var pr = $("<tr></tr>", {
+            id: "bddr"+newid,
+            "data-id": newid
+        });
         // loop through each td and create new elements with name of newi
-        $.each($("#tab_logic tbody tr:nth(0) td"), function() {
+        $.each($("#tab_tiankong tbody:eq(0) tr:nth(0) td"), function() {
+            var cur_td = $(this);
+            
+            var children = cur_td.children();
+            
+            // add new td and element if it has a name
+            if ($(this).data("name") != undefined) {
+                var td = $("<td></td>", {
+                    "data-name": $(cur_td).data("name")
+                });
+                
+                var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
+                c.attr("name", $(cur_td).data("name") + newid);
+                c.appendTo($(td));
+                td.appendTo($(pr));
+               
+            } else {
+            	alert("else");
+                var td = $("<td></td>", {
+                    'text': $('#tab_tiankong tr').length
+                }).appendTo($(pr));
+            }
+        });
+        
+        $.each($("#tab_tiankong tbody:eq(1) tr:nth(0) td"), function() {
             var cur_td = $(this);
             
             var children = cur_td.children();
@@ -232,7 +277,7 @@ $(document).ready(function() {
             } else {
             	alert("else");
                 var td = $("<td></td>", {
-                    'text': $('#tab_logic tr').length
+                    'text': $('#tab_tiankong tr').length
                 }).appendTo($(tr));
             }
         });
@@ -249,12 +294,22 @@ $(document).ready(function() {
         
         // add the new row
        
+        $(pr).appendTo($('#tab_logic'));
         $(tr).appendTo($('#tab_logic'));
         $(tr).find("td button.row-remove").on("click", function() {
              $(this).closest("tr").remove();
-             
+             $(pr).closest("tr").remove();
         }
         );
+        $(tr).find("td button.row-add").on("click", function() {
+        	var t= document.getElementById("tab_logic");
+        	t.action="tiankong.action";
+        	t.submit();
+        	$(this).closest("tr").remove();
+            $(pr).closest("tr").remove();
+       }
+       );
+        
         
        
 });
