@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
 <link rel="stylesheet" href="assets/css/main.css" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Home</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
 <!-- load stylesheets -->
 <!-- Google web font "Open Sans" -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,6 +22,7 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
           <![endif]-->
+
 </head>
 <script src="js/jquery-2.1.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -71,20 +73,20 @@
 						id="tab_logic">
 						<tbody>
 							<tr id='bddr0' data-id="0" hidden="hidden">
-								<td  data-name="ques" align="center"><input
+								<td colspan="5" data-name="ques" align="center"><input
 									type="text" name="ques0" class="form-control" placeholder="题目">
 								</td>
-								<td  data-name="kongge" align="center"><input
+								<td colspan="5" data-name="kongge" align="center"><input
 									type="text" name="kongge0" class="form-control"
 									placeholder="关键词"></td>
-								<td  data-name="score" align="center"><input
+								<td colspan="5" data-name="score" align="center"><input
 									type="text" name="score0" class="form-control" placeholder="分数">
 								</td>
 							</tr>
 						</tbody>
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
-								<td  data-name="desc"><textarea name="desc0"
+								<td colspan="4" data-name="desc"><textarea name="desc0"
 										placeholder="问题描述" class="form-control"></textarea></td>
 								<td data-name="del">
 									<button class="btn row-remove">删除</button>

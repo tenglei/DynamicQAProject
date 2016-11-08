@@ -99,16 +99,17 @@ $(document).ready(function() {
         $(pr).appendTo($('#tab_logic'));
         $(tr).appendTo($('#tab_logic'));
         $(tr).find("td button.row-remove").on("click", function() {
+        	
              $(this).closest("tr").remove();
              $(pr).closest("tr").remove();
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
-        	var t= document.getElementById("tab_logic");
-        	t.action="wenda.action";
-        	t.submit();
-        	$(this).closest("tr").remove();
-            $(pr).closest("tr").remove();
+        
+        	document.myform.action="wenda";
+        	myform.submit();
+        	//未删除加入，或许会报错
+       
        }
        );
         
@@ -203,11 +204,9 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
-        	var t= document.getElementById("tab_logic");
-        	t.action="xuanze.action";
-        	t.submit();
-        	$(this).closest("tr").remove();
-            $(pr).closest("tr").remove();
+        	document.myform.action="xuanze";
+        	myform.submit();
+        	//未删除加入，或许会报错
        }
        );
         
@@ -302,11 +301,9 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
-        	var t= document.getElementById("tab_logic");
-        	t.action="tiankong.action";
-        	t.submit();
-        	$(this).closest("tr").remove();
-            $(pr).closest("tr").remove();
+        	document.myform.action="tiankong";
+        	myform.submit();
+        	//未删除加入，或许会报错
        }
        );
         
