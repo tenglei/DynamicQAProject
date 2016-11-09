@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="assets/css/main.css" />
@@ -44,6 +45,8 @@
 
 					<ul class="nav navbar-nav">
 						<li class="nav-item"><a class="nav-link" id="xuanze"
+							href="#tm-section-1"><s:property value="basename"/></a></li>
+						<li class="nav-item"><a class="nav-link" id="xuanze"
 							href="#tm-section-1">选择题</a></li>
 						<li class="nav-item"><a class="nav-link" href="#tm-section-1"
 							id="tiankong">填空题</a></li>
@@ -68,9 +71,12 @@
 
 			<div class="row clearfix">
 				<div class="col-md-12 table-responsive">
-				<form action="" method="post" id = "tab_form" name="myform">
+				
+				<form action="" method="post" id = "tab_form" name="myform">		
+				 <input type="hidden" id="tmpques" name="xxx" value="<s:property value="basename"/>" >
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_logic">
+							
 						<tbody>
 							<tr id='bddr0' data-id="0" hidden="hidden">
 								<td colspan="5" data-name="ques" align="center"><input
@@ -82,6 +88,10 @@
 								<td colspan="5" data-name="score" align="center"><input
 									type="text" name="score0" class="form-control" placeholder="分数">
 								</td>
+								<!-- <td colspan="5" data-name="QAnum" align="center"><input
+									 name="QAnum0"  class="form-control" >
+									
+								</td> -->
 							</tr>
 						</tbody>
 						<tbody>
@@ -248,5 +258,6 @@
 		</script>
 	</div>
 	<script src="js/myscript.js"></script>
+	<!--  <input type="text" id="atquestion" name="<s:property value="basename"/>" value=""  > -->
 </body>
 </html>

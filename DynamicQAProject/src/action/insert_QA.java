@@ -4,16 +4,23 @@ import java.sql.*;
 
 public class insert_QA
 {
-	private String QAnum;//问卷号码
+	private String QAnum1;//问卷号码
+	private String xxx;
 	private String ques1;
 	private String desc1;
 	private String key1;
 	private String score1;
+	private String basename;
 	public static boolean isNum(String str){
 		return str.matches("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$");
 	}
 	public String insert_wenda()
 	{
+		
+		this.QAnum1=this.xxx;
+		this.basename = this.QAnum1;
+		System.out.println("00:");
+		System.out.println(this.QAnum1);
 		System.out.println("11:");
 		System.out.println(this.ques1);
 		System.out.println("22:");
@@ -37,8 +44,8 @@ public class insert_QA
 		}
 		else//下面开始插入
 		{
-			Connection conn = new initialize().getlink(this.QAnum);
-			String sql="insert into qa(ques1,desc1,key1,score1) values(?,?,?,?)";
+			Connection conn = new initialize().getlink(this.QAnum1);
+			String sql="insert into qa(question,answer,keywords,score) values(?,?,?,?)";
 			try{
 			PreparedStatement ps=conn.prepareStatement(sql);
 			ps.setString(1,this.ques1);
@@ -57,11 +64,11 @@ public class insert_QA
 			return "successinsert";
 		}
 	}
-	public String getQAnum() {
-		return QAnum;
+	public String getQAnum1() {
+		return QAnum1;
 	}
-	public void setQAnum(String qAnum) {
-		QAnum = qAnum;
+	public void setQAnum(String QAnum1) {
+		this.QAnum1 = QAnum1;
 	}
 	public String getQues1() {
 		return ques1;
@@ -86,6 +93,18 @@ public class insert_QA
 	}
 	public void setScore1(String score1) {
 		this.score1 = score1;
+	}
+	public String getBasename() {
+		return basename;
+	}
+	public void setBasename(String basename) {
+		this.basename = basename;
+	}
+	public String getXxx() {
+		return xxx;
+	}
+	public void setXxx(String xxx) {
+		this.xxx = xxx;
 	}
 	
 	/*

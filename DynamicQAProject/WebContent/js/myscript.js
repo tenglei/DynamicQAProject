@@ -17,7 +17,8 @@ $(document).ready(function() {
 	
     $("#wenda").on("click", function() {
         // Dynamic Rows Code
-        
+    	//var bl = document.getElementById("atquestion").getAttribute("name");
+      //  document.getElementById("tmpques").setAttribute("value",bl);
         // Get max row id and set new id
         $.each($("#tab_logic tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
@@ -117,7 +118,8 @@ $(document).ready(function() {
 });
     $("#xuanze").on("click", function() {
         // Dynamic Rows Code
-        
+    	var bl = document.getElementById("atquestion").getAttribute("name");
+        document.getElementById("atquestion").setAttribute("value",bl);
         // Get max row id and set new id
         $.each($("#tab_select tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
@@ -215,7 +217,10 @@ $(document).ready(function() {
     
     $("#tiankong").on("click", function() {
         // Dynamic Rows Code
-        
+    	
+         var bl = document.getElementById("atquestion").getAttribute("name");
+         document.getElementById("atquestion").setAttribute("value",bl);
+    	 
         // Get max row id and set new id
         $.each($("#tab_tiankong tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
