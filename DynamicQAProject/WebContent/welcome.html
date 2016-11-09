@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="assets/css/main.css" />
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
+
 <script type="text/javascript">
 function validate_required(field,alerttxt)
 {
@@ -44,18 +45,39 @@ function validate_form(thisform)
 		}
 	}
 }
-
+function validate_form2(thisform)
+{
+	with(thisform)
+	{
+		if(validate_required(name,"请确认所有信息不为空！")==false)
+		{
+			return false;
+		}
+		else if(validate_required(email,"请确认所有信息不为空！")==false)
+		{
+			return false;	
+		}
+		else if(validate_required(password,"请确认所有信息不为空！")==false)
+		{
+			return false;	
+		}
+		else if(validate_required(confirmpassword,"请确认所有信息不为空！")==false)
+		{
+			return false;	
+		}
+		else if(confirmpassword!=password)
+		{
+			alert("两次输入的密码必须匹配！");
+			return false;
+		}
+		alert("注册成功！快快登录吧！");
+	}
+}
 
 </script>
 
-
-
-
-
 </head>
 <body>
-
-
 
 	<!-- Header -->
 	<section id="header">
@@ -117,39 +139,39 @@ function validate_form(thisform)
 			<div class="row 0%">
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/01.jpg" class="image fit"><img
-						src="images/thumbs/01.jpg" alt="" title="Ad infinitum" /></a>
+						src="images/thumbs/01.jpg" alt="" title="学生" /></a>
 				</div>
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/02.jpg" class="image fit"><img
-						src="images/thumbs/02.jpg" alt="" title="Dressed in Clarity" /></a>
+						src="images/thumbs/02.jpg" alt="" title="农民" /></a>
 				</div>
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/03.jpg" class="image fit"><img
-						src="images/thumbs/03.jpg" alt="" title="Raven" /></a>
+						src="images/thumbs/03.jpg" alt="" title="游乐园" /></a>
 				</div>
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/04.jpg" class="image fit"><img
 						src="images/thumbs/04.jpg" alt=""
-						title="I'll have a cup of Disneyland, please" /></a>
+						title="小商店" /></a>
 				</div>
 			</div>
 			<div class="row 0%">
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/05.jpg" class="image fit"><img
-						src="images/thumbs/05.jpg" alt="" title="Cherish" /></a>
+						src="images/thumbs/05.jpg" alt="" title="白领" /></a>
 				</div>
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/06.jpg" class="image fit"><img
-						src="images/thumbs/06.jpg" alt="" title="Different." /></a>
+						src="images/thumbs/06.jpg" alt="" title="企业" /></a>
 				</div>
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/07.jpg" class="image fit"><img
-						src="images/thumbs/07.jpg" alt="" title="History was made here" /></a>
+						src="images/thumbs/07.jpg" alt="" title="高校" /></a>
 				</div>
 				<div class="3u 12u(mobile)">
 					<a href="images/fulls/08.jpg" class="image fit"><img
 						src="images/thumbs/08.jpg" alt=""
-						title="People come and go and walk away" /></a>
+						title="艺术家" /></a>
 				</div>
 			</div>
 		</div>
@@ -161,7 +183,7 @@ function validate_form(thisform)
 			<h2>立马开始问者之旅</h2>
 			<p>请输入相应信息完成注册</p>
 		</header>
-		<form method="get" action="registe.action" >
+		<form method="get" action="registe.action" onsubmit="return validate_form2(this)">
 			<div class="row 50%">
 
 				<div class="6u 12u$(mobile)" style="align:center">
@@ -181,7 +203,7 @@ function validate_form(thisform)
 			<p></p>
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="注册" /></li>
+					<li><input type="submit" value="注册" onclick="return validate_form(this)"/></li>
 				</ul>
 
 				<p></p>
@@ -202,7 +224,7 @@ function validate_form(thisform)
 		<header>
 			<p>赶紧来登录吧！</p>
 		</header>
-		<form method="post" action="login.action">
+		<form method="post" action="login.action" onsubmit="return validate_form(this)">
 			<div class="row 50%">
 				<div class="6u 12u$(mobile)" style="align:center">
 					<input type="text" class="text" name="logininfor" placeholder="请输入注册名" style="text-align:center"/>
@@ -214,7 +236,7 @@ function validate_form(thisform)
 			<p></p>
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="登录" /></li>
+					<li><input type="submit" value="登录" onclick="return validate_form(this)"/></li>
 				</ul>
 			</div>
 			

@@ -1,6 +1,11 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <html lang="en">
 <head>
+
+
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <title>问者</title>
@@ -13,6 +18,8 @@
 <link href="css/animate.css" rel="stylesheet">
 
 </head>
+
+
 <body data-spy="scroll" data-target="#topnav" id="top">
 
 	<section class="header-area-home" id="header-area-home">
@@ -36,11 +43,9 @@
 								<li><a href="#myrepertory">我的题库</a></li>
 								<li><a href="#personalcenter">个人中心</a></li>
 								
-								
-								<li>                               </a></li>
-								
-								
-								
+								<li><a>您好，</a></li>
+								<li><a><s:property value="welcomename"/></a></li>
+								<li><a href="addnewqa.action?authorname=<s:property value="welcomename"/>" >新增问卷</a></li>
 							</ul>
 						</div>
 					</div>

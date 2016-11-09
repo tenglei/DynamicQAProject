@@ -66,7 +66,7 @@ $(document).ready( function() {
         clickEvent = false;
     });
 
-    $("#main-nav-container").sticky({topSpacing:0});
+    //$("#main-nav-container").sticky({topSpacing:0});
 
 
     $('.navbar-eden a[href*=#]:not([href=#]):not([rel=crs])').click(function() {

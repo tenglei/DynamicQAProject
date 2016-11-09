@@ -13,11 +13,20 @@
 		
 		<action name="login" class = "action.login" method = "login_user">
 			<result name="loginfailed">/welcome.html</result>
-			<result name="loginsuccess">/a.jsp</result>
+			<result name="loginsuccess">/index.jsp</result>
 		</action>
 		
 		<action name="addnewqa" class = "action.initialize_QA" method = "buildbase">
 			<result name="successbuild">/edit.jsp</result>
 		</action>
+		
+		<action name="editcancel" class = "action.delete_base" method = "delete">
+			<result name="deletesuccess">/index.jsp</result>
+		</action>
+		
+		<action name="wenda" class = "action.insert_QA" method = "insert_wenda">
+			<result name="successinsert">/edit.jsp</result>
+		</action>
+		
 	</package>
 </struts>

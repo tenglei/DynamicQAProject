@@ -5,21 +5,29 @@ import java.sql.*;
 public class insert_QA
 {
 	private String QAnum;//问卷号码
-	private String question;
-	private String answer;
-	private String keywords;
-	private String score;
+	private String ques1;
+	private String desc1;
+	private String key1;
+	private String score1;
 	public static boolean isNum(String str){
 		return str.matches("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$");
 	}
 	public String insert_wenda()
 	{
+		System.out.println("11:");
+		System.out.println(this.ques1);
+		System.out.println("22:");
+		System.out.println(this.desc1);
+		System.out.println("33:");
+		System.out.println(this.key1);
+		System.out.println("44:");
+		System.out.println(this.score1);
 		boolean right = true;
-		if(this.question.length()==0||this.answer.length()==0||this.keywords.length()==0||this.score.length()==0)
+		if(this.ques1.length()==0||this.desc1.length()==0||this.key1.length()==0||this.score1.length()==0)
 		{
 			return "inputerror";
 		}
-		if(isNum(this.score)==false)
+		if(isNum(this.score1)==false)
 		{
 			return "inputerror";
 		}
@@ -30,13 +38,13 @@ public class insert_QA
 		else//下面开始插入
 		{
 			Connection conn = new initialize().getlink(this.QAnum);
-			String sql="insert into qa(question,answer,keywords,score) values(?,?,?,?)";
+			String sql="insert into qa(ques1,desc1,key1,score1) values(?,?,?,?)";
 			try{
 			PreparedStatement ps=conn.prepareStatement(sql);
-			ps.setString(1,this.question);
-			ps.setString(2,this.answer);
-			ps.setString(3, this.keywords);
-			ps.setFloat(4, Float.parseFloat(this.score));//总的分值暂定是0
+			ps.setString(1,this.ques1);
+			ps.setString(2,this.desc1);
+			ps.setString(3, this.key1);
+			ps.setFloat(4, Float.parseFloat(this.score1));//总的分值暂定是0
 			ps.executeUpdate();
 			}
 			catch (SQLException e) 
@@ -44,32 +52,42 @@ public class insert_QA
 				e.printStackTrace();
 			}
 			//更新各项数据
-			new tongyong().updatebase(conn, 3, Float.parseFloat(this.score));
+			new tongyong().updatebase(conn, 3, Float.parseFloat(this.score1));
 			System.out.println("增加成功！");
 			return "successinsert";
 		}
 	}
+	public String getQAnum() {
+		return QAnum;
+	}
+	public void setQAnum(String qAnum) {
+		QAnum = qAnum;
+	}
+	public String getQues1() {
+		return ques1;
+	}
+	public void setQues1(String ques1) {
+		this.ques1 = ques1;
+	}
+	public String getDesc1() {
+		return desc1;
+	}
+	public void setDesc1(String desc1) {
+		this.desc1 = desc1;
+	}
+	public String getKey1() {
+		return key1;
+	}
+	public void setKey1(String key1) {
+		this.key1 = key1;
+	}
+	public String getScore1() {
+		return score1;
+	}
+	public void setScore1(String score1) {
+		this.score1 = score1;
+	}
 	
-	public void setQAnum(String QAnum)
-	{
-		this.QAnum = QAnum;
-	}
-	public void setquestion(String question)
-	{
-		this.question = question;
-	}
-	public void setanswer(String answer)
-	{
-		this.answer = answer;
-	}
-	public void setkeywords(String keywords)
-	{
-		this.keywords = keywords;
-	}
-	public void setscore(String score)
-	{
-		this.score = score;
-	}
 	/*
 	public static void main(String[] args)
 	{

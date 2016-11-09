@@ -9,10 +9,11 @@ public class initialize_QA
 	private String authorid;
 	private String biaoqian;
 	private String basename;
+	private String password;//这里要设置密码，目的是返回
 	public String buildbase()
 	{
-		System.out.println("得到的用户名是：");
-		System.out.println(this.authorname);
+		//System.out.println("得到的用户名是：");
+		//System.out.println(this.authorname);
 		
 		int QAnum = 0;//先得到问卷号码,并且更新问卷的号码
 		String a = "";
@@ -26,6 +27,7 @@ public class initialize_QA
 			{
 				this.authorid = rs3.getString(4);
 				this.biaoqian = rs3.getString(5);
+				this.password = rs3.getString(2);
 			}
 		}
 		catch (SQLException e) 
@@ -89,6 +91,10 @@ public class initialize_QA
 	{
 		this.authorname = authorname;
 	}
+	public String getauthorname()
+	{
+		return authorname;
+	}
 	public void setauthorid(String authorid)
 	{
 		this.authorid = authorid;
@@ -97,21 +103,16 @@ public class initialize_QA
 	{
 		this.biaoqian = biaoqian;
 	}
-	/*
-	public static void main(String[] args)
-	{
-		initialize_QA s = new initialize_QA();
-		s.setauthorname("xuefeng");
-		s.setauthorid("3");
-		s.setbiaoqian("sports");
-		s.buildbase();
-		System.out.println("Success!");
-	}
-	*/
 	public String getBasename() {
 		return basename;
 	}
 	public void setBasename(String basename) {
 		this.basename = basename;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }
