@@ -44,7 +44,7 @@
 				<div class="collapse navbar-toggleable-md" id="tmNavbar">
 
 					<ul class="nav navbar-nav">
-						<li class="nav-item"><a class="nav-link" id="xuanze"
+						<li class="nav-item"><a class="nav-link" 
 							href="#tm-section-1"><s:property value="basename"/></a></li>
 						<li class="nav-item"><a class="nav-link" id="xuanze"
 							href="#tm-section-1">选择题</a></li>
@@ -71,12 +71,10 @@
 
 			<div class="row clearfix">
 				<div class="col-md-12 table-responsive">
-				
-				<form action="" method="post" id = "tab_form" name="myform">		
-				 <input type="hidden" id="tmpques" name="xxx" value="<s:property value="basename"/>" >
+				<form action="" method="post" id = "tab_form" name="myform">
+				    <input type="hidden" id="tmpques" name="xxx" value="<s:property value="basename"/>" >
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_logic">
-							
 						<tbody>
 							<tr id='bddr0' data-id="0" hidden="hidden">
 								<td colspan="5" data-name="ques" align="center"><input
@@ -88,16 +86,12 @@
 								<td colspan="5" data-name="score" align="center"><input
 									type="text" name="score0" class="form-control" placeholder="分数">
 								</td>
-								<!-- <td colspan="5" data-name="QAnum" align="center"><input
-									 name="QAnum0"  class="form-control" >
-									
-								</td> -->
 							</tr>
 						</tbody>
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
 								<td colspan="4" data-name="desc"><textarea name="desc0"
-										placeholder="问题描述" class="form-control"></textarea></td>
+										placeholder="参考答案" class="form-control"></textarea></td>
 								<td data-name="del">
 									<button class="btn row-remove">删除</button>
 								</td>
@@ -108,6 +102,7 @@
 						</tbody>
 					</table>
 				</form>
+				
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_select">
 
@@ -125,13 +120,13 @@
 						</tbody>
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
-								<td data-name="select0"><textarea name="select00"
+								<td data-name="first"><textarea name="first0"
 										placeholder="选项一" class="form-control"></textarea></td>
-								<td data-name="select1"><textarea name="select01"
+								<td data-name="second"><textarea name="second0"
 										placeholder="选项二" class="form-control"></textarea></td>
-								<td data-name="select2"><textarea name="select02"
+								<td data-name="third"><textarea name="third0"
 										placeholder="选项三" class="form-control"></textarea></td>
-								<td data-name="select3"><textarea name="select03"
+								<td data-name="fourth"><textarea name="fourth0"
 										placeholder="选项四" class="form-control"></textarea></td>
 								<td data-name="del">
 									<button class="btn row-remove">删除</button>
@@ -140,31 +135,31 @@
 								<td data-name="add">
 									<button class="btn row-add">添加</button>
 								</td>
-
 							</tr>
 						</tbody>
 					</table>
+					
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_tiankong">
 						<tbody>
 							<tr id='bddr0' data-id="0" hidden="hidden">
-								<td colspan="5" data-name="key" align="center"><input
-									type="text" name="key0" class="form-control" placeholder="答案">
+								<td colspan="5" data-name="ques" align="center"><input
+									type="text" name="ques0" class="form-control" placeholder="请输入填空题题目（技术限制，需要全部手动输入）">
 								</td>
-								<td colspan="5" data-name="kongge" align="center"><input
-									type="text" name="kongge0" class="form-control"
+								<td colspan="5" data-name="fillnum" align="center"><input
+									type="text" name="fillnum0" class="form-control"
 									placeholder="空格数量"></td>
 								<td colspan="5" data-name="score" align="center"><input
 									type="text" name="score0" class="form-control"
-									placeholder="空格数量"></td>
+									placeholder="分值"></td>
 
 							</tr>
 						</tbody>
 
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
-								<td colspan="4" data-name="select0"><textarea
-										name="select00" placeholder="请输入填空题题目（技术限制，需要全部手动输入）"
+								<td colspan="4" data-name="answer"><textarea
+										name="answer0" placeholder="答案（请以空格分隔不同空之间的答案）"
 										class="form-control"></textarea></td>
 								<td data-name="del">
 									<button class="btn row-remove">删除</button>
@@ -258,6 +253,5 @@
 		</script>
 	</div>
 	<script src="js/myscript.js"></script>
-	<!--  <input type="text" id="atquestion" name="<s:property value="basename"/>" value=""  > -->
 </body>
 </html>

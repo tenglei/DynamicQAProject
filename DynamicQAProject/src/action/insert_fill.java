@@ -4,11 +4,13 @@ import java.sql.*;
 
 public class insert_fill 
 {
-	private String QAnum;
-	private String fillnum;
-	private String question;
-	private String answer;
-	private String score;
+	private String QAnum1;
+	private String xxx;
+	private String fillnum1;
+	private String ques1;
+	private String answer1;
+	private String score1;
+	private String basename;
 	public static boolean isfloat(String str){
 		return str.matches("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$");
 	}
@@ -17,17 +19,23 @@ public class insert_fill
 	}
 	public String insert_fi()
 	{
+		this.QAnum1=this.xxx;
+		this.basename = this.QAnum1;
+		System.out.println(fillnum1);
+		System.out.println(ques1);
+		System.out.println(answer1);
+		System.out.println(fillnum1);
 		boolean right = true;
-		if(isfloat(this.score)==false||isNum(this.fillnum)==false)
+		if(isfloat(this.score1)==false||isNum(this.fillnum1)==false)
 		{
 			return "inputerror";
 		}
-		if(this.question.length()!=0)
+		if(this.ques1.length()!=0)
 		{
 			int p = 0;
-			String[] sarray = this.answer.split(" ");
+			String[] sarray = this.answer1.split(" ");
 			p = sarray.length;
-			if(Integer.parseInt(this.fillnum)!=p)
+			if(Integer.parseInt(this.fillnum1)!=p)
 			{
 				return "inputerror";
 			}
@@ -42,14 +50,14 @@ public class insert_fill
 		}
 		else//下面开始插入
 		{
-			Connection conn = new initialize().getlink(this.QAnum);
+			Connection conn = new initialize().getlink(this.QAnum1);
 			String sql="insert into fill(blanknum,question,answer,score) values(?,?,?,?)";
 			try{
 			PreparedStatement ps=conn.prepareStatement(sql);
-			ps.setInt(1,Integer.parseInt(this.fillnum));
-			ps.setString(2,this.question);
-			ps.setString(3, this.answer);
-			ps.setFloat(4, Float.parseFloat(this.score));
+			ps.setInt(1,Integer.parseInt(this.fillnum1));
+			ps.setString(2,this.ques1);
+			ps.setString(3, this.answer1);
+			ps.setFloat(4, Float.parseFloat(this.score1));
 			ps.executeUpdate();
 			}
 			catch (SQLException e) 
@@ -57,32 +65,55 @@ public class insert_fill
 				e.printStackTrace();
 			}
 			
-			new tongyong().updatebase(conn, 2, Float.parseFloat(this.score));
+			new tongyong().updatebase(conn, 2, Float.parseFloat(this.score1));
 			System.out.println("增加成功！");
 			return "successinsert";
 		}
 	}
+	public String getQAnum1() {
+		return QAnum1;
+	}
+	public void setQAnum1(String qAnum1) {
+		QAnum1 = qAnum1;
+	}
+	public String getXxx() {
+		return xxx;
+	}
+	public void setXxx(String xxx) {
+		this.xxx = xxx;
+	}
+	public String getFillnum1() {
+		return fillnum1;
+	}
+	public void setFillnum1(String fillnum1) {
+		this.fillnum1 = fillnum1;
+	}
+	public String getQues1() {
+		return ques1;
+	}
+	public void setQues1(String ques1) {
+		this.ques1 = ques1;
+	}
+	public String getAnswer1() {
+		return answer1;
+	}
+	public void setAnswer1(String answer1) {
+		this.answer1 = answer1;
+	}
+	public String getScore1() {
+		return score1;
+	}
+	public void setScore1(String score1) {
+		this.score1 = score1;
+	}
+	public String getBasename() {
+		return basename;
+	}
+	public void setBasename(String basename) {
+		this.basename = basename;
+	}
 	
-	public void setQAnum(String QAnum)
-	{
-		this.QAnum = QAnum;
-	}
-	public void setfillnum(String fillnum)
-	{
-		this.fillnum = fillnum;
-	}
-	public void setquestion(String question)
-	{
-		this.question = question;
-	}
-	public void setanswer(String answer)
-	{
-		this.answer = answer;
-	}
-	public void setscore(String score)
-	{
-		this.score = score;
-	}
+	
 	/*
 	public static void main(String[] args)
 	{

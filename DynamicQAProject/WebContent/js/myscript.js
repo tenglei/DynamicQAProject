@@ -17,8 +17,7 @@ $(document).ready(function() {
 	
     $("#wenda").on("click", function() {
         // Dynamic Rows Code
-    	//var bl = document.getElementById("atquestion").getAttribute("name");
-      //  document.getElementById("tmpques").setAttribute("value",bl);
+        
         // Get max row id and set new id
         $.each($("#tab_logic tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
@@ -118,8 +117,7 @@ $(document).ready(function() {
 });
     $("#xuanze").on("click", function() {
         // Dynamic Rows Code
-    	var bl = document.getElementById("atquestion").getAttribute("name");
-        document.getElementById("atquestion").setAttribute("value",bl);
+        //alert("xuanze");
         // Get max row id and set new id
         $.each($("#tab_select tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
@@ -206,7 +204,7 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
-        	document.myform.action="xuanze";
+        	document.myform.action="xuanze.action";
         	myform.submit();
         	//未删除加入，或许会报错
        }
@@ -217,10 +215,7 @@ $(document).ready(function() {
     
     $("#tiankong").on("click", function() {
         // Dynamic Rows Code
-    	
-         var bl = document.getElementById("atquestion").getAttribute("name");
-         document.getElementById("atquestion").setAttribute("value",bl);
-    	 
+        
         // Get max row id and set new id
         $.each($("#tab_tiankong tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
@@ -306,7 +301,7 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
-        	document.myform.action="tiankong";
+        	document.myform.action="tiankong.action";
         	myform.submit();
         	//未删除加入，或许会报错
        }

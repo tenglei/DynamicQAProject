@@ -4,29 +4,33 @@ import java.sql.*;
 
 public class insert_choice 
 {
-	private String QAnum;//问卷号码
-	private String question;
-	private String Ach;
-	private String Bch;
-	private String Cch;
-	private String Dch;
-	private String rightans;
-	private String score;
+	private String QAnum1;//问卷号码
+	private String xxx;
+	private String ques1;
+	private String first1;
+	private String second1;
+	private String third1;
+	private String fourth1;
+	private String key1;
+	private String score1;
+	private String basename;
 	public static boolean isNum(String str){
 		return str.matches("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$");
 	}
 	public String insert_cho()
 	{
+		this.QAnum1 = this.xxx;
+		this.basename = this.QAnum1;
 		boolean right = true;
-		if(this.question.length()==0||this.Ach.length()==0||this.Bch.length()==0||this.Cch.length()==0||this.Dch.length()==0)
+		if(this.ques1.length()==0||this.first1.length()==0||this.second1.length()==0||this.third1.length()==0||this.fourth1.length()==0)
 		{
 			right = false;
 		}
-		if(this.rightans.equals("A")==false&&this.rightans.equals("B")==false&&this.rightans.equals("C")==false&&this.rightans.equals("D")==false)
+		if(this.key1.equals("A")==false&&this.key1.equals("B")==false&&this.key1.equals("C")==false&&this.key1.equals("D")==false)
 		{
 			right = false;
 		}
-		if(isNum(this.score)==false)
+		if(isNum(this.score1)==false)
 		{
 			right = false;
 		}
@@ -36,17 +40,17 @@ public class insert_choice
 		}
 		else//下面开始插入
 		{
-			Connection conn = new initialize().getlink(this.QAnum);
+			Connection conn = new initialize().getlink(this.QAnum1);
 			String sql="insert into choice(question,Ach,Bch,Cch,Dch,answer,score) values(?,?,?,?,?,?,?)";
 			try{
 			PreparedStatement ps=conn.prepareStatement(sql);
-			ps.setString(1,this.question);
-			ps.setString(2,this.Ach);
-			ps.setString(3, this.Bch);
-			ps.setString(4, this.Cch);//总的分值暂定是0
-			ps.setString(5, this.Dch);
-			ps.setString(6, this.rightans);
-			ps.setFloat(7, Float.parseFloat(this.score));
+			ps.setString(1,this.ques1);
+			ps.setString(2,this.first1);
+			ps.setString(3, this.second1);
+			ps.setString(4, this.third1);//总的分值暂定是0
+			ps.setString(5, this.fourth1);
+			ps.setString(6, this.key1);
+			ps.setFloat(7, Float.parseFloat(this.score1));
 			ps.executeUpdate();
 			}
 			catch (SQLException e) 
@@ -54,43 +58,27 @@ public class insert_choice
 				e.printStackTrace();
 			}
 			//更新各项数据
-			new tongyong().updatebase(conn, 1, Float.parseFloat(this.score));
+			new tongyong().updatebase(conn, 1, Float.parseFloat(this.score1));
 			System.out.println("增加成功！");
 			return "successinsert";
 		}
 	}
 	
-	public void setQAnum(String QAnum)
+	public void setQAnum1(String QAnum1)
 	{
-		this.QAnum = QAnum;
+		this.QAnum1 = QAnum1;
 	}
-	public void setquestion(String question)
+	public void setques1(String ques1)
 	{
-		this.question = question;
+		this.ques1 = ques1;
 	}
-	public void setAch(String Ach)
+	public void setkey1(String key1)
 	{
-		this.Ach = Ach;
+		this.key1 = key1;
 	}
-	public void setBch(String Bch)
+	public void setscore1(String score1)
 	{
-		this.Bch = Bch;
-	}
-	public void setCch(String Cch)
-	{
-		this.Cch = Cch;
-	}
-	public void setDch(String Dch)
-	{
-		this.Dch = Dch;
-	}
-	public void setrightans(String rightans)
-	{
-		this.rightans = rightans;
-	}
-	public void setscore(String score)
-	{
-		this.score = score;
+		this.score1 = score1;
 	}
 	/*
 	public static void main(String[] args)
@@ -107,4 +95,41 @@ public class insert_choice
 		System.out.println(s.insert_cho());
 	}
 	*/
+	public String getXxx() {
+		return xxx;
+	}
+	public void setXxx(String xxx) {
+		this.xxx = xxx;
+	}
+	
+	public String getBasename() {
+		return basename;
+	}
+	public void setBasename(String basename) {
+		this.basename = basename;
+	}
+	public String getFirst1() {
+		return first1;
+	}
+	public void setFirst1(String first1) {
+		this.first1 = first1;
+	}
+	public String getSecond1() {
+		return second1;
+	}
+	public void setSecond1(String second1) {
+		this.second1 = second1;
+	}
+	public String getThird1() {
+		return third1;
+	}
+	public void setThird1(String third1) {
+		this.third1 = third1;
+	}
+	public String getFourth1() {
+		return fourth1;
+	}
+	public void setFourth1(String fourth1) {
+		this.fourth1 = fourth1;
+	}
 }

@@ -28,5 +28,12 @@
 			<result name="successinsert">/edit.jsp</result>
 		</action>
 		
+		<action name="xuanze" class = "action.insert_choice" method = "insert_cho">
+			<result name="successinsert">/edit.jsp</result>
+		</action>
+		
+		<action name="tiankong" class = "action.insert_fill" method = "insert_fi">
+			<result name="successinsert">/edit.jsp</result>
+		</action>
 	</package>
 </struts>
