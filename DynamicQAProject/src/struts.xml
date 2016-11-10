@@ -35,5 +35,10 @@
 		<action name="tiankong" class = "action.insert_fill" method = "insert_fi">
 			<result name="successinsert">/edit.jsp</result>
 		</action>
+		
+		<action name="finishedit" class = "action.finishedit" method = "back">
+			<result name="successback">/index.jsp</result>
+		</action>
+		
 	</package>
 </struts>

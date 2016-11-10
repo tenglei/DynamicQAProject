@@ -14,11 +14,14 @@ public class insert_choice
 	private String key1;
 	private String score1;
 	private String basename;
+	private String yyy;
+	private String authorname;
 	public static boolean isNum(String str){
 		return str.matches("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$");
 	}
 	public String insert_cho()
 	{
+		this.authorname = this.yyy;
 		this.QAnum1 = this.xxx;
 		this.basename = this.QAnum1;
 		boolean right = true;
@@ -131,5 +134,17 @@ public class insert_choice
 	}
 	public void setFourth1(String fourth1) {
 		this.fourth1 = fourth1;
+	}
+	public String getYyy() {
+		return yyy;
+	}
+	public void setYyy(String yyy) {
+		this.yyy = yyy;
+	}
+	public String getAuthorname() {
+		return authorname;
+	}
+	public void setAuthorname(String authorname) {
+		this.authorname = authorname;
 	}
 }

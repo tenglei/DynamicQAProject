@@ -54,7 +54,7 @@
 							href="#tm-section-1">问答题</a></li>
 						<li class="nav-item"><a class="nav-link" id="finish"
 						    href="#tm-section-1"
-							onclick="location='index.html' ">完成编辑</a></li>
+							onclick="location.href='finishedit.action?editname=<s:property value="basename"/>&authorname=<s:property value="authorname"/>'">完成编辑</a></li>
 					</ul>
 
 				</div>
@@ -73,6 +73,7 @@
 				<div class="col-md-12 table-responsive">
 				<form action="" method="post" id = "tab_form" name="myform">
 				    <input type="hidden" id="tmpques" name="xxx" value="<s:property value="basename"/>" >
+				     <input type="hidden" id="asas" name="yyy" value="<s:property value="authorname"/>" >
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_logic">
 						<tbody>

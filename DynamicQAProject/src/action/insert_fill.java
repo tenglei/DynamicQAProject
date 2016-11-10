@@ -11,6 +11,8 @@ public class insert_fill
 	private String answer1;
 	private String score1;
 	private String basename;
+	private String yyy;
+	private String authorname;
 	public static boolean isfloat(String str){
 		return str.matches("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$");
 	}
@@ -19,6 +21,7 @@ public class insert_fill
 	}
 	public String insert_fi()
 	{
+		this.authorname = this.yyy;
 		this.QAnum1=this.xxx;
 		this.basename = this.QAnum1;
 		System.out.println(fillnum1);
@@ -111,6 +114,18 @@ public class insert_fill
 	}
 	public void setBasename(String basename) {
 		this.basename = basename;
+	}
+	public String getYyy() {
+		return yyy;
+	}
+	public void setYyy(String yyy) {
+		this.yyy = yyy;
+	}
+	public String getAuthorname() {
+		return authorname;
+	}
+	public void setAuthorname(String authorname) {
+		this.authorname = authorname;
 	}
 	
 	

@@ -11,12 +11,14 @@ public class insert_QA
 	private String key1;
 	private String score1;
 	private String basename;
+	private String yyy;
+	private String authorname;
 	public static boolean isNum(String str){
 		return str.matches("^[-+]?(([0-9]+)([.]([0-9]+))?|([.]([0-9]+))?)$");
 	}
 	public String insert_wenda()
 	{
-		
+		this.authorname = this.yyy;
 		this.QAnum1=this.xxx;
 		this.basename = this.QAnum1;
 		System.out.println("00:");
@@ -105,6 +107,18 @@ public class insert_QA
 	}
 	public void setXxx(String xxx) {
 		this.xxx = xxx;
+	}
+	public String getAuthorname() {
+		return authorname;
+	}
+	public void setAuthorname(String authorname) {
+		this.authorname = authorname;
+	}
+	public String getYyy() {
+		return yyy;
+	}
+	public void setYyy(String yyy) {
+		this.yyy = yyy;
 	}
 	
 	/*
