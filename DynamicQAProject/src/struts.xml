@@ -40,5 +40,8 @@
 			<result name="successback">/index.jsp</result>
 		</action>
 		
+		<action name="huida" class = "action.showtest" method = "maketest">
+			<result name="successmake">/???.jsp</result>
+		</action>
 	</package>
 </struts>
