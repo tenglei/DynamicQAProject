@@ -43,13 +43,13 @@
 				<div class="collapse navbar-toggleable-md" id="tmNavbar">
 
 					<ul class="nav navbar-nav">
-						<li class="nav-item"><a class="nav-link" id="xuanze"
-							href="#tm-section-1"></a></li>
+						<li class="nav-item"><a class="nav-link" id="wenjuan"
+							href="#tm-section-1"><s:property value="wenjuanhao"/></a></li>
 						<li class="nav-item"><a class="nav-link" href="#tm-section-1"
-							id="tiankong"></a></li>
-						<li class="nav-item"><a class="nav-link" id="wenda"
-							href="#tm-section-1"></a></li>
+							id="ath"><s:property value="author"/></a></li>
 						<li class="nav-item"><a class="nav-link" id="finish"
+						    href="#tm-section-1">完成修改</a></li>
+						<li class="nav-item"><a class="nav-link" id="back"
 						    href="#tm-section-1"
 							onclick="location='index.html' ">返回主页</a></li>
 					</ul>
@@ -68,41 +68,84 @@
 
 			<div class="row clearfix">
 				<div class="col-md-12 table-responsive">
-				<table class="table table-bordered table-hover table-sortable"
-						id="tab_tiankong">
-						<s:iterator value="wenda">
+				<table class="table table-bordered table-hover table-sortable">
+						<s:iterator value="choiceques" status="st">
 						<tbody>
 							<tr>
 								<td >
-								
+								<input type="text" name="choiceques" class="form-control" value="<s:property />"/>
 								</td>
-								<td >
-								
+								<td>
+								<input type="text" name="choicequesscore" class="form-control" value="<s:property value="choicescore[#st.count]"/>"/>				
 								</td>
-								<td >
-								
-								</td>
-
 							</tr>
 						</tbody>
 
 						<tbody>
 							<tr>
 								<td >
-								
+								<input type="radio" checked="checked" name="as+<s:property value="#st.count"/>" value="A" />
+								A <s:property value="ansA[#st.count]"/>
 								</td>
 								<td >
-								
+								<input type="radio" checked="checked" name="as+<s:property value="#st.count"/>" value="B" />
+								B <s:property value="ansB[#st.count]"/>
 								</td>
 								<td >
-								
+								<input type="radio" checked="checked" name="as+<s:property value="#st.count"/>" value="C" />
+								C <s:property value="ansC[#st.count]"/>
 								</td>
-
+								<td >
+								<input type="radio" checked="checked" name="as+<s:property value="#st.count"/>" value="D" />
+								D <s:property value="ansD[#st.count]"/>
+								</td>
 							</tr>
 						</tbody>
 						</s:iterator>
 					</table>
-				
+				<table class="table table-bordered table-hover table-sortable">
+						<s:iterator value="fillques" status="st">
+						<tbody>
+							<tr>
+								<td >
+								<input type="text" name="fillques" class="form-control" value="<s:property />"/>
+								</td>
+								<td >
+								<input type="text" name="fillquesscore" class="form-control" value="<s:property value="fillscore[#st.count]"/>"/>
+								</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td >
+								<input type="text" name="fillquesans" class="form-control" id="fillans_+<s:property value="#st.count"/>"/>
+								</td>
+							</tr>
+						</tbody>
+						</s:iterator>
+					</table>
+				<table class="table table-bordered table-hover table-sortable">
+						<s:iterator value="ques" status="st">
+						<tbody>
+							<tr>
+								<td >
+								<input type="text" name="qause" class="form-control" value="<s:property />"/>
+								</td>
+								<td>
+								<input type="text" name="qauesscore" class="form-control" value="<s:property value="quesscore[#st.count]"/>"/>
+								</td>
+							</tr>
+						</tbody>
+
+						<tbody>
+							<tr>
+								<td >
+								<input type="text" name="qauesans" class="form-control" id="quesans_+<s:property value="#st.count"/>"/>
+								</td>
+							</tr>
+						</tbody>
+						</s:iterator>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -184,6 +227,6 @@
 			});
 		</script>
 	</div>
-	
+	<script src="js/show.js"></script>
 </body>
 </html>
