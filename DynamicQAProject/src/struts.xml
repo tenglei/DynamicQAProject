@@ -41,7 +41,7 @@
 		</action>
 		
 		<action name="huida" class = "action.showtest" method = "maketest">
-			<result name="successmake">/???.jsp</result>
+			<result name="successmake">/show.jsp</result>
 		</action>
 	</package>
 </struts>

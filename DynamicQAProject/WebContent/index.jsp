@@ -33,7 +33,7 @@
 								<span class="sr-only">Toggle navigation</span> <i
 									class="tn-menu"></i>
 							</button>
-							<a class="navbar-brand" href="#"><img src="images/logo.png" /></a>
+							<a class="navbar-brand" href="#"><img src="images/indexlogo.png" /></a>
 						</div>
 
 						<div class="collapse navbar-collapse" id="main-menu">
@@ -61,20 +61,20 @@
 							<!-- Indicators -->
 							<ol class="carousel-indicators">
 								<li data-target="#featured-slider" data-slide-to="0"
-									class="active"><img src='images/slider-1-t.jpg' alt=''
+									class="active"><img src='images/daxue1-x.jpg' alt=''
 									class='featured-slide-thumb' /></li>
 								<li data-target="#featured-slider" data-slide-to="1"><img
-									src='images/slider-2-t.jpg' alt='' class='featured-slide-thumb' /></li>
+									src='images/jishu1-x.jpg' alt='' class='featured-slide-thumb' /></li>
 								<li data-target="#featured-slider" data-slide-to="2"><img
-									src='images/slider-3-t.jpg' alt='' class='featured-slide-thumb' /></li>
+									src='images/xingzuozhuti3-x.jpg' alt='' class='featured-slide-thumb' /></li>
 							</ol>
 
 							<!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox">
 								<div class="item active" id="slide-2">
-									<img src='images/slider-1.jpg' alt=''
+									<img src='images/daxue3.jpg' alt=''
 										class='featured-slide inv' data-animation='animated zoomIn'
-										data-delay='0.3s' /> <img src='images/slider-2.jpg' alt=''
+										data-delay='0.3s' /> <img src='images/daxue2.jpg' alt=''
 										class='featured-slide featured-slide-1 inv'
 										data-animation='animated zoomIn' data-delay='0.7s' />
 									<div class="carousel-caption">
@@ -82,23 +82,23 @@
 											data-animation="animated zoomIn"><a href="#"
 											rel="category">问卷主题一</a></span>
 										<h2 class="slide-title inv" data-animation="animated fadeInUp"
-											data-duration="2s" data-delay="1s">主题一介绍</h2>
+											data-duration="2s" data-delay="1s">大学生活</h2>
 										<div class="slide-excerpt inv"
 											data-animation="animated fadeInUp" data-duration="3s"
 											data-delay="2s">
 											<ul class="row">
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2s'>特点一</li>
+													data-delay='2s'>学习</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.1s'>特点二</li>
+													data-delay='2.1s'>工作</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.2s'>特点三</li>
+													data-delay='2.2s'>宿舍</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.3s'>特点四</li>
+													data-delay='2.3s'>图书馆</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.4s'>特点五</li>
+													data-delay='2.4s'>青春</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.5s'>特点六</li>
+													data-delay='2.5s'>情感</li>
 
 											</ul>
 										</div>
@@ -113,9 +113,9 @@
 									</div>
 								</div>
 								<div class="item" id="slide-3">
-									<img src='images/slider-2.jpg' alt=''
+									<img src='images/jishu2.jpg' alt=''
 										class='featured-slide inv' data-animation='animated zoomIn'
-										data-delay='0.3s' /> <img src='images/slider-3.jpg' alt=''
+										data-delay='0.3s' /> <img src='images/jishu3.jpg' alt=''
 										class='featured-slide featured-slide-1 inv'
 										data-animation='animated zoomIn' data-delay='0.7s' />
 									<div class="carousel-caption">
@@ -123,23 +123,23 @@
 											data-animation="animated zoomIn"><a href="#"
 											rel="category">问卷主题二</a></span>
 										<h2 class="slide-title inv" data-animation="animated fadeInUp"
-											data-duration="2s" data-delay="1s">主题二介绍</h2>
+											data-duration="2s" data-delay="1s">技术</h2>
 										<div class="slide-excerpt inv"
 											data-animation="animated fadeInUp" data-duration="3s"
 											data-delay="2s">
 											<ul class="row">
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2s'>特点一</li>
+													data-delay='2s'>电子科技</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.1s'>特点二</li>
+													data-delay='2.1s'>计算机</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.2s'>特点三</li>
+													data-delay='2.2s'>商务</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.3s'>特点四</li>
+													data-delay='2.3s'>经济</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.4s'>特点五</li>
+													data-delay='2.4s'>交通</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.5s'>特点六</li>
+													data-delay='2.5s'>产业</li>
 
 											</ul>
 										</div>
@@ -154,9 +154,9 @@
 									</div>
 								</div>
 								<div class="item" id="slide-4">
-									<img src='images/slider-3.jpg' alt=''
+									<img src='images/xingzuosucai1.jpg' alt=''
 										class='featured-slide inv' data-animation='animated zoomIn'
-										data-delay='0.3s' /> <img src='images/slider-1.jpg' alt=''
+										data-delay='0.3s' /> <img src='images/xingzuozhuti2.jpg' alt=''
 										class='featured-slide featured-slide-1 inv'
 										data-animation='animated zoomIn' data-delay='0.7s' />
 									<div class="carousel-caption">
@@ -164,23 +164,23 @@
 											data-animation="animated zoomIn"><a href="#"
 											rel="category">问卷主题三</a></span>
 										<h2 class="slide-title inv" data-animation="animated fadeInUp"
-											data-duration="2s" data-delay="1s">主题介绍</h2>
+											data-duration="2s" data-delay="1s">星座</h2>
 										<div class="slide-excerpt inv"
 											data-animation="animated fadeInUp" data-duration="3s"
 											data-delay="2s">
 											<ul class="row">
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2s'>特点一</li>
+													data-delay='2s'>星座与生活</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.1s'>特点二</li>
+													data-delay='2.1s'>哲学</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.2s'>特点三</li>
+													data-delay='2.2s'>星座和爱情</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.3s'>特点四</li>
+													data-delay='2.3s'>玄学</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.4s'>特点五</li>
+													data-delay='2.4s'>中医学</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.5s'>特点六</li>
+													data-delay='2.5s'>神话故事</li>
 
 											</ul>
 										</div>
@@ -715,7 +715,7 @@
 				<div class="col-md-12 text-center section-intro">
 					<hr />
 					<h2>
-						<img src="images/logo.png" />
+						<img src="images/indexlogo.png" />
 					</h2>
 					Copyright &copy; 2016.Company name All rights reserved. <a href="#"
 						class="btn-social btn-facebook btn-sm"><i class="tn-facebook"></i></a>

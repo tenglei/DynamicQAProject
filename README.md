@@ -1,2 +1,0 @@
-# DynamicQAProject
-SE TEAM WORK
