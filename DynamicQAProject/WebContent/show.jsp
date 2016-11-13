@@ -35,9 +35,9 @@
 
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a class="nav-link" id="wenjuan"
-						href="#tm-section-1"></a></li>
+						href="#tm-section-1"><s:property value="wenjuanhao" /></a></li>
 					<li class="nav-item"><a class="nav-link" href="#tm-section-1"
-						id="ath"></a></li>
+						id="ath"><s:property value="author" /></a></li>
 					<li class="nav-item"><a class="nav-link" id="finish"
 						href="#tm-section-1">完成修改</a></li>
 					<li class="nav-item"><a class="nav-link" id="back"
@@ -51,6 +51,11 @@
 		</div>
 	</div>
 	<div class="container">
+	<input type="hidden" id="seleth"
+						name="<s:property value="choiceques.size()"/>" /> <input
+						type="hidden" id="fillth"
+						name="<s:property value="fillques.size()"/>" /> <input
+						type="hidden" id="qath" name="<s:property value="ques.size()"/>" />
 		<div class="row">
 			<div class="contact-form">
 				<div class="row">
@@ -63,57 +68,62 @@
 					</div>
 				</div>
 			</div>
+				<s:iterator value="choiceques" status="st">
 			<div class="row">
-				<div class="contact-form">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea name="choiceques" class="form-control "
-									style="height: 100px" readonly="true"> </textarea>
-								<p>分</p>
+					<div class="contact-form">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<textarea name="choiceques" class="form-control "
+										style="height: 100px" readonly="true"><s:property /></textarea>
+									<p><s:property value="choicescore[#st.index]" />分</p>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="radio" checked="checked" name="as" value="A" readonly="true"/> A
-								<input type="text" name="Aques" class="form-control" value="" />
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="radio" checked="checked" name="as<s:property value="#st.index"/>" value="A"
+										readonly="true" /> A <input type="text" name="Aques"
+										class="form-control" value="<s:property value="ansA[#st.index]" />" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="radio" name="as<s:property value="#st.index"/>" value="B" readonly="true" /> B<input
+										type="text" name="Bques" class="form-control" value="<s:property value="ansB[#st.index]" />" />
+								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="radio" name="as" value="B" readonly="true"/> B<input
-									type="text" name="Bques" class="form-control" value="" />
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="radio" name="as<s:property value="#st.index"/>" value="C" readonly="true" /> C <input
+										type="text" name="Cques" class="form-control" value="<s:property value="ansC[#st.index]" />" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="radio" name="as<s:property value="#st.index"/>" value="D" readonly="true" /> D <input
+										type="text" name="Dques" class="form-control" value="<s:property value="ansD[#st.index]" />" />
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="radio" name="as" value="C" readonly="true"/> C <input
-									type="text" name="Cques" class="form-control" value="" />
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="radio" name="as" value="D" readonly="true"/> D <input
-									type="text" name="Dques" class="form-control" value="" />
-							</div>
-						</div>
-					</div>
 
-				</div>
+					</div>
 			</div>
-			<p></p>
-			<br>
-
+						<p></p>
+						<br>
+				</s:iterator>
+	<s:iterator value="fillques" status="st">
 			<div class="row">
 				<div class="contact-form">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<textarea name="fillques" class="form-control" style="height: 100px" readonly="true"/></textarea>分
+								<textarea name="fillques" class="form-control"
+									style="height: 100px" readonly="true" /><s:property /></textarea>
+								<p><s:property value="fillscore[#st.index]" />分</p>
 							</div>
 						</div>
 					</div>
@@ -121,22 +131,25 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<textarea name="fillquesans" class="form-control textarea"
-									rows="3" id="fillans" placeholder="请输入答案"></textarea>
+									rows="3" id="fillans<s:property value="#st.index"/>" placeholder="请输入答案"></textarea>
 
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<p></p>
 				<br>
 			</div>
+			</s:iterator>
+		  <s:iterator value="ques" status="st">
 			<div class="row">
 				<div class="contact-form">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<textarea name="qause" class="form-control" style="height: 100px" readonly="true"/></textarea>分
+								<textarea name="qause" class="form-control"
+									style="height: 100px" readonly="true" /><s:property /></textarea>
+								分
 							</div>
 						</div>
 					</div>
@@ -144,18 +157,19 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<textarea name="qauesans" class="form-control textarea" rows="3"
-									id="quesans" placeholder="请输入答案"></textarea>
+									id="quesans<s:property value="#st.index"/>" placeholder="请输入答案"></textarea>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
+			
 			<p></p>
 			<br>
+			</div>
+		</s:iterator>
 		</div>
 	</div>
-	
+
 
 
 	<!-- #home -->
