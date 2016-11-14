@@ -24,6 +24,7 @@ public class login
 				{
 					isfound = true;//ур╣╫ак
 					truepassword = rs1.getString(2);
+					//System.out.println(truepassword);
 					break;
 				}
 			}

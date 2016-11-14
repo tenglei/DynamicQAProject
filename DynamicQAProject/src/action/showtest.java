@@ -109,7 +109,7 @@ public class showtest
 			ResultSet rsw = statw.executeQuery(sqlw);
 			while(rsw.next()!=false)
 			{
-				this.ques.add(rsw.getString(2));
+				this.ques.add(rsw.getString(1));
 				this.quesscore.add(rsw.getString(4));
 			}
 			rsw.close();

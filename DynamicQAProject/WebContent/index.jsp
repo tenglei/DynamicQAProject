@@ -40,11 +40,9 @@
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#top">主页</a></li>
 								<li><a href="#questionrepertory">浏览问库</a></li>
-								<li><a href="#myrepertory">我的题库</a></li>
-								<li><a href="#personalcenter">个人中心</a></li>
-								
-								<li><a>您好，</a></li>
-								<li><a><s:property value="welcomename"/></a></li>
+								<li><a href="chakanwenjuan.action?zuozhemingzi=<s:property value="welcomename"/>" >我的问库</a></li>
+								<li><a href="#personalcenter">个人中心</a></li>	
+								<li><a>您好，<s:property value="welcomename"/></a></li>
 								<li><a href="addnewqa.action?authorname=<s:property value="welcomename"/>" >新增问卷</a></li>
 							</ul>
 						</div>
@@ -717,13 +715,7 @@
 					<h2>
 						<img src="images/indexlogo.png" />
 					</h2>
-					Copyright &copy; 2016.Company name All rights reserved. <a href="#"
-						class="btn-social btn-facebook btn-sm"><i class="tn-facebook"></i></a>
-					<a href="#" class="btn-social btn-google-plus btn-sm"><i
-						class="tn-google"></i></a> <a href="#"
-						class="btn-social btn-vimeo btn-sm"><i class="tn-vimeo"></i></a> <a
-						href="#" class="btn-social btn-dropbox btn-sm"><i
-						class="tn-dropbox"></i></a>
+					Copyright &copy; 2016.HIT All rights reserved. 
 				</div>
 			</div>
 		</div>

@@ -43,5 +43,21 @@
 		<action name="huida" class = "action.showtest" method = "maketest">
 			<result name="successmake">/show.jsp</result>
 		</action>
+		
+		<action name="tijiao" class = "action.checkans" method = "checkanswer">
+			<result name="checkover">/ranking.jsp</result>
+		</action>
+		
+		<action name="chakanwenjuan" class = "action.wenjuanchengxian" method = "getwenjuan">
+			<result name="getsuccess">/home.jsp</result>
+		</action>
+		
+		<action name="backto" class = "action.backtotheindex" method = "back">
+			<result name="back">/index.jsp</result>
+		</action>
+		
+		<action name="ranking" class = "action.checkans" method = "checkanswer">
+			<result name="checkover">/ranking.jsp</result>
+		</action>
 	</package>
 </struts>
