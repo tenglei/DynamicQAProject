@@ -75,7 +75,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<textarea name="choiceques" class="form-control "
-										style="height: 100px" readonly="true"><s:property /></textarea>
+										style="height: 75px" readonly="true"><s:property /></textarea>
 									<p><s:property value="choicescore[#st.index]" />分</p>
 								</div>
 							</div>
@@ -85,13 +85,13 @@
 								<div class="form-group">
 									<input type="radio" checked="checked" name="as<s:property value="#st.index"/>" value="A"
 										readonly="true" /> A <input type="text" name="Aques"
-										class="form-control" value="<s:property value="ansA[#st.index]" />" />
+										class="form-control" value="<s:property value="ansA[#st.index]" />" readonly="true"/>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<input type="radio" name="as<s:property value="#st.index"/>" value="B" readonly="true" /> B<input
-										type="text" name="Bques" class="form-control" value="<s:property value="ansB[#st.index]" />" />
+										type="text" name="Bques" class="form-control" value="<s:property value="ansB[#st.index]" />" readonly="true"/>
 								</div>
 							</div>
 						</div>
@@ -99,13 +99,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<input type="radio" name="as<s:property value="#st.index"/>" value="C" readonly="true" /> C <input
-										type="text" name="Cques" class="form-control" value="<s:property value="ansC[#st.index]" />" />
+										type="text" name="Cques" class="form-control" value="<s:property value="ansC[#st.index]" />" readonly="true"/>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<input type="radio" name="as<s:property value="#st.index"/>" value="D" readonly="true" /> D <input
-										type="text" name="Dques" class="form-control" value="<s:property value="ansD[#st.index]" />" />
+										type="text" name="Dques" class="form-control" value="<s:property value="ansD[#st.index]" />" readonly="true"/>
 								</div>
 							</div>
 						</div>
@@ -122,7 +122,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<textarea name="fillques" class="form-control"
-									style="height: 100px" readonly="true" /><s:property /></textarea>
+									style="height: 75px" readonly="true" ><s:property /></textarea>
 								<p><s:property value="fillscore[#st.index]" />分</p>
 							</div>
 						</div>
@@ -148,7 +148,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<textarea name="qause" class="form-control"
-									style="height: 100px" readonly="true" /><s:property /></textarea>
+									style="height: 75px" readonly="true" ><s:property /></textarea>
 								分
 							</div>
 						</div>

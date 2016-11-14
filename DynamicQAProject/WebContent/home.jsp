@@ -51,11 +51,6 @@
 		</div>
 	</div>
 	<div class="container">
-	<input type="hidden" id="seleth"
-						name="" /> <input
-						type="hidden" id="fillth"
-						name="" /> <input
-						type="hidden" id="qath" name="" />
 		<div class="row">
 			<div class="contact-form">
 				<div class="row">
@@ -68,101 +63,18 @@
 					</div>
 				</div>
 			</div>
-				
-			<div class="row">
-					<div class="contact-form">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<textarea name="choiceques" class="form-control "
-										style="height: 75px" readonly="true"></textarea>
-									<p>分</p>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="radio" checked="checked" name="as" value="A"
-										readonly="true" /> A <input type="text" name="Aques"
-										class="form-control" value=""  readonly="true"/>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="radio" name="as" value="B" readonly="true" /> B<input
-										type="text" name="Bques" class="form-control" value="" readonly="true"/>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="radio" name="as" value="C" readonly="true" /> C <input
-										type="text" name="Cques" class="form-control" value="" readonly="true"/>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="radio" name="as" value="D" readonly="true" /> D <input
-										type="text" name="Dques" class="form-control" value="" readonly="true"/>
-								</div>
-							</div>
-						</div>
-
-					</div>
-			</div>
-						<p></p>
-						<br>
-				
-	
 			<div class="row">
 				<div class="contact-form">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
-								<textarea name="fillques" class="form-control"
-									style="height: 75px" readonly="true" /></textarea>
-								<p>分</p>
+							
+									<li><a href="#quesnumber">651</a></li>
+									
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea name="fillquesans" class="form-control textarea"
-									rows="2" id="fillans" placeholder="请输入答案"></textarea>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<p></p>
-				<br>
-			</div>
-			
-		
-			<div class="row">
-				<div class="contact-form">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea name="qause" class="form-control"
-									style="height: 75px" readonly="true" /></textarea>
-								分
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea name="qauesans" class="form-control textarea" rows="2"
-									id="quesans" placeholder="请输入答案"></textarea>
-							</div>
-						</div>
-					</div>
-				</div>
-			
+				</div>		
 			<p></p>
 			<br>
 			</div>
