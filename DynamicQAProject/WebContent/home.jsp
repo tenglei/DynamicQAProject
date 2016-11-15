@@ -62,11 +62,11 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group" align="center">
-							<p>您的问卷为：</p>
+							<p>您的问卷和它们的回答链接为：</p>
 							<s:iterator value="CLJjh" status="st"> 
-									<li>问卷<s:property value="#st.count"/>、<s:property value="QAjihe[#st.index]"/> 复制该超链接可分享给好友回答：<a href="<s:property/>"><s:property/></a></li>							
+									<li>问卷<s:property value="#st.count"/>、<s:property value="QAjihe[#st.index]"/> <a href="<s:property/>"><s:property/></a></li>							
 							</s:iterator>
-						    
+						    <p>复制以上链接到朋友圈即可邀请更多朋友作答！</p>
 							</div>
 						</div>
 					</div>

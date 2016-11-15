@@ -30,10 +30,11 @@
 			<div class="collapse navbar-toggleable-md" id="tmNavbar">
 
 				<ul class="nav navbar-nav">
+				
 					<li class="nav-item"><a class="nav-link" href="#tm-section-1"
-						id="ath">您好，<s:property value="huidazhe"/></a></li>
+						id="ath">您的姓名：<s:property value="huidazhe"/></a></li>
 					<li class="nav-item"><a class="nav-link" id="back"
-						href="#tm-section-1" onclick="window.close();">关闭该页面</a></li>
+						href="#tm-section-1" onclick="window.close();">关闭页面</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -66,10 +67,16 @@
 							<p>您的名次：<s:property value="huidazhemingci"/></p>			    
 							</div>
 							<div class="form-group" align="center">
-							<p>评价：<s:property value="tishixinxi"/></p>			    
+							<p><s:property value="tishixinxi"/></p>			    
 							</div>
 							<div class="form-group" align="center">
-							<p>已有 <s:property value="huidacishu"/>人回答</p>			    
+							<p>本问卷已有 <s:property value="huidacishu"/>人回答</p>	    
+							</div>
+							<div class="form-group" align="center">
+							<p>快快分享下面的链接到朋友圈，邀请更多朋友来作答吧！</p>	    
+							</div>
+							<div class="form-group" align="center">
+							<p><s:property value="QAnumlianjie"/></p>	    
 							</div>
 						</div>
 					</div>

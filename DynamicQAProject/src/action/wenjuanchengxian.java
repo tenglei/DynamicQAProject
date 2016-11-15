@@ -19,6 +19,7 @@ public class wenjuanchengxian
 			String sql = "select * from user where Name="+"\""+this.zuozhemingzi+"\"";
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
+			
 			while(rs.next()!=false)
 			{
 				x= rs.getString(6);
@@ -26,7 +27,12 @@ public class wenjuanchengxian
 		}
 		catch (SQLException e)
 		{
+			//return "getfailed";
 			e.printStackTrace();
+		}
+		if(x==null)
+		{
+			return "getfailed";
 		}
 		String[] h = x.split(" ");
 		for(int z=1;z<h.length;z++)
@@ -34,7 +40,6 @@ public class wenjuanchengxian
 			this.QAjihe.add(h[z]);//添加完成了相应信息
 			this.CLJjh.add("http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
 		}
-
 		return "getsuccess";
 	}
 	
@@ -56,4 +61,13 @@ public class wenjuanchengxian
 	public void setZuozhemingzi(String zuozhemingzi) {
 		this.zuozhemingzi = zuozhemingzi;
 	} 
+	/*
+	public static void main(String[] args)
+	{
+		wenjuanchengxian s = new wenjuanchengxian();
+		s.zuozhemingzi = "luxin";
+		System.out.println(s.getwenjuan());
+		
+	}
+	*/
 }

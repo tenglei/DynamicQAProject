@@ -50,6 +50,7 @@
 		
 		<action name="chakanwenjuan" class = "action.wenjuanchengxian" method = "getwenjuan">
 			<result name="getsuccess">/home.jsp</result>
+			<result name="getfailed">/nopaper.jsp</result>
 		</action>
 		
 		<action name="backto" class = "action.backtotheindex" method = "back">

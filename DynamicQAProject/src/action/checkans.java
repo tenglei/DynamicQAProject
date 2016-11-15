@@ -17,6 +17,7 @@ public class checkans
 	private String huidazhemingci;//回答者的名次2
 	private String huidacishu;//已经回答结束人数3
 	private String tishixinxi;//提示信息4
+	private String QAnumlianjie;//本问卷的回答链接
 	public void zhuanhuan(List<String> a,List<String> b)//处理传进来的值,a是原来的
 	{
 		String x = a.get(0);
@@ -66,6 +67,7 @@ public class checkans
 		
 		//下面开始判定选择题
 		this.wenjuan = this.QAnum;
+		this.QAnumlianjie = "http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+this.QAnum;
 		float total = 0;//起始算0分
 		Connection conn = new initialize().getlink(this.QAnum);
 		int x1 = -1;
@@ -173,6 +175,7 @@ public class checkans
 			e.printStackTrace();
 		}
 		//接下来更新名次
+		int hdzmc = 0;
 		int mingci = 0;
 		try{
 			String sql5 = "select * from list ORDER BY score DESC";
@@ -196,6 +199,7 @@ public class checkans
 				if(this.huidazhe.equals(u))
 				{
 					this.huidazhemingci = String.valueOf(mingci);
+					hdzmc = mingci;
 				}
 			}
 			stat5.close();
@@ -224,7 +228,7 @@ public class checkans
 			stat8.executeUpdate(sql8);
 			stat8.close();
 			this.huidacishu = String.valueOf(xc);
-			if((float)mingci/(float)xc<0.5)
+			if((float)hdzmc/(float)xc<0.5)
 			{
 				this.tishixinxi = "姿势水平很高啊骚年，再接再厉！";
 			}
@@ -326,6 +330,12 @@ public class checkans
 		System.out.println(s.tishixinxi);
 	}
 	*/
+	public String getQAnumlianjie() {
+		return QAnumlianjie;
+	}
+	public void setQAnumlianjie(String qAnumlianjie) {
+		QAnumlianjie = qAnumlianjie;
+	}
 	
 	
 	
