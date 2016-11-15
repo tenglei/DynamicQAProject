@@ -182,17 +182,25 @@ public class checkans
 			while(rs5.next()!=false)
 			{
 				mingci++;
+				/*
 				if(this.huidazhe.equals(rs5.getString(2)))
 				{
 					String sql6 = "update list set mingci="+String.valueOf(mingci)+" where name="+"\""+this.huidazhe+"\"";
 					stat6.executeUpdate(sql6);
 					break;
 				}
+				*/
+				String u = rs5.getString(2);
+				String sql6 = "update list set mingci="+String.valueOf(mingci)+" where name="+"\""+u+"\"";
+				stat6.executeUpdate(sql6);//把所有的名次都更新一遍
+				if(this.huidazhe.equals(u))
+				{
+					this.huidazhemingci = String.valueOf(mingci);
+				}
 			}
 			stat5.close();
 			stat6.close();
 			rs5.close();
-			this.huidazhemingci = String.valueOf(mingci);
 		}
 		catch (SQLException e) 
 		{
