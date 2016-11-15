@@ -75,7 +75,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<textarea name="choiceques" class="form-control "
-										style="height: 75px" readonly="true"></textarea>
+										style="height: 75px" readonly="true">sdfsadf</textarea>
 									<p>分</p>
 								</div>
 							</div>

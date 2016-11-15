@@ -105,7 +105,33 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
-        
+        	var test1 = document.myform.score1;
+        	var test2 = document.myform.ques1;
+        	var test3 = document.myform.kongge1;
+        	if(typeof(test1.value)!="undefined"&&test1.value.length!=0){
+        		if(isNaN(test1.value)){
+        			alert("请输入数字");
+        			return;
+        		}
+        	}
+        	else{
+        		alert("分数栏不能为空");
+        		return ;
+        	}
+        	if(typeof(test3.value)!="undefined"&&test1.value.length!=0 ){
+        		
+        	}
+        	else{
+        		alert("关键词不能为空");
+        		return ;
+        	}
+        	if(typeof(test2.value)!="undefined"&&test1.value.length!=0){
+        		
+        	}
+        	else{
+        		alert("问题栏不能为空");
+        		return ;
+        	}
         	document.myform.action="wenda";
         	myform.submit();
         	//未删除加入，或许会报错
@@ -204,6 +230,39 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
+        	var test1 = document.myform.score1;
+        	var test2 = document.myform.ques1;
+        	var test3 = document.myform.key1;
+        	var test4 = document.myform.select01;
+        	var test5 = document.myform.select02;
+        	var test6 = document.myform.select03;
+        	var test7 = document.myform.select04;
+        	if(typeof(test1.value)!="undefined"&&test1.value.length!=0){
+        		if(isNaN(test1.value)){
+        			alert("请输入数字");
+        			return;
+        		}
+        	}
+        	else{
+        		alert("分数栏不能为空");
+        		return ;
+        	}
+        	if(typeof(test3.value)!="undefined"&&test1.value.length!=0 ){
+        		
+        	}
+        	else{
+        		alert("关键词不能为空");
+        		return ;
+        	}
+        	if(typeof(test2.value)!="undefined"&&test1.value.length!=0){
+        		
+        	}
+        	else{
+        		alert("问题栏不能为空");
+        		return ;
+        	}
+        	
+        	
         	document.myform.action="xuanze";
         	myform.submit();
         	//未删除加入，或许会报错
@@ -301,6 +360,33 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
+        	var test1 = document.myform.score1;
+        	var test2 = document.myform.ques1;
+        	var test3 = document.myform.kongge1;
+        	if(typeof(test1.value)!="undefined"&&test1.value.length!=0){
+        		if(isNaN(test1.value)){
+        			alert("请输入数字");
+        			return;
+        		}
+        	}
+        	else{
+        		alert("分数栏不能为空");
+        		return ;
+        	}
+        	if(typeof(test3.value)!="undefined"&&test1.value.length!=0 ){
+        		
+        	}
+        	else{
+        		alert("关键词不能为空");
+        		return ;
+        	}
+        	if(typeof(test2.value)!="undefined"&&test1.value.length!=0){
+        		
+        	}
+        	else{
+        		alert("问题栏不能为空");
+        		return ;
+        	}
         	document.myform.action="tiankong";
         	myform.submit();
         	//未删除加入，或许会报错
