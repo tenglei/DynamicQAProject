@@ -3,7 +3,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-<link rel="stylesheet" href="assets/css/main.css" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,7 +123,7 @@
 								<td data-name="select3"><textarea name="select03"
 										placeholder="选项四" class="form-control"></textarea></td>
 								<td data-name="del">
-									<button class="btn row-remove">删除</button>
+									<button class="btn row-remove ">删除</button>
 
 								</td>
 								<td data-name="add">
