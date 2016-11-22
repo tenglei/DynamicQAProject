@@ -8,7 +8,9 @@ public class finishedit
 	private String authorname;
 	private String name;
 	private String editname;
-	public String back()//回到登录界面，并且生成问卷号码,把新生成的问卷号加入到用户属性中
+	private String wenjuanclass;//问卷类型
+	private String wenjuanname;//作者自定义的问卷的名字，可以用于查找
+	public String back()//回到登录界面，并且生成问卷号码,把新生成的问卷号加入到用户属性中,把新生成的问卷号加入到问卷总列表和各个类型的分列表中，设置问卷的类别（大学、生活、情感）
 	{
 		this.welcomename = this.authorname;
 		this.name = this.editname;
@@ -45,13 +47,54 @@ public class finishedit
 			String sql3 = "update user set wenjuanhao="+"\""+temp+" "+this.name+"\""+" where Name="+"\""+this.authorname+"\"";
 			stat3.executeUpdate(sql3);
 			stat3.close();
+			//conn2.close();
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		/*下面把新的问卷号码加入总的问卷表中*/
+		String sql4="insert into allpaper(paper) values(?)";
+		try{
+			PreparedStatement ps=conn2.prepareStatement(sql4);
+			ps.setString(1,this.name);
+			ps.executeUpdate();
+			//conn2.close();
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		//插入到分过类的的问卷表中
+		String sql7="insert into "+this.wenjuanclass+"(paper) values(?)";
+		try{
+			PreparedStatement ps2=conn2.prepareStatement(sql7);
+			ps2.setString(1,this.name);
+			ps2.executeUpdate();
 			conn2.close();
 		}
 		catch (SQLException e) 
 		{
 			e.printStackTrace();
 		}
-		
+		//下面把问卷的类型加入到问卷属性中
+		Connection conn3 = new initialize().getlink(this.name);
+		try
+		{
+			Statement stat4 = conn3.createStatement();
+			String sql5 = "update property set classname="+"\""+this.wenjuanclass+"\""+" where QAid="+"\""+this.name+"\"";
+			stat4.executeUpdate(sql5);
+			Statement stat5 = conn3.createStatement();
+			String sql6 = "update property set papername="+"\""+this.wenjuanname+"\""+" where QAid="+"\""+this.name+"\"";
+			stat5.executeUpdate(sql6);
+			stat4.close();
+			stat5.close();
+			conn3.close();
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
 		
 		
 		return "successback";
@@ -80,6 +123,18 @@ public class finishedit
 	}
 	public void setAuthorname(String authorname) {
 		this.authorname = authorname;
+	}
+	public String getWenjuanclass() {
+		return wenjuanclass;
+	}
+	public void setWenjuanclass(String wenjuanclass) {
+		this.wenjuanclass = wenjuanclass;
+	}
+	public String getWenjuanname() {
+		return wenjuanname;
+	}
+	public void setWenjuanname(String wenjuanname) {
+		this.wenjuanname = wenjuanname;
 	}
 	
 }
