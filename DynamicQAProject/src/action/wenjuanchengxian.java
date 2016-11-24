@@ -11,6 +11,7 @@ public class wenjuanchengxian
 	private String zuozhemingzi;
 	private List<String> QAjihe = new ArrayList<String>();
 	private List<String> CLJjh = new ArrayList<String>();
+	private List<String> QAstate = new ArrayList<String>();
 	public String getwenjuan()
 	{
 		String x="";
