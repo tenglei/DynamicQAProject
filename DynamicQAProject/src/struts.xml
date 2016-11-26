@@ -13,7 +13,7 @@
 		
 		<action name="login" class = "action.login" method = "login_user">
 			<result name="loginfailed">/welcome.html</result>
-			<result name="loginsuccess">/index.jsp</result>
+			<result name="loginsuccess">/UserHome.jsp</result>
 		</action>
 		
 		<action name="addnewqa" class = "action.initialize_QA" method = "buildbase">

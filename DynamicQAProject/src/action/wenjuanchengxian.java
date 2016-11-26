@@ -36,8 +36,9 @@ public class wenjuanchengxian
 			return "getfailed";
 		}
 		String[] h = x.split(" ");
-		for(int z=1;z<h.length;z++)
+		for(int z=0;z<h.length;z++)
 		{
+			System.out.println(h[z]);
 			this.QAjihe.add(h[z]);//添加完成了相应信息
 			this.CLJjh.add("http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
 		}
@@ -71,4 +72,12 @@ public class wenjuanchengxian
 		
 	}
 	*/
+
+	public List<String> getQAstate() {
+		return QAstate;
+	}
+
+	public void setQAstate(List<String> qAstate) {
+		QAstate = qAstate;
+	}
 }

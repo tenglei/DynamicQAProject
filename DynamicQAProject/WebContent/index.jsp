@@ -44,6 +44,10 @@
 								<li><a href="#personalcenter">个人中心</a></li>	
 								<li><a>您好，<s:property value="welcomename"/></a></li>
 								<li><a href="addnewqa.action?authorname=<s:property value="welcomename"/>" >新增问卷</a></li>
+								
+								<li><a><input type="text" placeholder="搜索问卷"/><input type="button" class="btn-success" value="搜索"></a></li> 
+								
+								
 							</ul>
 						</div>
 					</div>
