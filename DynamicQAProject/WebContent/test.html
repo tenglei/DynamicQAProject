@@ -17,8 +17,8 @@
 <link rel="stylesheet" href="UserHome/css/app.css" type="text/css" />
 </head>
 <body>
-	<input type="hidden" id="friendsNum" value="">
-	<input type="hidden" id="questionsNum" value="">
+<input type="hidden" id="friendsNum" value="4">
+	<input type="hidden" id="questionsNum" value="4">
 	<div class="app app-header-fixed" id="app">
 		<!-- navbar -->
 		<div class="app-header navbar">
@@ -221,7 +221,7 @@
 									<!-- 通知栏 -->
 								</div>
 								<div class="list-group">
-									<a  class="media list-group-item"> <!--                     <span class="pull-left thumb-sm"> -->
+									<a class="media list-group-item"> <!--                     <span class="pull-left thumb-sm"> -->
 										<!--                       <img src="img/a0.jpg" alt="..." class="img-circle"> -->
 										<!--                     </span> --> <span
 										class="media-body block m-b-none"> <!--                       Use awesome animate.css<br> -->
@@ -462,6 +462,9 @@
 									<li ui-sref-active="active"><a ui-sref="app.ui.buttons">
 											<span translate="aside.nav.components.ui_kits.BUTTONS">新建问卷</span>
 									</a></li>
+									<li ui-sref-active="active"><a ui-sref="app.ui.buttons" id="myques">
+											<span translate="aside.nav.components.ui_kits.BUTTONS">我的问卷</span>
+									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.icons">
 											<b class="badge bg-info pull-right">3</b> <span
 											translate="aside.nav.components.ui_kits.ICONS">随便看看</span>
@@ -525,13 +528,13 @@
 										class="fa fa-fw fa-angle-down text-active"></i>
 								</span> <b class="label bg-primary pull-right">2</b> <!-- 提示个数信息 --> <i
 									class="glyphicon glyphicon-list"></i> <span
-									translate="aside.nav.components.table.TABLE">我的好友</span>
+									translate="aside.nav.components.table.TABLE" >我的好友</span>
 							</a>
 								<ul class="nav nav-sub dk">
 									<li class="nav-sub-header"><a href> <span
 											translate="aside.nav.components.table.TABLE">我的好友</span>
 									</a></li>
-									<li ui-sref-active="active"><a ui-sref="app.table.static">
+									<li ui-sref-active="active"><a ui-sref="app.table.static" id="myfriends">
 											<span translate="aside.nav.components.table.TABLE_STATIC">好友列表</span>
 									</a></li>
 									<li ui-sref-active="active"><a
@@ -711,7 +714,111 @@
 				<div class="hbox hbox-auto-xs hbox-auto-sm">
 					<div class="col">
 						<div
-							style="background: url(img/c4.jpg) center center; background-size: cover">
+							style="background: url(img/c4.jpg) center center; background-size: cover"
+							id="friend1" >
+							<div class="wrapper-lg bg-white-opacity">
+								<div class="row m-t">
+									<div class="col-sm-7">
+										<a href class="thumb-lg pull-left m-r"> <img
+											src="img/a0.jpg" class="img-circle">
+										</a>
+										<div class="clear m-b">
+											<div class="m-b m-t-sm">
+												<span class="h3 text-black" >绿色XXX</span> <small class="m-l">送人头专家</small>
+											</div>
+											<!--                         <p class="m-b"> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
+											<!--                         </p> -->
+											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="pull-right pull-none-xs text-center">
+											<a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">2000</span> <small>关注我的</small>
+											</a> <a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">250</span> <small>我关注的</small>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapper bg-white b-b" id="bolck1" ></div>
+						<div
+							style="background: url(img/c4.jpg) center center; background-size: cover"
+							 id="friend2" >
+							<div class="wrapper-lg bg-white-opacity">
+								<div class="row m-t">
+									<div class="col-sm-7">
+										<a href class="thumb-lg pull-left m-r"> <img
+											src="img/a0.jpg" class="img-circle">
+										</a>
+										<div class="clear m-b">
+											<div class="m-b m-t-sm">
+												<span class="h3 text-black" id="friend2">绿色XXX</span> <small class="m-l">送人头专家</small>
+											</div>
+											<!--                         <p class="m-b"> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
+											<!--                         </p> -->
+											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="pull-right pull-none-xs text-center">
+											<a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">2000</span> <small>关注我的</small>
+											</a> <a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">250</span> <small>我关注的</small>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapper bg-white b-b" id="block2" ></div>
+
+						<div
+							style="background: url(img/c4.jpg) center center; background-size: cover"
+							id="friend3" >
+							<div class="wrapper-lg bg-white-opacity">
+								<div class="row m-t">
+									<div class="col-sm-7">
+										<a href class="thumb-lg pull-left m-r"> <img
+											src="img/a0.jpg" class="img-circle">
+										</a>
+										<div class="clear m-b">
+											<div class="m-b m-t-sm">
+												<span class="h3 text-black" >绿色XXX</span> <small class="m-l">送人头专家</small>
+											</div>
+											<!--                         <p class="m-b"> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
+											<!--                         </p> -->
+											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="pull-right pull-none-xs text-center">
+											<a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">2000</span> <small>关注我的</small>
+											</a> <a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">250</span> <small>我关注的</small>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapper bg-white b-b" id="block3" ></div>
+						<div
+							style="background: url(img/c4.jpg) center center; background-size: cover"
+							id="userHome" >
 							<div class="wrapper-lg bg-white-opacity">
 								<div class="row m-t">
 									<div class="col-sm-7">
@@ -742,14 +849,14 @@
 								</div>
 							</div>
 						</div>
-						<div class="wrapper bg-white b-b" >
+						<div class="wrapper bg-white b-b"  id="userDy">
 							<ul class="nav nav-pills nav-sm">
-								<li class="active"><a >我的动态</a></li>
+								<li class="active"><a>我的动态</a></li>
 								<!--                   <li><a href>Profile</a></li> -->
 								<!--                   <li><a href>Messages</a></li> -->
 							</ul>
 						</div>
-						<div class="padder">
+					<div class="padder" id="mypadder">
 							<div class="streamline b-l b-info m-l-lg m-b padder-v">
 								<!--                   <div> -->
 								<!--                     <a class="pull-left thumb-sm avatar m-l-n-md"> -->
@@ -773,14 +880,37 @@
 								<!--                     </div> -->
 								<!--                   </div> -->
 								<!-- .comment-reply -->
-								<div class="m-l-lg" id="userHome">
+								<div class="m-l-lg" id="userQ1">
 									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
 										alt="...">
 									</a>
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right"> 十分钟之前 </span> <a >绿色XXX</a>添加了YYY问卷
+												class="text-muted m-l-sm pull-right">十分钟之前   <button class="btn-danger">删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
+												
+										</div>
+									</div>
+								</div>
+								<div class="m-l-lg" id="userQ2">
+									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
+										alt="...">
+									</a>
+									<div class="m-l-xxl panel b-a">
+										<div class="panel-heading pos-rlt">
+											<span class="arrow left pull-up"></span> <span
+												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-danger">删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
+										</div>
+									</div>
+								</div>
+								<div class="m-l-lg" id="userQ3">
+									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
+										alt="...">
+									</a>
+									<div class="m-l-xxl panel b-a">
+										<div class="panel-heading pos-rlt">
+											<span class="arrow left pull-up"></span> <span
+												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-danger">删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
 										</div>
 									</div>
 								</div>
@@ -876,6 +1006,10 @@
 								<!--                   </div> -->
 							</div>
 						</div>
+
+
+
+
 					</div>
 					<div class="col w-lg bg-light lter b-l bg-auto">
 						<div class="wrapper">
@@ -900,7 +1034,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a >用户二</a>
+												<a>用户二</a>
 											</div>
 											<small class="text-muted">写字的</small>
 										</div></li>
@@ -911,7 +1045,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a >用户三</a>
+												<a>用户三</a>
 											</div>
 											<small class="text-muted">画画的</small>
 										</div></li>
@@ -922,7 +1056,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a >用户四</a>
+												<a>用户四</a>
 											</div>
 											<small class="text-muted">弹吉他的</small>
 										</div></li>
@@ -932,21 +1066,15 @@
 								<h4 class="font-thin padder">好友圈子排名</h4>
 								<ul class="list-group">
 									<li class="list-group-item">
-										<p>
-											第一名：AAA
-										</p> <small class="block text-muted"><i
+										<p>第一名：AAA</p> <small class="block text-muted"><i
 											class="fa fa-fw fa-clock-o"></i> 两分钟前</small>
 									</li>
 									<li class="list-group-item">
-										<p>
-											第二名:BBB
-										</p> <small class="block text-muted"><i
+										<p>第二名:BBB</p> <small class="block text-muted"><i
 											class="fa fa-fw fa-clock-o"></i> 一分钟前</small>
 									</li>
 									<li class="list-group-item">
-										<p>
-											第三名：CCC
-										</p> <small class="block text-muted"><i
+										<p>第三名：CCC</p> <small class="block text-muted"><i
 											class="fa fa-fw fa-clock-o"></i> 一分钟前</small>
 									</li>
 								</ul>
@@ -1042,8 +1170,8 @@
 		<div class="app-footer wrapper b-t bg-light">
 			<span class="pull-right">1.0.0 <a href="#app"
 				class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
-				HIT版权所有 
-				
+			HIT版权所有
+
 		</div>
 		<!-- / footer -->
 	</div>
@@ -1149,5 +1277,6 @@
 			});
 		}(jQuery);
 	</script>
+	<script src="js/userHome.js"></script>
 </body>
 </html>
