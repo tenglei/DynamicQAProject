@@ -27,6 +27,72 @@ public class finishedit
 	private List<String> quesans = new ArrayList<String>();
 	private List<String> queskey = new ArrayList<String>();
 	private List<String> quesscore = new ArrayList<String>(); 
+	public int getNum(Connection conn,String name)//得到数量
+	{
+		int num = 0;
+		String sql = "select count(*) from "+name;
+		try{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				num = Integer.parseInt(rs.getString(1));
+			}
+		}
+		catch (Exception e) { 
+				e.printStackTrace(); 
+			} 
+		
+		return num;
+	}
+	public void deletetable(Connection conn,String tablename)
+	{
+		
+		try{
+			Statement st = conn.createStatement();
+			String sql = "delete from "+tablename; 
+			st.executeUpdate(sql);
+		}
+		catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
+	public void insertques(Connection conn,String insertablename,String oritablename,int rank)//rank 是第rank+1条记录！
+	{
+		String sql="insert into gongyou."+insertablename+" select * from project."+oritablename+" limit "+String.valueOf(rank)+",1";
+		try{
+    		PreparedStatement ps=conn.prepareStatement(sql);
+    		ps.executeUpdate();
+    	}
+    	catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	public void inserttixing(int min,int max,int n,Connection conn,String insertablename,String oritablename)//插入某种题型
+	{
+		 int[] result = new int[n];  
+		    int count = 0;  
+		    while(count < n) {  
+		        int num = (int) (Math.random() * (max - min)) + min;  
+		        boolean flag = true;  
+		        for (int j = 0; j < n; j++) {  
+		            if(num == result[j]){  
+		                flag = false;  
+		                break;  
+		            }  
+		        }  
+		        if(flag){  
+		        	//System.out.println(num);
+		        	insertques(conn,insertablename,oritablename,num);
+		            result[count] = num;  
+		            count++;  
+		        }  
+		    }  
+		
+		
+	}
+	
 	public String back()//回到登录界面，并且生成问卷号码,把新生成的问卷号加入到用户属性中,把新生成的问卷号加入到问卷总列表和各个类型的分列表中，设置问卷的类别（大学、生活、情感）
 	{
 		this.welcomename = this.authorname;//用于回去的
@@ -237,7 +303,42 @@ public class finishedit
 			e.printStackTrace();
 		}
 		//最后再生成“共有测试”，规则是每添加5份问卷，就生成一次。
-		
+		///Connection conn4 = new initialize().getlink("project");
+		if(getNum(conn4,"paper") % 5==0)//如果此时问卷数量是5的倍数
+		{
+			if(getNum(conn4,"allchoice")>10&&getNum(conn4,"allfill")>10&&getNum(conn4,"allqa")>10)//如果题目数量符合要求
+			{
+				Connection conn5 = new initialize().getlink("gongyou");
+				try{
+					Statement stat7 = conn5.createStatement();
+					String sql8 = "update property set state=1 where QAid=\"gongyou\"";
+					stat7.executeUpdate(sql8);
+					stat7.close();
+				}
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
+				deletetable(conn5,"choice");
+				deletetable(conn5,"fill");
+				deletetable(conn5,"qa");
+				//下面开始添加题目
+				int choicenum = getNum(conn4,"allchoice")-1;
+				int fillnum = getNum(conn4,"allfill")-1;
+				int qanum = getNum(conn4,"allqa")-1;
+				inserttixing(0,choicenum,5,conn5,"choice","allchoice");
+				inserttixing(0,fillnum,5,conn5,"fill","allfill");
+				inserttixing(0,qanum,2,conn5,"qa","allqa");
+				try{
+					conn4.close();
+					conn5.close();
+				}
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+		}
 		
 		
 		

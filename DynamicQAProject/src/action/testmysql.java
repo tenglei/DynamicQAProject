@@ -134,6 +134,86 @@ public class testmysql
 		return "deletesuccess";
 	}
 	*/
+	/*
+	public static void getnum()
+	{
+		Connection conn = new initialize().getlink("project");
+		String sql = "select count(*) from allpaper";
+		try{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				System.out.println(rs.getString(1));
+			}
+		}
+		catch (Exception e) { 
+				e.printStackTrace(); 
+			} 
+	}
+	*/
+	public static void randomCommon(int min, int max, int n){//生成随机数  
+	    int[] result = new int[n];  
+	    int count = 0;  
+	    while(count < n) {  
+	        int num = (int) (Math.random() * (max - min)) + min;  
+	        boolean flag = true;  
+	        for (int j = 0; j < n; j++) {  
+	            if(num == result[j]){  
+	                flag = false;  
+	                break;  
+	            }  
+	        }  
+	        if(flag){  
+	        	Connection conn = new initialize().getlink("gongyou");
+	        	
+	        	System.out.println(num);
+	        	String sql="insert into gongyou qa select * from project allqa where id=2";
+	        	try{
+	        		PreparedStatement ps=conn.prepareStatement(sql);
+	        		ps.executeUpdate();
+	        	}
+	        	catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
+	        	
+	            result[count] = num;  
+	            count++;  
+	        }  
+	    }    
+	}  
+	/*
+	public static void getRannum()
+	{
+		for(int i=0;i<5;i++)
+		{
+			System.out.println((int)(4*Math.random()+1));
+		}
+	}
+	*/
+	public static void t1()
+	{
+		Connection conn = new initialize().getlink("gongyou");
+    	
+    	//System.out.println(num);
+    	String sql="insert into gongyou.qa select * from project.allqa limit 3,1";
+    	try{
+    		PreparedStatement ps=conn.prepareStatement(sql);
+    		ps.executeUpdate();
+    	}
+    	catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		
+		testmysql.t1();
+	}
+	/*
 	public String fanhui(String p)
 	{
 		if(p.length() == 3)
@@ -145,6 +225,6 @@ public class testmysql
 			return "fuck you";
 		}
 	}
-	
+	*/
 
 }
