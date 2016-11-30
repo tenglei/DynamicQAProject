@@ -5,6 +5,86 @@ import java.sql.*;
 
 public class tongyong 
 {
+	public String getExact(Connection conn,String tablename,int rank,int num)//rank 是第rank+1条记录！,num是维度
+	{
+		String c = "";
+		String sql="select * from "+tablename+" limit "+String.valueOf(rank)+",1";
+		try{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				c = rs.getString(num);
+			}
+    	}
+    	catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		return c;
+	}
+	
+	
+	
+	public int getjilu(Connection conn,String tablename)//得到某个表的记录总数
+	{
+		int x = 0;
+		String sql = "select count(*) from "+tablename;
+		try{
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next())
+			{
+				x = Integer.parseInt(rs.getString(1));
+			}
+		}
+		catch (Exception e) { 
+				e.printStackTrace(); 
+			} 
+		return x;
+	}
+	
+	
+	
+	public static String getsth(Connection conn,String tablename,String keyvalue,String keyname,int num)//函数，得到一些东西
+	{
+		String x = "";
+		try{
+			String sql = "select * from "+tablename+" where "+keyname+"="+"\""+keyvalue+"\"";
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()!=false)
+			{
+				x = rs.getString(num);
+			}
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		if(x==null)
+		{
+			return "";
+		}
+		else
+		{
+			return x;
+		}
+	}
+	
+	
+	
+	public static void main(String[] args)
+	{
+		Connection conn = new initialize().getlink("project");
+		System.out.println(getsth(conn,"user","tl","Name",5));
+	}
+	
+	
+	
+	
+	
+	
 	public void updatebase(Connection conn,int i,float score)//插入选择题、填空题或者大题的时候更新问卷数据库
 	{
 		try 

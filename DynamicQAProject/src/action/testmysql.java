@@ -165,18 +165,11 @@ public class testmysql
 	            }  
 	        }  
 	        if(flag){  
-	        	Connection conn = new initialize().getlink("gongyou");
+	        	//Connection conn = new initialize().getlink("gongyou");
 	        	
 	        	System.out.println(num);
-	        	String sql="insert into gongyou qa select * from project allqa where id=2";
-	        	try{
-	        		PreparedStatement ps=conn.prepareStatement(sql);
-	        		ps.executeUpdate();
-	        	}
-	        	catch (SQLException e) 
-				{
-					e.printStackTrace();
-				}
+	        	//String sql="insert into gongyou qa select * from project allqa where id=2";
+	        
 	        	
 	            result[count] = num;  
 	            count++;  
