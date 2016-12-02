@@ -556,21 +556,14 @@
 										class="fa fa-fw fa-angle-right text"></i> <i
 										class="fa fa-fw fa-angle-down text-active"></i>
 								</span> <i class="glyphicon glyphicon-edit"></i> <span
-									translate="aside.nav.components.form.FORM">我的关注</span>
+									translate="aside.nav.components.form.FORM" >我的圈子</span>
 							</a>
 								<ul class="nav nav-sub dk">
 									<li class="nav-sub-header"><a href> <span
-											translate="aside.nav.components.form.FORM">我的关注</span>
+											translate="aside.nav.components.form.FORM" >我的圈子</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.form.elements">
-											<span translate="aside.nav.components.form.FORM_ELEMENTS">关注的人</span>
-									</a></li>
-									<li ui-sref-active="active"><a
-										ui-sref="app.form.validation"> <span
-											translate="aside.nav.components.form.FORM_VALIDATION">关注的主题</span>
-									</a></li>
-									<li ui-sref-active="active"><a ui-sref="app.form.wizard">
-											<span translate="aside.nav.components.form.FORM_WIZARD">关注的问卷</span>
+											<span translate="aside.nav.components.form.FORM_ELEMENTS" id="myCircle">共同问卷</span>
 									</a></li>
 									<!--                   <li ui-sref-active="active"> -->
 									<!--                     <a ui-sref="app.form.fileupload"> -->
@@ -887,7 +880,7 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right">十分钟之前   <button class="btn-danger">删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
+												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" id="checkOrder1">查看排名</button> <button class="btn-danger" >删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
 												
 										</div>
 									</div>
@@ -899,7 +892,7 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-danger">删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
+												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-success" id="checkOrder2">查看排名</button> <button class="btn-danger" >删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
 										</div>
 									</div>
 								</div>
@@ -910,7 +903,7 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-danger">删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
+												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-success" id="checkOrder3">查看排名</button> <button class="btn-danger" >删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
 										</div>
 									</div>
 								</div>
@@ -1066,15 +1059,15 @@
 								<h4 class="font-thin padder">好友圈子排名</h4>
 								<ul class="list-group">
 									<li class="list-group-item">
-										<p>第一名：AAA</p> <small class="block text-muted"><i
+										<p id=numberFirst></p> <small class="block text-muted"><i
 											class="fa fa-fw fa-clock-o"></i> 两分钟前</small>
 									</li>
 									<li class="list-group-item">
-										<p>第二名:BBB</p> <small class="block text-muted"><i
+										<p id=numberSecond></p> <small class="block text-muted"><i
 											class="fa fa-fw fa-clock-o"></i> 一分钟前</small>
 									</li>
 									<li class="list-group-item">
-										<p>第三名：CCC</p> <small class="block text-muted"><i
+										<p id=numberThird></p> <small class="block text-muted"><i
 											class="fa fa-fw fa-clock-o"></i> 一分钟前</small>
 									</li>
 								</ul>
