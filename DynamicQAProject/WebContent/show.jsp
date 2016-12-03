@@ -50,6 +50,7 @@
 				data-toggle="collapse" data-target="#tmNavbar">&#9776;</button>
 		</div>
 	</div>
+	
 	<div class="container">
 	<input type="hidden" id="seleth"
 						name="<s:property value="choiceques.size()"/>" /> <input

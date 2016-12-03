@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="UserHome/css/app.css" type="text/css" />
 </head>
 <body>
-<input type="hidden" id="friendsNum" value="4">
+	<input type="hidden" id="friendsNum" value="4">
 	<input type="hidden" id="questionsNum" value="4">
 	<div class="app app-header-fixed" id="app">
 		<!-- navbar -->
@@ -462,8 +462,9 @@
 									<li ui-sref-active="active"><a ui-sref="app.ui.buttons">
 											<span translate="aside.nav.components.ui_kits.BUTTONS">新建问卷</span>
 									</a></li>
-									<li ui-sref-active="active"><a ui-sref="app.ui.buttons" id="myques">
-											<span translate="aside.nav.components.ui_kits.BUTTONS">我的问卷</span>
+									<li ui-sref-active="active"><a ui-sref="app.ui.buttons"
+										id="myques"> <span
+											translate="aside.nav.components.ui_kits.BUTTONS">我的问卷</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.icons">
 											<b class="badge bg-info pull-right">3</b> <span
@@ -528,14 +529,15 @@
 										class="fa fa-fw fa-angle-down text-active"></i>
 								</span> <b class="label bg-primary pull-right">2</b> <!-- 提示个数信息 --> <i
 									class="glyphicon glyphicon-list"></i> <span
-									translate="aside.nav.components.table.TABLE" >我的好友</span>
+									translate="aside.nav.components.table.TABLE">我的好友</span>
 							</a>
 								<ul class="nav nav-sub dk">
 									<li class="nav-sub-header"><a href> <span
 											translate="aside.nav.components.table.TABLE">我的好友</span>
 									</a></li>
-									<li ui-sref-active="active"><a ui-sref="app.table.static" id="myfriends">
-											<span translate="aside.nav.components.table.TABLE_STATIC">好友列表</span>
+									<li ui-sref-active="active"><a ui-sref="app.table.static"
+										id="myfriends"> <span
+											translate="aside.nav.components.table.TABLE_STATIC">好友列表</span>
 									</a></li>
 									<li ui-sref-active="active"><a
 										ui-sref="app.table.datatable"> <span
@@ -556,14 +558,15 @@
 										class="fa fa-fw fa-angle-right text"></i> <i
 										class="fa fa-fw fa-angle-down text-active"></i>
 								</span> <i class="glyphicon glyphicon-edit"></i> <span
-									translate="aside.nav.components.form.FORM" >我的圈子</span>
+									translate="aside.nav.components.form.FORM">我的圈子</span>
 							</a>
 								<ul class="nav nav-sub dk">
 									<li class="nav-sub-header"><a href> <span
-											translate="aside.nav.components.form.FORM" >我的圈子</span>
+											translate="aside.nav.components.form.FORM">我的圈子</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.form.elements">
-											<span translate="aside.nav.components.form.FORM_ELEMENTS" id="myCircle">共同问卷</span>
+											<span translate="aside.nav.components.form.FORM_ELEMENTS"
+											id="myCircle">共同问卷</span>
 									</a></li>
 									<!--                   <li ui-sref-active="active"> -->
 									<!--                     <a ui-sref="app.form.fileupload"> -->
@@ -708,110 +711,7 @@
 					<div class="col">
 						<div
 							style="background: url(img/c4.jpg) center center; background-size: cover"
-							id="friend1" >
-							<div class="wrapper-lg bg-white-opacity">
-								<div class="row m-t">
-									<div class="col-sm-7">
-										<a href class="thumb-lg pull-left m-r"> <img
-											src="img/a0.jpg" class="img-circle">
-										</a>
-										<div class="clear m-b">
-											<div class="m-b m-t-sm">
-												<span class="h3 text-black" >绿色XXX</span> <small class="m-l">送人头专家</small>
-											</div>
-											<!--                         <p class="m-b"> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
-											<!--                         </p> -->
-											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
-										</div>
-									</div>
-									<div class="col-sm-5">
-										<div class="pull-right pull-none-xs text-center">
-											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">2000</span> <small>关注我的</small>
-											</a> <a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">250</span> <small>我关注的</small>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="wrapper bg-white b-b" id="bolck1" ></div>
-						<div
-							style="background: url(img/c4.jpg) center center; background-size: cover"
-							 id="friend2" >
-							<div class="wrapper-lg bg-white-opacity">
-								<div class="row m-t">
-									<div class="col-sm-7">
-										<a href class="thumb-lg pull-left m-r"> <img
-											src="img/a0.jpg" class="img-circle">
-										</a>
-										<div class="clear m-b">
-											<div class="m-b m-t-sm">
-												<span class="h3 text-black" id="friend2">绿色XXX</span> <small class="m-l">送人头专家</small>
-											</div>
-											<!--                         <p class="m-b"> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
-											<!--                         </p> -->
-											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
-										</div>
-									</div>
-									<div class="col-sm-5">
-										<div class="pull-right pull-none-xs text-center">
-											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">2000</span> <small>关注我的</small>
-											</a> <a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">250</span> <small>我关注的</small>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="wrapper bg-white b-b" id="block2" ></div>
-
-						<div
-							style="background: url(img/c4.jpg) center center; background-size: cover"
-							id="friend3" >
-							<div class="wrapper-lg bg-white-opacity">
-								<div class="row m-t">
-									<div class="col-sm-7">
-										<a href class="thumb-lg pull-left m-r"> <img
-											src="img/a0.jpg" class="img-circle">
-										</a>
-										<div class="clear m-b">
-											<div class="m-b m-t-sm">
-												<span class="h3 text-black" >绿色XXX</span> <small class="m-l">送人头专家</small>
-											</div>
-											<!--                         <p class="m-b"> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
-											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
-											<!--                         </p> -->
-											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
-										</div>
-									</div>
-									<div class="col-sm-5">
-										<div class="pull-right pull-none-xs text-center">
-											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">2000</span> <small>关注我的</small>
-											</a> <a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">250</span> <small>我关注的</small>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="wrapper bg-white b-b" id="block3" ></div>
-						<div
-							style="background: url(img/c4.jpg) center center; background-size: cover"
-							id="userHome" >
+							id="friend1">
 							<div class="wrapper-lg bg-white-opacity">
 								<div class="row m-t">
 									<div class="col-sm-7">
@@ -842,14 +742,118 @@
 								</div>
 							</div>
 						</div>
-						<div class="wrapper bg-white b-b"  id="userDy">
+						<div class="wrapper bg-white b-b" id="bolck1"></div>
+						<div
+							style="background: url(img/c4.jpg) center center; background-size: cover"
+							id="friend2">
+							<div class="wrapper-lg bg-white-opacity">
+								<div class="row m-t">
+									<div class="col-sm-7">
+										<a href class="thumb-lg pull-left m-r"> <img
+											src="img/a0.jpg" class="img-circle">
+										</a>
+										<div class="clear m-b">
+											<div class="m-b m-t-sm">
+												<span class="h3 text-black" id="friend2">绿色XXX</span> <small
+													class="m-l">送人头专家</small>
+											</div>
+											<!--                         <p class="m-b"> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
+											<!--                         </p> -->
+											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="pull-right pull-none-xs text-center">
+											<a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">2000</span> <small>关注我的</small>
+											</a> <a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">250</span> <small>我关注的</small>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapper bg-white b-b" id="block2"></div>
+
+						<div
+							style="background: url(img/c4.jpg) center center; background-size: cover"
+							id="friend3">
+							<div class="wrapper-lg bg-white-opacity">
+								<div class="row m-t">
+									<div class="col-sm-7">
+										<a href class="thumb-lg pull-left m-r"> <img
+											src="img/a0.jpg" class="img-circle">
+										</a>
+										<div class="clear m-b">
+											<div class="m-b m-t-sm">
+												<span class="h3 text-black">绿色XXX</span> <small class="m-l">送人头专家</small>
+											</div>
+											<!--                         <p class="m-b"> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
+											<!--                         </p> -->
+											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="pull-right pull-none-xs text-center">
+											<a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">2000</span> <small>关注我的</small>
+											</a> <a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">250</span> <small>我关注的</small>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapper bg-white b-b" id="block3"></div>
+						<div
+							style="background: url(img/c4.jpg) center center; background-size: cover"
+							id="userHome">
+							<div class="wrapper-lg bg-white-opacity">
+								<div class="row m-t">
+									<div class="col-sm-7">
+										<a href class="thumb-lg pull-left m-r"> <img
+											src="img/a0.jpg" class="img-circle">
+										</a>
+										<div class="clear m-b">
+											<div class="m-b m-t-sm">
+												<span class="h3 text-black">绿色XXX</span> <small class="m-l">送人头专家</small>
+											</div>
+											<!--                         <p class="m-b"> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a> -->
+											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a> -->
+											<!--                         </p> -->
+											<!--                         <a href class="btn btn-sm btn-success btn-rounded">关注</a> -->
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="pull-right pull-none-xs text-center">
+											<a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">2000</span> <small>关注我的</small>
+											</a> <a href class="m-b-md inline m"> <span
+												class="h3 block font-bold">250</span> <small>我关注的</small>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapper bg-white b-b" id="userDy">
 							<ul class="nav nav-pills nav-sm">
 								<li class="active"><a>我的动态</a></li>
 								<!--                   <li><a href>Profile</a></li> -->
 								<!--                   <li><a href>Messages</a></li> -->
 							</ul>
 						</div>
-					<div class="padder" id="mypadder">
+						<div class="padder" id="mypadder">
 							<div class="streamline b-l b-info m-l-lg m-b padder-v">
 								<!--                   <div> -->
 								<!--                     <a class="pull-left thumb-sm avatar m-l-n-md"> -->
@@ -880,8 +884,11 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" id="checkOrder1">查看排名</button> <button class="btn-danger" >删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
-												
+												class="text-muted m-l-sm pull-right">十分钟之前
+												<button class="btn-success" name="0">查看排名</button>
+												<button class="btn-danger">删除</button>
+											</span> <a>绿色XXX</a>添加了YYY问卷
+
 										</div>
 									</div>
 								</div>
@@ -892,7 +899,10 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-success" id="checkOrder2">查看排名</button> <button class="btn-danger" >删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
+												class="text-muted m-l-sm pull-right"> 十分钟之前
+												<button class="btn-success" name="1">查看排名</button>
+												<button class="btn-danger">删除</button>
+											</span> <a>绿色XXX</a>添加了YYY问卷
 										</div>
 									</div>
 								</div>
@@ -903,7 +913,10 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right"> 十分钟之前   <button class="btn-success" id="checkOrder3">查看排名</button> <button class="btn-danger" >删除</button> </span> <a >绿色XXX</a>添加了YYY问卷
+												class="text-muted m-l-sm pull-right"> 十分钟之前
+												<button class="btn-success" name="2">查看排名</button>
+												<button class="btn-danger">删除</button>
+											</span> <a>绿色XXX</a>添加了YYY问卷
 										</div>
 									</div>
 								</div>
@@ -1057,19 +1070,12 @@
 							</div>
 							<div class="panel b-a">
 								<h4 class="font-thin padder">好友圈子排名</h4>
-								<ul class="list-group">
+								<ul class="list-group" id="listGroup">
 									<li class="list-group-item">
 										<p id=numberFirst></p> <small class="block text-muted"><i
 											class="fa fa-fw fa-clock-o"></i> 两分钟前</small>
 									</li>
-									<li class="list-group-item">
-										<p id=numberSecond></p> <small class="block text-muted"><i
-											class="fa fa-fw fa-clock-o"></i> 一分钟前</small>
-									</li>
-									<li class="list-group-item">
-										<p id=numberThird></p> <small class="block text-muted"><i
-											class="fa fa-fw fa-clock-o"></i> 一分钟前</small>
-									</li>
+
 								</ul>
 							</div>
 							<!--                 <div class="panel b-light clearfix"> -->
