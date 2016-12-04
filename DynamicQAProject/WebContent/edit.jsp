@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib prefix="s" uri="/struts-tags"%>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>编辑问卷</title>
 <!-- load stylesheets -->
 <!-- Google web font "Open Sans" -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -43,8 +42,6 @@
 				<div class="collapse navbar-toggleable-md" id="tmNavbar">
 
 					<ul class="nav navbar-nav">
-						<li class="nav-item"><a class="nav-link" 
-							href="#tm-section-1"><s:property value="basename"/></a></li>
 						<li class="nav-item"><a class="nav-link" id="xuanze"
 							href="#tm-section-1">选择题</a></li>
 						<li class="nav-item"><a class="nav-link" href="#tm-section-1"
@@ -53,7 +50,7 @@
 							href="#tm-section-1">问答题</a></li>
 						<li class="nav-item"><a class="nav-link" id="finish"
 						    href="#tm-section-1"
-							onclick="location.href='finishedit.action?editname=<s:property value="basename"/>&authorname=<s:property value="authorname"/>'">完成编辑</a></li>
+							onclick="location='index.html' ">完成编辑</a></li>
 					</ul>
 
 				</div>
@@ -71,8 +68,6 @@
 			<div class="row clearfix">
 				<div class="col-md-12 table-responsive">
 				<form action="" method="post" id = "tab_form" name="myform">
-				    <input type="hidden" id="tmpques" name="xxx" value="<s:property value="basename"/>" >
-				     <input type="hidden" id="asas" name="yyy" value="<s:property value="authorname"/>" >
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_logic">
 						<tbody>
@@ -80,8 +75,8 @@
 								<td colspan="5" data-name="ques" align="center"><input
 									type="text" name="ques0" class="form-control" placeholder="题目">
 								</td>
-								<td colspan="5" data-name="key" align="center"><input
-									type="text" name="key0" class="form-control"
+								<td colspan="5" data-name="kongge" align="center"><input
+									type="text" name="kongge0" class="form-control"
 									placeholder="关键词"></td>
 								<td colspan="5" data-name="score" align="center"><input
 									type="text" name="score0" class="form-control" placeholder="分数">
@@ -91,7 +86,7 @@
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
 								<td colspan="4" data-name="desc"><textarea name="desc0"
-										placeholder="参考答案" class="form-control"></textarea></td>
+										placeholder="问题描述" class="form-control"></textarea></td>
 								<td data-name="del">
 									<button class="btn row-remove">删除</button>
 								</td>
@@ -102,7 +97,6 @@
 						</tbody>
 					</table>
 				</form>
-				
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_select">
 
@@ -120,46 +114,46 @@
 						</tbody>
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
-								<td data-name="first"><textarea name="first0"
+								<td data-name="select0"><textarea name="select00"
 										placeholder="选项一" class="form-control"></textarea></td>
-								<td data-name="second"><textarea name="second0"
+								<td data-name="select1"><textarea name="select01"
 										placeholder="选项二" class="form-control"></textarea></td>
-								<td data-name="third"><textarea name="third0"
+								<td data-name="select2"><textarea name="select02"
 										placeholder="选项三" class="form-control"></textarea></td>
-								<td data-name="fourth"><textarea name="fourth0"
+								<td data-name="select3"><textarea name="select03"
 										placeholder="选项四" class="form-control"></textarea></td>
 								<td data-name="del">
-									<button class="btn row-remove">删除</button>
+									<button class="btn row-remove ">删除</button>
 
 								</td>
 								<td data-name="add">
 									<button class="btn row-add">添加</button>
 								</td>
+
 							</tr>
 						</tbody>
 					</table>
-					
 					<table class="table table-bordered table-hover table-sortable"
 						id="tab_tiankong">
 						<tbody>
 							<tr id='bddr0' data-id="0" hidden="hidden">
-								<td colspan="5" data-name="ques" align="center"><input
-									type="text" name="ques0" class="form-control" placeholder="请输入填空题题目（技术限制，需要全部手动输入）">
+								<td colspan="5" data-name="key" align="center"><input
+									type="text" name="key0" class="form-control" placeholder="答案">
 								</td>
-								<td colspan="5" data-name="fillnum" align="center"><input
-									type="text" name="fillnum0" class="form-control"
+								<td colspan="5" data-name="kongge" align="center"><input
+									type="text" name="kongge0" class="form-control"
 									placeholder="空格数量"></td>
 								<td colspan="5" data-name="score" align="center"><input
 									type="text" name="score0" class="form-control"
-									placeholder="分值"></td>
+									placeholder="空格数量"></td>
 
 							</tr>
 						</tbody>
 
 						<tbody>
 							<tr id='addr0' data-id="0" hidden="hidden">
-								<td colspan="4" data-name="answer"><textarea
-										name="answer0" placeholder="答案（请以空格分隔不同空之间的答案）"
+								<td colspan="4" data-name="select0"><textarea
+										name="select00" placeholder="请输入填空题题目（技术限制，需要全部手动输入）"
 										class="form-control"></textarea></td>
 								<td data-name="del">
 									<button class="btn row-remove">删除</button>

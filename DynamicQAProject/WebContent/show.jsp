@@ -37,11 +37,11 @@
 					<li class="nav-item"><a class="nav-link" id="wenjuan"
 						href="#tm-section-1"><s:property value="wenjuanhao" /></a></li>
 					<li class="nav-item"><a class="nav-link" href="#tm-section-1"
-						id="ath">作者姓名：<s:property value="author" /></a></li>
+						id="ath"><s:property value="author" /></a></li>
 					<li class="nav-item"><a class="nav-link" id="finish"
-						href="">提交</a></li>
-					<!--  <li class="nav-item"><a class="nav-link" id="back"
-						href="#tm-section-1" onclick="location='index.html' ">返回主页</a></li>-->
+						href="#tm-section-1">完成修改</a></li>
+					<li class="nav-item"><a class="nav-link" id="back"
+						href="#tm-section-1" onclick="location='index.html' ">返回主页</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -50,6 +50,7 @@
 				data-toggle="collapse" data-target="#tmNavbar">&#9776;</button>
 		</div>
 	</div>
+	
 	<div class="container">
 	<input type="hidden" id="seleth"
 						name="<s:property value="choiceques.size()"/>" /> <input
@@ -149,7 +150,7 @@
 							<div class="form-group">
 								<textarea name="qause" class="form-control"
 									style="height: 75px" readonly="true" ><s:property /></textarea>
-								<p><s:property value="quesscore[#st.index]" />分</p>
+								分
 							</div>
 						</div>
 					</div>
@@ -168,7 +169,6 @@
 			</div>
 		</s:iterator>
 		</div>
-		<input type="text" name="answer" id="answerp" placeholder="请输入您的称呼">
 	</div>
 
 

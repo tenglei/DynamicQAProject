@@ -12,19 +12,6 @@ function AddElement(mytype) {
 		TemO.appendChild(newline);
 	}
 $(document).ready(function() {
-	 function count(o){
-         var t = typeof o;
-         if(t == 'string'){
-                 return o.length;
-         }else if(t == 'object'){
-                 var n = 0;
-                 for(var i in o){
-                         n++;
-                 }
-                 return n;
-         }
-         return false;
- }
 	
 	var newid = 0;
 	
@@ -120,41 +107,32 @@ $(document).ready(function() {
         $(tr).find("td button.row-add").on("click", function() {
         	var test1 = document.myform.score1;
         	var test2 = document.myform.ques1;
-        	var test3 = document.myform.key1;
-        	var test4 = document.myform.desc1;
+        	var test3 = document.myform.kongge1;
         	if(typeof(test1.value)!="undefined"&&test1.value.length!=0){
         		if(isNaN(test1.value)){
         			alert("请输入数字");
-        			return false;
+        			return;
         		}
         	}
         	else{
         		alert("分数栏不能为空");
-        		return false;
+        		return ;
         	}
-        	if(typeof(test3.value)!="undefined"&&test3.value.length!=0 ){
+        	if(typeof(test3.value)!="undefined"&&test1.value.length!=0 ){
         		
         	}
         	else{
         		alert("关键词不能为空");
-        		return false;
+        		return ;
         	}
-        	if(typeof(test2.value)!="undefined"&&test2.value.length!=0){
+        	if(typeof(test2.value)!="undefined"&&test1.value.length!=0){
         		
         	}
         	else{
         		alert("问题栏不能为空");
-        		return false;
+        		return ;
         	}
-        	if(typeof(test4.value)!="undefined"&&test4.value.length!=0 ){
-        		
-        	}
-        	else{
-        		alert("答案不能为空！");
-        		return false;
-        	}
-        	alert("添加成功！");
-        	document.myform.action="wenda.action";
+        	document.myform.action="wenda";
         	myform.submit();
         	//未删除加入，或许会报错
        
@@ -165,7 +143,7 @@ $(document).ready(function() {
 });
     $("#xuanze").on("click", function() {
         // Dynamic Rows Code
-        //alert("xuanze");
+        
         // Get max row id and set new id
         $.each($("#tab_select tr"), function() {
             if (parseInt($(this).data("id")) > newid) {
@@ -252,73 +230,40 @@ $(document).ready(function() {
         }
         );
         $(tr).find("td button.row-add").on("click", function() {
-        	
-        	
         	var test1 = document.myform.score1;
         	var test2 = document.myform.ques1;
         	var test3 = document.myform.key1;
-        	var test4 = document.myform.first1;
-        	var test5 = document.myform.second1;
-        	var test6 = document.myform.third1;
-        	var test7 = document.myform.fourth1;
+        	var test4 = document.myform.select01;
+        	var test5 = document.myform.select02;
+        	var test6 = document.myform.select03;
+        	var test7 = document.myform.select04;
         	if(typeof(test1.value)!="undefined"&&test1.value.length!=0){
         		if(isNaN(test1.value)){
         			alert("请输入数字");
-        			return false;
+        			return;
         		}
         	}
         	else{
         		alert("分数栏不能为空");
-        		return false;
+        		return ;
         	}
-        	if(typeof(test3.value)!="undefined"&&test3.value.length!=0 ){
-        		if(test3.value!='A'&&test3.value!='B'&&test3.value!='C'&&test3.value!='D')
-        		{
-        			alert("答案必须输入大写的ABCD！！！");
-        			return false;
-        		}
-        	}
-        	else{
-        		alert("答案不能为空");
-        		return false;
-        	}
-        	if(typeof(test4.value)!="undefined"&&test4.value.length!=0){
+        	if(typeof(test3.value)!="undefined"&&test1.value.length!=0 ){
         		
         	}
         	else{
-        		alert("选项不能为空");
-        		return false;
+        		alert("关键词不能为空");
+        		return ;
         	}
-        	if(typeof(test5.value)!="undefined"&&test5.value.length!=0){
+        	if(typeof(test2.value)!="undefined"&&test1.value.length!=0){
         		
-        	}
-        	else{
-        		alert("选项不能为空");
-        		return false;
-        	}
-        	if(typeof(test6.value)!="undefined"&&test6.value.length!=0){
-	
-        	}
-        	else{
-        		alert("选项不能为空");
-        		return false;
-        	}
-        	if(typeof(test7.value)!="undefined"&&test7.value.length!=0){
-	
-        	}
-        	else{
-        		alert("选项不能为空");
-        		return false;
-        	}
-        	if(typeof(test2.value)!="undefined"&&test2.value.length!=0){
-	
         	}
         	else{
         		alert("问题栏不能为空");
-        		return false;
+        		return ;
         	}
-        	alert("添加成功！");
-        	document.myform.action="xuanze.action";
+        	
+        	
+        	document.myform.action="xuanze";
         	myform.submit();
         	//未删除加入，或许会报错
        }
@@ -417,50 +362,32 @@ $(document).ready(function() {
         $(tr).find("td button.row-add").on("click", function() {
         	var test1 = document.myform.score1;
         	var test2 = document.myform.ques1;
-        	var test3 = document.myform.fillnum1;
-        	var test4 = document.myform.answer1;
-        	if(typeof(test3.value)!="undefined"&&test3.value.length!=0 ){
-        		if(isNaN(test3.value)){
-        			alert("请输入数字");
-        			return false;
-        		}
-        	}
-        	else{
-        		alert("空格数量不能为空");
-        		return false;
-        	}
-        	if(typeof(test4.value)!="undefined"&&test4.value.length!=0){
-        		//var testmp = test4.split(" ");
-        		//if(count(testmp)!=test3.value)
-        		//{
-        			//alert("要求空格数量和输入的数量必须匹配")
-        		//}
-        	}
-        	else{
-        		alert("答案不能为空");
-        		return false;
-        	}
+        	var test3 = document.myform.kongge1;
         	if(typeof(test1.value)!="undefined"&&test1.value.length!=0){
         		if(isNaN(test1.value)){
         			alert("请输入数字");
-        			return false;
+        			return;
         		}
         	}
         	else{
         		alert("分数栏不能为空");
-        		return false;
+        		return ;
         	}
-        	
-        	if(typeof(test2.value)!="undefined"&&test2.value.length!=0){
+        	if(typeof(test3.value)!="undefined"&&test1.value.length!=0 ){
+        		
+        	}
+        	else{
+        		alert("关键词不能为空");
+        		return ;
+        	}
+        	if(typeof(test2.value)!="undefined"&&test1.value.length!=0){
         		
         	}
         	else{
         		alert("问题栏不能为空");
-        		return false;
+        		return ;
         	}
-        	alert("添加成功！");
-        	
-        	document.myform.action="tiankong.action";
+        	document.myform.action="tiankong";
         	myform.submit();
         	//未删除加入，或许会报错
        }
@@ -483,13 +410,13 @@ $(document).ready(function() {
         
         return $helper;
     };
-	/*
+  
     $(".table-sortable tbody").sortable({
         helper: fixHelperModified      
     }).disableSelection();
 
     $(".table-sortable thead").disableSelection();
-	*/
+
 
 
    // $("#wenda").trigger("click");

@@ -19,6 +19,10 @@
 <script src="js/site.js"></script>
 <body>
 
+
+
+
+
 	<div class="row navbar-row">
 		<div
 			class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 navbar-container">
@@ -31,11 +35,13 @@
 
 				<ul class="nav navbar-nav">
 					<li class="nav-item"><a class="nav-link" id="wenjuan"
-						href="#tm-section-1">我的问卷</a></li>
+						href="#tm-section-1"></a></li>
 					<li class="nav-item"><a class="nav-link" href="#tm-section-1"
-						id="ath">您好，<s:property value="zuozhemingzi"/></a></li>
+						id="ath"></a></li>
+					<li class="nav-item"><a class="nav-link" id="finish"
+						href="#tm-section-1">完成修改</a></li>
 					<li class="nav-item"><a class="nav-link" id="back"
-						href="#tm-section-1" onclick="location.href='backto.action?welcomename=<s:property value="zuozhemingzi"/>'">返回主页</a></li>
+						href="#tm-section-1" onclick="location='index.html' ">返回主页</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -61,12 +67,10 @@
 				<div class="contact-form">
 					<div class="row">
 						<div class="col-md-12">
-							<div class="form-group" align="center">
-							<p>您的问卷和它们的回答链接为：</p>
-							<s:iterator value="CLJjh" status="st"> 
-									<li>问卷<s:property value="#st.count"/>、<s:property value="QAjihe[#st.index]"/> <a href="<s:property/>"><s:property/></a></li>							
-							</s:iterator>
-						    <p>复制以上链接到朋友圈即可邀请更多朋友作答！</p>
+							<div class="form-group">
+							
+									<li><a href="#quesnumber">651</a></li>
+									
 							</div>
 						</div>
 					</div>

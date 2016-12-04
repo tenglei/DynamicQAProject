@@ -13,64 +13,6 @@
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 <link rel="stylesheet" href="assets/css/main.css" />
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-
-
-<script type="text/javascript">
-function validate_required(field,alerttxt)
-{
-	with (field)
-	{
-		if(value==null||value=="")
-		{
-			alert(alerttxt);
-			return false;
-		}
-		else
-		{
-			return true;	
-		}
-	}
-}
-function validate_form(thisform)
-{
-	with(thisform)
-	{
-		if(validate_required(logininfor,"用户名或者密码不能是空的！")==false)
-		{
-			return false;
-		}
-		else if(validate_required(loginpassword,"用户名或者密码不能是空的！")==false)
-		{
-			return false;	
-		}
-	}
-}
-function validate_form2(thisform)
-{
-	with(thisform)
-	{
-		if(validate_required(name,"请确认所有信息不为空！")==false)
-		{
-			return false;
-		}
-		else if(validate_required(email,"请确认所有信息不为空！")==false)
-		{
-			return false;	
-		}
-		else if(validate_required(password,"请确认所有信息不为空！")==false)
-		{
-			return false;	
-		}
-		else if(validate_required(confirmpassword,"请确认所有信息不为空！")==false)
-		{
-			return false;	
-		}
-		alert("注册成功！快快登录吧！");
-	}
-}
-
-</script>
-
 </head>
 <body>
 
@@ -178,7 +120,7 @@ function validate_form2(thisform)
 			<h2>立马开始问者之旅</h2>
 			<p>请输入相应信息完成注册</p>
 		</header>
-		<form method="get" action="registe.action" onsubmit="return validate_form2(this)">
+		<form method="post" action="#" >
 			<div class="row 50%">
 
 				<div class="6u 12u$(mobile)" style="align:center">
@@ -188,17 +130,17 @@ function validate_form2(thisform)
 					<input type="text" class="text" name="email" placeholder="请输入邮箱" style="text-align:center"/>
 				</div>
 				<div class="6u 12u$(mobile)">
-					<input type="password" class="text" name="password" placeholder="请输入密码" style="text-align:center"/>
+					<input type="text" class="text" name="password" placeholder="请输入密码" style="text-align:center"/>
 				</div>
 				<div class="6u$ 12u$(mobile)">
-					<input type="password" class="text" name="confirmpassword"
+					<input type="text" class="text" name="confirmpassword"
 						placeholder="再次输入确认密码" style="text-align:center"/>
 				</div>
 			</div>
 			<p></p>
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="注册" onclick="return validate_form(this)"/></li>
+					<li><input type="submit" value="注册" /></li>
 				</ul>
 
 				<p></p>
@@ -219,19 +161,20 @@ function validate_form2(thisform)
 		<header>
 			<p>赶紧来登录吧！</p>
 		</header>
-		<form method="post" action="login.action" onsubmit="return validate_form(this)">
+		<form method="post" action="#" >
 			<div class="row 50%">
+
 				<div class="6u 12u$(mobile)" style="align:center">
-					<input type="text" class="text" name="logininfor" placeholder="请输入注册名" style="text-align:center"/>
+					<input type="text" class="text" name="name" placeholder="请输入姓名或邮箱" style="text-align:center"/>
 				</div>
 				<div class="6u$ 12u$(mobile)">
-					<input type="password" class="text" name="loginpassword" placeholder="请输入密码" style="text-align:center"/>
+					<input type="text" class="text" name="password" placeholder="请输入密码" style="text-align:center"/>
 				</div>
 			</div>
 			<p></p>
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="登录" onclick="return validate_form(this)"/></li>
+					<li><input type="submit" value="登录" /></li>
 				</ul>
 			</div>
 			
@@ -240,10 +183,175 @@ function validate_form2(thisform)
 	</article>
 	
 	
+	<!-- Generic -->
+	<!--
+			<article class="container box style3">
+				<header>
+					<h2>Generic Box</h2>
+					<p>Just a generic box. Nothing to see here.</p>
+				</header>
+				<section>
+					<header>
+						<h3>Paragraph</h3>
+						<p>This is a subtitle</p>
+					</header>
+					<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
+					habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
+					leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
+					amet risus elit.</p>
+				</section>
+				<section>
+					<header>
+						<h3>Blockquote</h3>
+					</header>
+					<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+					tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
+				</section>
+				<section>
+					<header>
+						<h3>Divider</h3>
+					</header>
+					<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
+					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+					posuere cubilia.</p>
+					<hr />
+					<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+					posuere cubilia.</p>
+				</section>
+				<section>
+					<header>
+						<h3>Unordered List</h3>
+					</header>
+					<ul class="default">
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+					</ul>
+				</section>
+				<section>
+					<header>
+						<h3>Ordered List</h3>
+					</header>
+					<ol class="default">
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+					</ol>
+				</section>
+				<section>
+					<header>
+						<h3>Table</h3>
+					</header>
+					<div class="table-wrapper">
+						<table class="default">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Description</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>45815</td>
+									<td>Something</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>29.99</td>
+								</tr>
+								<tr>
+									<td>24524</td>
+									<td>Nothing</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>19.99</td>
+								</tr>
+								<tr>
+									<td>45815</td>
+									<td>Something</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>29.99</td>
+								</tr>
+								<tr>
+									<td>24524</td>
+									<td>Nothing</td>
+									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+									<td>19.99</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="3"></td>
+									<td>100.00</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</section>
+				<section>
+					<header>
+						<h3>Form</h3>
+					</header>
+					<form method="post" action="#">
+						<div class="row">
+							<div class="6u">
+								<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
+							</div>
+							<div class="6u">
+								<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<select name="department" id="department">
+									<option value="">Choose a department</option>
+									<option value="1">Manufacturing</option>
+									<option value="2">Administration</option>
+									<option value="3">Support</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<textarea name="message" id="message" placeholder="Enter your message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<ul class="actions">
+									<li><input type="submit" value="Submit" /></li>
+									<li><input type="reset" class="style3" value="Clear Form" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</section>
+			</article>
+		-->
 	
 
 	<section id="footer">
-		
+		<ul class="icons">
+			<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon fa-google-plus"><span
+					class="label">Google+</span></a></li>
+			<li><a href="#" class="icon fa-pinterest"><span
+					class="label">Pinterest</span></a></li>
+			<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+			<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		</ul>
 		<div class="copyright">
 			<ul class="menu">
 				<li>&copy; 版权所有</li>

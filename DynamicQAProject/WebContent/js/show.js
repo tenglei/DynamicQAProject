@@ -4,22 +4,20 @@
 $(document).ready(function() {
 	$("#finish").on("click", function() {
 		var quesAns = document.createElement("form");
-		var Seleth = document.getElementById("seleth").getAttribute("name");
-		var Fillth = document.getElementById("fillth").getAttribute("name");
-		var QAth = document.getElementById("qath").getAttribute("name");
-		var questionaire = document.getElementById("wenjuan").innerText;
-		var Answerp = document.getElementById("answerp");
+		var Seleth = getElementById("seleth").getAttribute("name");
+		var Fillth = getElementById("fillth").getAttribute("name");
+		var QAth = getElementById("qath").getAttribute("name");
 		document.body.appendChild(quesAns);
 		quesAns.method = 'post';
-		quesAns.action = 'tijiao.action';
+		quesAns.action = 'answer.action';
 		quesAns.target = '_blank';// 尚不清楚后果
 		//生成选择题答案列表
 		var i = 0;
 		var subval=new Array();
-		while (i < parseInt(Seleth)) {
+		while (i < Seleth) {
 			var tmpId = "as";
-			tmpId=tmpId+i.toString();
-			var val=document.getElementsByName(tmpId);
+			tmpId=tmpId+i;
+			var val=document.getElementByName(tmpID);
 			for(var j=0;j<val.length;j++){
 				if(val[j].checked){
 					subval[i] = val[j].value;
@@ -48,9 +46,9 @@ $(document).ready(function() {
 		//生成填空题列表
 		i=0;
 		var subvals=new Array();
-		while(i<parseInt(Fillth)){
+		while(i<Fillth){
 			var fillId="fillans";
-			fillId=fillId+i.toString();
+			fillId=fillId+i;
 			var fval=document.getElementById(fillId);
 			subvals[i] = fval.value;
 			i++;
@@ -63,9 +61,9 @@ $(document).ready(function() {
 		
 		i=0;
 		var subvalt=new Array();
-		while(i<parseInt(QAth)){
+		while(i<QAth){
 			var QAId="quesans";
-			QAId = QAId +i.toString();
+			QAId = QAId +i;
 			var QAval=document.getElementById(QAId);
 			subvalt[i]=QAval.value;
 			i++;
@@ -75,18 +73,6 @@ $(document).ready(function() {
 		qatmp.setAttribute("type", "hidden");
 		qatmp.setAttribute("value", subvalt);
 		quesAns.appendChild(qatmp);
-		
-		var questmp = document.createElement("input");
-		questmp.setAttribute("name", "QAnum");
-		questmp.setAttribute("type", "hidden");
-		questmp.setAttribute("value", questionaire);
-		quesAns.appendChild(questmp);
-		
-		var answertmp = document.createElement("input");
-		answertmp.setAttribute("name", "huidazhe");
-		answertmp.setAttribute("type", "hidden");
-		answertmp.setAttribute("value",Answerp.value );
-		quesAns.appendChild(answertmp);
 		
 		quesAns.submit();
 		
