@@ -18,7 +18,28 @@ public class login
 	private List<String> friends = new ArrayList<String>();
 	private String guanzhushuliang;
 	private String beiguanzhu;
-	
+	private List<List<String>> suoyoupaiming = new ArrayList<List<String>>();
+	public void addlist(Connection conn,List<List<String>> suoyou)//加入问卷的排名
+	{
+		List<String> list = new ArrayList<String>();
+		String sql = "select * from list";
+		try
+		{
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()!=false)
+			{
+				list.add(rs.getString(2));
+			}
+			suoyou.add(list);
+			stmt.close();
+			rs.close();
+		}
+		catch (SQLException e1)
+		{
+			e1.printStackTrace();
+		}
+	}
 	public String login_user() 
 	{
 		String truepassword = "";
@@ -156,9 +177,26 @@ public class login
 					e.printStackTrace();
 				}
 				//下面载入我被关注的数量和我关注的数量
-				
-				
-				
+				//下面生成所有问卷的排名
+				for(int j=0;j<this.myquestion.size();j++)//对于每个问卷，生成它的排名
+				{
+					Connection p = new initialize().getlink(this.myquestion.get(j));
+					addlist(p,this.suoyoupaiming);
+					try {
+						p.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				for(int y1 =0;y1<this.suoyoupaiming.size();y1++)
+				{
+					for(int h=0;h<this.suoyoupaiming.get(y1).size();h++)
+					{
+						System.out.println(this.suoyoupaiming.get(y1).get(h));
+					}
+				}
+					
 				
 				
 				
@@ -173,6 +211,14 @@ public class login
 		{
 			return "loginfailed";//有信息没有输入，失败
 		}
+	}
+	public static void main(String[] args)
+	{
+		
+		login x = new login();
+		x.logininfor = "yaobingkun";
+		x.loginpassword = "qweasd";
+		x.login_user();
 	}
 	public String fuzhu()
 	{
@@ -256,5 +302,11 @@ public class login
 	}
 	public void setBeiguanzhu(String beiguanzhu) {
 		this.beiguanzhu = beiguanzhu;
+	}
+	public List<List<String>> getSuoyoupaiming() {
+		return suoyoupaiming;
+	}
+	public void setSuoyoupaiming(List<List<String>> suoyoupaiming) {
+		this.suoyoupaiming = suoyoupaiming;
 	}
 }
