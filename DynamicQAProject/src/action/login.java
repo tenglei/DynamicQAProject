@@ -131,6 +131,7 @@ public class login
 					while(rs2.next()!=false)
 					{
 						y= rs2.getString(5);
+						this.beiguanzhu = String.valueOf(rs2.getInt(8));
 					}
 					
 					if(y.length()==0)//如果还没有关注的人
@@ -189,14 +190,16 @@ public class login
 						e.printStackTrace();
 					}
 				}
-				for(int y1 =0;y1<this.suoyoupaiming.size();y1++)
-				{
-					for(int h=0;h<this.suoyoupaiming.get(y1).size();h++)
-					{
-						System.out.println(this.suoyoupaiming.get(y1).get(h));
-					}
-				}
-					
+//				for(int y1 =0;y1<this.suoyoupaiming.size();y1++)
+//				{
+//					for(int h=0;h<this.suoyoupaiming.get(y1).size();h++)
+//					{
+//						System.out.println(this.suoyoupaiming.get(y1).get(h));
+//					}
+//				}
+				
+				
+				
 				
 				
 				
@@ -219,6 +222,8 @@ public class login
 		x.logininfor = "yaobingkun";
 		x.loginpassword = "qweasd";
 		x.login_user();
+		System.out.println(x.getGuanzhushuliang());
+		System.out.println(x.getBeiguanzhu());
 	}
 	public String fuzhu()
 	{

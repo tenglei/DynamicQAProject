@@ -254,7 +254,7 @@
 					</a> <!-- dropdown -->
 						<ul class="dropdown-menu animated fadeInRight w">
 							<!--               <li class="wrapper b-b m-b-sm bg-light m-t-n-xs"> -->
-							<!--                 <div> -->
+							<!--                  <div> -->
 							<!--                   <p>300mb of 500mb used</p> -->
 							<!--                 </div> -->
 							<!--                 <progressbar value="60" class="progress-xs m-b-none bg-white"></progressbar> -->
@@ -299,7 +299,7 @@
 							</a> <a href="#" data-toggle="dropdown"
 								class="dropdown-toggle hidden-folded"> <span class="clear">
 									<span class="block m-t-sm"> <strong
-										class="font-bold text-lt">绿色XXX</strong> <!-- 用户名字 --> <b
+										class="font-bold text-lt"><s:property value="welcomename"/></strong> <!-- 用户名字 --> <b
 										class="caret"></b>
 								</span> <span class="text-muted text-xs block">送人头专家</span>
 							</span>
@@ -470,7 +470,7 @@
 											<span translate="aside.nav.components.ui_kits.BUTTONS">我的问卷</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.icons">
-											<b class="badge bg-info pull-right">3</b> <span
+											<!--  <b class="badge bg-info pull-right">3</b> --><span
 											translate="aside.nav.components.ui_kits.ICONS">随便看看</span>
 									</a></li>
 									<!--                   <li ui-sref-active="active"> -->
@@ -530,7 +530,7 @@
 								class="auto"> <span class="pull-right text-muted"> <i
 										class="fa fa-fw fa-angle-right text"></i> <i
 										class="fa fa-fw fa-angle-down text-active"></i>
-								</span> <b class="label bg-primary pull-right">2</b> <!-- 提示个数信息 --> <i
+								</span>  <!-- 提示个数信息 --> <i
 									class="glyphicon glyphicon-list"></i> <span
 									translate="aside.nav.components.table.TABLE" >我的好友</span>
 							</a>
@@ -541,14 +541,14 @@
 									<li ui-sref-active="active"><a ui-sref="app.table.static" id="myfriends">
 											<span translate="aside.nav.components.table.TABLE_STATIC">好友列表</span>
 									</a></li>
-									<li ui-sref-active="active"><a
+									<!--  <li ui-sref-active="active"><a
 										ui-sref="app.table.datatable"> <span
 											translate="aside.nav.components.table.DATATABLE">新增好友</span>
-									</a></li>
-									<li ui-sref-active="active"><a
+									</a></li>-->
+									<!--<li ui-sref-active="active"><a
 										ui-sref="app.table.footable"> <span
 											translate="aside.nav.components.table.FOOTABLE">黑名单</span>
-									</a></li>
+									</a></li>-->
 									<!--                   <li ui-sref-active="active"> -->
 									<!--                     <a ui-sref="app.table.grid"> -->
 									<!--                       <span>ngGrid</span> -->
@@ -735,9 +735,9 @@
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">2000</span> <small>关注我的</small>
+												class="h3 block font-bold"><s:property value="beiguanzhu"/></span> <small>关注我的</small>
 											</a> <a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">250</span> <small>我关注的</small>
+												class="h3 block font-bold"><s:property value="guanzhushuliang"/></span> <small>我关注的</small>
 											</a>
 										</div>
 									</div>
@@ -770,9 +770,9 @@
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">2000</span> <small>关注我的</small>
+												class="h3 block font-bold"><s:property value="beiguanzhu"/></span> <small>关注我的</small>
 											</a> <a href class="m-b-md inline m"> <span
-												class="h3 block font-bold">250</span> <small>我关注的</small>
+												class="h3 block font-bold"><s:property value="guanzhushuliang"/></span> <small>我关注的</small>
 											</a>
 										</div>
 									</div>
@@ -781,7 +781,7 @@
 						</div>
 						<div class="wrapper bg-white b-b"  id="userDy">
 							<ul class="nav nav-pills nav-sm">
-								<li class="active"><a>我的动态</a></li>
+								<li class="active"><a>我的问卷</a></li>
 								<!--                   <li><a href>Profile</a></li> -->
 								<!--                   <li><a href>Messages</a></li> -->
 							</ul>
@@ -818,7 +818,7 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" name=<s:property value="#st.index"/>>查看排名</button> <button class="btn-danger" >删除</button> </span> <a ><s:property value="welcomename"/></a>添加了问卷<s:property />  问卷链接:<a href='<s:property value="linklist[#st.index]"/>'><s:property value="linklist[#st.index]"/></a>
+												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" name=<s:property value="#st.index"/>>查看排名</button> <button class="btn-danger" >删除</button> </span> 问卷名称：<s:property />  问卷链接:<a href='<s:property value="linklist[#st.index]"/>'><s:property value="linklist[#st.index]"/></a>
 												
 										</div>
 									</div>
@@ -933,7 +933,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a>用户一</a>
+												<a><s:property value="friends1"/></a>
 											</div>
 											<small class="text-muted">做面包的</small>
 										</div></li>
@@ -944,7 +944,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a>用户二</a>
+												<a><s:property value="friends2"/></a>
 											</div>
 											<small class="text-muted">写字的</small>
 										</div></li>
@@ -955,7 +955,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a>用户三</a>
+												<a><s:property value="friends3"/></a>
 											</div>
 											<small class="text-muted">画画的</small>
 										</div></li>
@@ -966,14 +966,14 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a>用户四</a>
+												<a><s:property value="friends4"/></a>
 											</div>
 											<small class="text-muted">弹吉他的</small>
 										</div></li>
 								</ul>
 							</div>
 							<div class="panel b-a">
-								<h4 class="font-thin padder">好友圈子排名</h4>
+								<h4 class="font-thin padder">问卷得分排名</h4>
 								<ul class="list-group" id="listGroup">
 								
 									
