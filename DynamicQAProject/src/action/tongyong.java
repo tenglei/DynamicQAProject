@@ -131,7 +131,7 @@ public class tongyong
 			stat.executeUpdate(sql3);
 			stat.close();
 			stat1.close();
-			conn.close();
+			//conn.close();
 		}
 		catch (SQLException e) 
 		{

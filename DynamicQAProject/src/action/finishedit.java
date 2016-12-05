@@ -47,7 +47,6 @@ public class finishedit
 	}
 	public void deletetable(Connection conn,String tablename)
 	{
-		
 		try{
 			Statement st = conn.createStatement();
 			String sql = "delete from "+tablename; 
@@ -230,7 +229,7 @@ public class finishedit
 			Statement stat = conn.createStatement();
 			stat.executeUpdate(sql);
 			stat.close();
-			conn.close();
+			
 		}
 		catch (SQLException e) 
 		{
@@ -278,7 +277,7 @@ public class finishedit
 			PreparedStatement ps2=conn2.prepareStatement(sql7);
 			ps2.setString(1,this.name);
 			ps2.executeUpdate();
-			conn2.close();
+			//conn2.close();
 		}
 		catch (SQLException e) 
 		{
@@ -296,7 +295,7 @@ public class finishedit
 			stat5.executeUpdate(sql6);
 			stat4.close();
 			stat5.close();
-			conn3.close();
+			//conn3.close();
 		}
 		catch (SQLException e) 
 		{
@@ -304,9 +303,9 @@ public class finishedit
 		}
 		//最后再生成“共有测试”，规则是每添加5份问卷，就生成一次。
 		///Connection conn4 = new initialize().getlink("project");
-		if(getNum(conn4,"paper") % 5==0)//如果此时问卷数量是5的倍数
+		if(getNum(conn4,"allpaper") % 5==0)//如果此时问卷数量是5的倍数
 		{
-			if(getNum(conn4,"allchoice")>10&&getNum(conn4,"allfill")>10&&getNum(conn4,"allqa")>10)//如果题目数量符合要求
+			if(getNum(conn4,"allchoice")>=10&&getNum(conn4,"allfill")>=10&&getNum(conn4,"allqa")>=5)//如果题目数量符合要求
 			{
 				Connection conn5 = new initialize().getlink("gongyou");
 				try{
@@ -477,4 +476,74 @@ public class finishedit
 		this.queskey = queskey;
 	}
 	
+	public static void main(String[] args)
+	{
+		 List<String> choiceques = new ArrayList<String>();
+		 List<String> ansA = new ArrayList<String>(); 
+		 List<String> ansB = new ArrayList<String>();
+		 List<String> ansC = new ArrayList<String>();
+		 List<String> ansD = new ArrayList<String>();
+		 List<String> choicescore = new ArrayList<String>();
+		  List<String> choiceans = new ArrayList<String>();
+		  List<String> fillques = new ArrayList<String>();
+		  List<String> fillscore = new ArrayList<String>();
+		  List<String> blanknum = new ArrayList<String>();
+		  List<String> fillans = new ArrayList<String>();
+		  List<String> ques = new ArrayList<String>();
+		  List<String> quesans = new ArrayList<String>();
+		  List<String> queskey = new ArrayList<String>();
+		  List<String> quesscore = new ArrayList<String>(); 
+		  choiceques.add("iiiii");
+		  choiceques.add("jjjjj");
+		  ansA.add("asa");
+		  ansA.add("ppap");
+		  ansB.add("bsb");
+		  ansB.add("bsb");
+		  ansC.add("bsb");
+		  ansC.add("bsb");
+		  ansD.add("bsb");
+		  ansD.add("bsb");
+		  choicescore.add("12");
+		  choicescore.add("6");
+		  choiceans.add("A");
+		  choiceans.add("B");
+		  fillques.add("asaas");
+		  fillques.add("adad");
+		  fillscore.add("13");
+		  fillscore.add("14");
+		  blanknum.add("2");
+		  blanknum.add("3");
+		  fillans.add("asa assa");
+		  fillans.add("asasa ad adsd");
+		  ques.add("asaasas");
+		  ques.add("cccc");
+		  quesans.add("asasas");
+		  quesans.add("asas");
+		  queskey.add("asas");
+		  queskey.add("sadasfsasa");
+		  quesscore.add("3");
+		  quesscore.add("4");
+		finishedit x= new finishedit();
+		x.setAuthorname("yaobingkun");
+		x.setEditname("yaobingkun6");
+		x.setWenjuanclass("college");
+		x.setWenjuanname("shit");
+		x.setAnsA(ansA);
+		x.setAnsB(ansB);
+		x.setAnsC(ansC);
+		x.setAnsD(ansD);
+		x.setBlanknum(blanknum);
+		x.setChoiceans(choiceans);
+		x.setChoiceques(choiceques);
+		x.setChoicescore(choicescore);
+		x.setFillans(fillans);
+		x.setFillques(fillques);
+		x.setFillscore(fillscore);
+		x.setQues(quesscore);
+		x.setQuesans(quesans);
+		x.setQueskey(queskey);
+		x.setQuesscore(quesscore);
+		x.back();
+		System.out.println("wancheng!");
+	}
 }

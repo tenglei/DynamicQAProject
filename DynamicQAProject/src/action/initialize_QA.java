@@ -1,13 +1,15 @@
 package action;//用于初始化一个问卷表
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
  
 public class initialize_QA 
 {
 	private String authorname;
 	private String authorid;
-	private String biaoqian;
+	//private String biaoqian;
 	private String basename;
 	private String password;//这里要设置密码，目的是返回
 	public String buildbase()
@@ -26,7 +28,7 @@ public class initialize_QA
 			while(rs3.next()!=false)
 			{
 				this.authorid = rs3.getString(4);
-				this.biaoqian = rs3.getString(5);
+				//this.biaoqian = rs3.getString(5);
 				this.password = rs3.getString(2);
 			}
 		}
@@ -55,7 +57,7 @@ public class initialize_QA
 			Connection conn2 = new initialize().getlink(this.authorname+String.valueOf(QAnum));
 			try{
 				Statement stat2 = conn2.createStatement();
-				stat2.executeUpdate("create table property(QAid varchar(30),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(200),papername varchar(30),state int");
+				stat2.executeUpdate("create table property(QAid varchar(30),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(200),papername varchar(30),state int)");
 				stat2.executeUpdate("create table choice(question varchar(255),Ach varchar(80),Bch varchar(80),Cch varchar(80),Dch varchar(80), answer varchar(1),score float)");
 				stat2.executeUpdate("create table fill(blanknum int,question varchar(255),answer varchar(80),score float)");
 				stat2.executeUpdate("create table QA(question varchar(255),answer varchar(255),keywords varchar(80),score float)");
@@ -65,14 +67,14 @@ public class initialize_QA
 				PreparedStatement ps=conn2.prepareStatement(sql4);
 				ps.setString(1,this.authorname+String.valueOf(QAnum));
 				ps.setString(2,this.authorid);
-				ps.setString(3, this.biaoqian);
+				ps.setString(3,"");
 				ps.setInt(4, 0);//总的分值暂定是0
 				ps.setInt(5, 0);
 				ps.setInt(6, 0);
 				ps.setInt(7, 0);
 				ps.setInt(8, 0);
 				ps.setString(9, "该部分尚未完成开发！");
-				ps.setString(10, " ");
+				ps.setString(10, "");
 				ps.setInt(11,1);//1代表问卷开放了
 				ps.executeUpdate();
 				stat2.close();
@@ -101,10 +103,10 @@ public class initialize_QA
 	{
 		this.authorid = authorid;
 	}
-	public void setbiaoqian(String biaoqian)
-	{
-		this.biaoqian = biaoqian;
-	}
+//	public void setbiaoqian(String biaoqian)
+//	{
+//		this.biaoqian = biaoqian;
+//	}
 	public String getBasename() {
 		return basename;
 	}
@@ -116,5 +118,11 @@ public class initialize_QA
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public static void main(String[] args)
+	{
+		initialize_QA c = new initialize_QA();
+		c.authorname = "yaobingkun";
+		c.buildbase();
 	}
 }

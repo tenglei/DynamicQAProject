@@ -215,6 +215,7 @@ public class login
 			return "loginfailed";//有信息没有输入，失败
 		}
 	}
+	/*
 	public static void main(String[] args)
 	{
 		
@@ -225,6 +226,7 @@ public class login
 		System.out.println(x.getGuanzhushuliang());
 		System.out.println(x.getBeiguanzhu());
 	}
+	*/
 	public String fuzhu()
 	{
 		return "back";
