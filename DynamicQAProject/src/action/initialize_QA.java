@@ -122,7 +122,7 @@ public class initialize_QA
 	public static void main(String[] args)
 	{
 		initialize_QA c = new initialize_QA();
-		c.authorname = "yaobingkun";
+		c.authorname = "xsz";
 		c.buildbase();
 	}
 }

@@ -4,11 +4,12 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class login 
+public class seefriends 
 {
 	private String logininfor;
 	private String loginpassword;
-	private String welcomename;
+	private String hisname;
+	
 	private List<String> myquestion = new ArrayList<String>();
 	private List<String> linklist = new ArrayList<String>();
 	private String friends1;
@@ -42,59 +43,13 @@ public class login
 	}
 	public String login_user() 
 	{
-		String truepassword = "";
-		if(this.getLogininfor().length()!=0 && this.getLoginpassword().length()!=0)//全部非空，开始判断
-		{
-			Connection a1 = new initialize().getlink("project");//调用函数进行初始化
-			boolean isfound = false;
-			String sql1 = "select * from user where Name=\""+this.getLogininfor()+"\"";//先按照姓名搜索
-			try
-			{
-				Statement stmt1 = a1.createStatement();
-				ResultSet rs1 = stmt1.executeQuery(sql1);
-				while(rs1.next()!=false)
-				{
-					isfound = true;//找到了
-					truepassword = rs1.getString(2);
-					//System.out.println(truepassword);
-					break;
-				}
-			}
-			catch (SQLException e1)
-			{
-				e1.printStackTrace();
-			}
-			if(isfound == false)//尚未找到,再按照邮箱找一遍
-			{
-				String sql2 = "select * from user where Email=\""+this.getLogininfor()+"\"";
-				try
-				{
-					Statement stmt2 = a1.createStatement();
-					ResultSet rs2 = stmt2.executeQuery(sql2);
-					while(rs2.next()!=false)
-					{
-						isfound = true;//找到了
-						truepassword = rs2.getString(2);
-						break;
-					}
-				}
-				catch (SQLException e1)
-				{
-					e1.printStackTrace();
-				}
-			}
-			if(isfound == false)//如果没找到
-			{
-				return "loginfailed";//没有找到，失败
-			}
-			else if(this.getLoginpassword().equals(truepassword)==true)//
-			{				
-				this.welcomename = this.getLogininfor();
+				
+				
 				//下面生成用户编辑成的问卷列表
 				String x="";
 				Connection conn2 = new initialize().getlink("project");
 				try{
-					String sql = "select * from user where Name="+"\""+this.welcomename+"\"";
+					String sql = "select * from user where Name="+"\""+this.hisname+"\"";
 					Statement stmt2 = conn2.createStatement();
 					ResultSet rs2 = stmt2.executeQuery(sql);
 					
@@ -125,7 +80,7 @@ public class login
 				//下面生成朋友的列表
 				String y = "";
 				try{
-					String sql = "select * from user where Name="+"\""+this.welcomename+"\"";
+					String sql = "select * from user where Name="+"\""+this.hisname+"\"";
 					Statement stmt2 = conn2.createStatement();
 					ResultSet rs2 = stmt2.executeQuery(sql);
 					while(rs2.next()!=false)
@@ -190,72 +145,57 @@ public class login
 						e.printStackTrace();
 					}
 				}
-//				for(int y1 =0;y1<this.suoyoupaiming.size();y1++)
-//				{
-//					for(int h=0;h<this.suoyoupaiming.get(y1).size();h++)
-//					{
-//						System.out.println(this.suoyoupaiming.get(y1).get(h));
-//					}
-//				}
+
 				
 				
 				
 				
 				
-				
+
 				return "loginsuccess";//匹配，成功
-			}
-			else
-			{
-				return "loginfailed";//用户名密码不匹配，失败
-			}
-		}
-		else
-		{
-			return "loginfailed";//有信息没有输入，失败
-		}
 	}
-	/*
+
 	public static void main(String[] args)
 	{
 		
-		login x = new login();
-		x.logininfor = "yaobingkun";
-		x.loginpassword = "qweasd";
+		seefriends x = new seefriends();
+		x.setlogininfor("yaobingkun");
+		x.setloginpassword("qweasd");
+		x.setHisname("xsz");
 		x.login_user();
 		System.out.println(x.getGuanzhushuliang());
 		System.out.println(x.getBeiguanzhu());
 	}
-	*/
+	
 	public String fuzhu()
 	{
 		return "back";
 	}
 	public void setlogininfor(String logininfor)
 	{
-		this.setLogininfor(logininfor);
+		this.logininfor = logininfor;
 	}
 	
 	public void setloginpassword(String loginpassword)
 	{
-		this.setLoginpassword(loginpassword);
+		this.loginpassword = loginpassword;
 	}
 	
 	public String getloginfor()
 	{
-		return this.getLogininfor();
+		return this.logininfor;
 	}
 	
 	public String getloginpassword()
 	{
-		return this.getLoginpassword();
+		return this.loginpassword;
 	}
-	public String getWelcomename() {
-		return welcomename;
-	}
-	public void setWelcomename(String welcomename) {
-		this.welcomename = welcomename;
-	}
+//	public String getWelcomename() {
+//		return welcomename;
+//	}
+//	public void setWelcomename(String welcomename) {
+//		this.welcomename = welcomename;
+//	}
 	public List<String> getMyquestion() {
 		return myquestion;
 	}
@@ -279,6 +219,12 @@ public class login
 	}
 	public void setFriends2(String friends2) {
 		this.friends2 = friends2;
+	}
+	public String getHisname() {
+		return hisname;
+	}
+	public void setHisname(String hisname) {
+		this.hisname = hisname;
 	}
 	public String getFriends3() {
 		return friends3;
@@ -315,17 +261,5 @@ public class login
 	}
 	public void setSuoyoupaiming(List<List<String>> suoyoupaiming) {
 		this.suoyoupaiming = suoyoupaiming;
-	}
-	public String getLogininfor() {
-		return logininfor;
-	}
-	public void setLogininfor(String logininfor) {
-		this.logininfor = logininfor;
-	}
-	public String getLoginpassword() {
-		return loginpassword;
-	}
-	public void setLoginpassword(String loginpassword) {
-		this.loginpassword = loginpassword;
 	}
 }

@@ -60,5 +60,13 @@
 		<action name="ranking" class = "action.checkans" method = "checkanswer">
 			<result name="checkover">/ranking.jsp</result>
 		</action>
+		
+		<action name="goindex" class = "action.goindex" method = "getinfor">
+			<result name="successget">/index.jsp</result>
+		</action>
+		
+		<action name="seefriends" class = "action.seefriends" method = "login_user">
+			<result name="loginsuccess">/qitayonghu.jsp</result>
+		</action>
 	</package>
 </struts>

@@ -260,10 +260,11 @@ public class finishedit
 			e.printStackTrace();
 		}
 		/*下面把新的问卷号码加入总的问卷表中*/
-		String sql4="insert into allpaper(paper) values(?)";
+		String sql4="insert into allpaper(paper,num) values(?,?)";
 		try{
 			PreparedStatement ps=conn2.prepareStatement(sql4);
 			ps.setString(1,this.name);
+			ps.setInt(2, 0);
 			ps.executeUpdate();
 			//conn2.close();
 		}
@@ -272,10 +273,11 @@ public class finishedit
 			e.printStackTrace();
 		}
 		//插入到分过类的的问卷表中
-		String sql7="insert into "+this.wenjuanclass+"(paper) values(?)";
+		String sql7="insert into "+this.wenjuanclass+"(paper,num) values(?,?)";
 		try{
 			PreparedStatement ps2=conn2.prepareStatement(sql7);
 			ps2.setString(1,this.name);
+			ps2.setInt(2, 0);
 			ps2.executeUpdate();
 			//conn2.close();
 		}
@@ -524,10 +526,10 @@ public class finishedit
 		  quesscore.add("3");
 		  quesscore.add("4");
 		finishedit x= new finishedit();
-		x.setAuthorname("yaobingkun");
-		x.setEditname("yaobingkun6");
-		x.setWenjuanclass("college");
-		x.setWenjuanname("shit");
+		x.setAuthorname("xsz");
+		x.setEditname("xsz8");
+		x.setWenjuanclass("life");
+		x.setWenjuanname("shit8");
 		x.setAnsA(ansA);
 		x.setAnsB(ansB);
 		x.setAnsC(ansC);
@@ -546,4 +548,5 @@ public class finishedit
 		x.back();
 		System.out.println("wancheng!");
 	}
+	
 }

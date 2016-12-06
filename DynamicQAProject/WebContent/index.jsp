@@ -38,12 +38,9 @@
 
 						<div class="collapse navbar-collapse" id="main-menu">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#top">主页</a></li>
-								<li><a href="#questionrepertory">浏览问库</a></li>
-								<li><a href="chakanwenjuan.action?zuozhemingzi=<s:property value="welcomename"/>" >我的问库</a></li>
+								<li class="active"><a href="#top">信息主页</a></li>
 								<li><a href="#personalcenter">个人中心</a></li>	
 								<li><a>您好，<s:property value="welcomename"/></a></li>
-								<li><a href="addnewqa.action?authorname=<s:property value="welcomename"/>" >新增问卷</a></li>
 								
 								<li><a><input type="text" placeholder="搜索问卷"/><input type="button" class="btn-success" value="搜索"></a></li> 
 								
@@ -82,9 +79,9 @@
 									<div class="carousel-caption">
 										<span class="lead slide-cat inv"
 											data-animation="animated zoomIn"><a href="#"
-											rel="category">问卷主题一</a></span>
+											rel="category">问者主题一</a></span>
 										<h2 class="slide-title inv" data-animation="animated fadeInUp"
-											data-duration="2s" data-delay="1s">大学生活</h2>
+											data-duration="2s" data-delay="1s">大学</h2>
 										<div class="slide-excerpt inv"
 											data-animation="animated fadeInUp" data-duration="3s"
 											data-delay="2s">
@@ -108,7 +105,7 @@
 											<button class="btn btn-primary inv slide-btn btn-lg"
 												data-animation="animated fadeInUp" data-delay="3s"
 												data-duration="2s">
-												点击开始 <i class="tn-arrow-right"></i>
+												点击查看最火问卷<i class="tn-arrow-right"></i>
 											</button>
 										</div>
 
@@ -123,25 +120,25 @@
 									<div class="carousel-caption">
 										<span class="lead slide-cat inv"
 											data-animation="animated zoomIn"><a href="#"
-											rel="category">问卷主题二</a></span>
+											rel="category">问者主题二</a></span>
 										<h2 class="slide-title inv" data-animation="animated fadeInUp"
-											data-duration="2s" data-delay="1s">技术</h2>
+											data-duration="2s" data-delay="1s">情感</h2>
 										<div class="slide-excerpt inv"
 											data-animation="animated fadeInUp" data-duration="3s"
 											data-delay="2s">
 											<ul class="row">
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2s'>电子科技</li>
+													data-delay='2s'>爱情</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.1s'>计算机</li>
+													data-delay='2.1s'>友情</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.2s'>商务</li>
+													data-delay='2.2s'>亲情</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.3s'>经济</li>
+													data-delay='2.3s'>感动</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.4s'>交通</li>
+													data-delay='2.4s'>日常</li>
 												<li class="col-lg-6" data-animation='animated fadeInLeft'
-													data-delay='2.5s'>产业</li>
+													data-delay='2.5s'>生活</li>
 
 											</ul>
 										</div>
@@ -149,7 +146,7 @@
 											<button class="btn btn-info inv slide-btn btn-lg"
 												data-animation="animated lightSpeedIn" data-delay="3s"
 												data-duration="2s">
-												点击开始<i class="tn-arrow-right"></i>
+												点击查看最火问卷<i class="tn-arrow-right"></i>
 											</button>
 										</div>
 
@@ -164,25 +161,25 @@
 									<div class="carousel-caption">
 										<span class="lead slide-cat inv"
 											data-animation="animated zoomIn"><a href="#"
-											rel="category">问卷主题三</a></span>
+											rel="category">问者主题三</a></span>
 										<h2 class="slide-title inv" data-animation="animated fadeInUp"
-											data-duration="2s" data-delay="1s">星座</h2>
+											data-duration="2s" data-delay="1s">生活</h2>
 										<div class="slide-excerpt inv"
 											data-animation="animated fadeInUp" data-duration="3s"
 											data-delay="2s">
 											<ul class="row">
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2s'>星座与生活</li>
+													data-delay='2s'>学习</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.1s'>哲学</li>
+													data-delay='2.1s'>工作</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.2s'>星座和爱情</li>
+													data-delay='2.2s'>家庭</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.3s'>玄学</li>
+													data-delay='2.3s'>学校</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.4s'>中医学</li>
+													data-delay='2.4s'>朋友</li>
 												<li class="col-lg-6" data-animation='animated zoomIn'
-													data-delay='2.5s'>神话故事</li>
+													data-delay='2.5s'>事业</li>
 
 											</ul>
 										</div>
@@ -190,7 +187,7 @@
 											<button class="btn btn-danger inv slide-btn btn-lg"
 												data-animation="animated fadeInUp" data-delay="3s"
 												data-duration="2s">
-												点击开始 <i class="tn-arrow-right"></i>
+												点击查看最火问卷 <i class="tn-arrow-right"></i>
 											</button>
 										</div>
 
@@ -207,6 +204,7 @@
 		</div>
 
 	</section>
+	<!--  
 	<section class="featured-content-area" id="featured-content-area">
 		<div class="container">
 			<div class="row">
@@ -267,6 +265,7 @@
 			</div>
 		</div>
 	</section>
+	-->
 	<section class="why-us" id="why-us">
 
 		<div class="container">
@@ -282,8 +281,8 @@
 						<div class="featured-content-box text-center">
 							<i class="tn-heart ico-lg text-warning"></i>
 
-							<h3>问卷一</h3>
-							<p>问卷一介绍</p>
+							<h3><s:property value="wenjuan1"/></h3>
+							
 							<button class="btn btn-warning">查看更多</button>
 						</div>
 					</div>
@@ -291,8 +290,8 @@
 						<div class="featured-content-box text-center">
 							<i class="tn-server ico-lg text-info"></i>
 
-							<h3>问卷二</h3>
-							<p>问卷二介绍</p>
+							<h3><s:property value="wenjuan2"/></h3>
+							
 							<button class="btn btn-info">查看更多</button>
 						</div>
 					</div>
@@ -300,8 +299,8 @@
 						<div class="featured-content-box text-center">
 							<i class="tn-anchor ico-lg text-success"></i>
 
-							<h3>问卷三</h3>
-							<p>问卷三介绍</p>
+							<h3><s:property value="wenjuan3"/></h3>
+							
 							<button class="btn btn-primary">查看更多</button>
 						</div>
 					</div>
@@ -309,8 +308,8 @@
 						<div class="featured-content-box text-center">
 							<i class="tn-agenda ico-lg text-danger"></i>
 
-							<h3>问卷四</h3>
-							<p>问卷四介绍</p>
+							<h3><s:property value="wenjuan4"/></h3>
+							
 							<button class="btn btn-danger">查看更多</button>
 						</div>
 					</div>
@@ -318,8 +317,8 @@
 						<div class="featured-content-box text-center">
 							<i class="tn-headphone ico-lg text-warning"></i>
 
-							<h3>问卷五</h3>
-							<p>问卷五介绍</p>
+							<h3><s:property value="wenjuan5"/></h3>
+							
 							<button class="btn btn-warning">查看更多</button>
 						</div>
 					</div>
@@ -327,8 +326,8 @@
 						<div class="featured-content-box text-center">
 							<i class="tn-dashboard ico-lg text-info"></i>
 
-							<h3>问卷六</h3>
-							<p>问卷六介绍</p>
+							<h3><s:property value="wenjuan5"/></h3>
+							
 							<button class="btn btn-info">查看更多</button>
 						</div>
 					</div>
@@ -364,7 +363,7 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href="">用户一</a>
+								<a href=""><s:property value="newf1"/></a>
 							</h4>
 							<small>用户一介绍</small>
 						</div>
@@ -403,7 +402,7 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href="">用户二</a>
+								<a href=""><s:property value="newf2"/></a>
 							</h4>
 							<small>用户二介绍</small>
 						</div>
@@ -442,7 +441,7 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href="">用户三</a>
+								<a href=""><s:property value="newf3"/></a>
 							</h4>
 							<small>用户三介绍</small>
 						</div>
@@ -481,7 +480,7 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href="">用户四</a>
+								<a href=""><s:property value="newf4"/></a>
 							</h4>
 							<small>用户四介绍</small>
 						</div>
@@ -520,7 +519,7 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href="">用户五</a>
+								<a href=""><s:property value="newf5"/></a>
 							</h4>
 							<small>用户五介绍</small>
 						</div>
@@ -559,7 +558,7 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href="">用户六</a>
+								<a href=""><s:property value="newf6"/></a>
 							</h4>
 							<small>用户六介绍</small>
 						</div>
@@ -590,7 +589,7 @@
 		</div>
 	</section>
 
-
+	<!--  
 	<section class="client-reviews" id="client-reviews">
 		<div class="container">
 			<div class="row">
@@ -646,7 +645,7 @@
 			</div>
 		</div>
 	</section>
-
+-->
 	<section class="getspeach" id="getspeach">
 		<div class="container">
 			<div class="row">
@@ -692,7 +691,7 @@
 						</div>
 
 						<h3>联系我们</h3>
-						<p>xxx xxxx xxxx</p>
+						<p>18946036722</p>
 
 					</div>
 
@@ -702,7 +701,7 @@
 						</div>
 
 						<h3>邮箱</h3>
-						<p>xxx@qq.com</p>
+						<p>yaobingkun2008@126.com</p>
 
 					</div>
 

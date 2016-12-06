@@ -250,7 +250,7 @@
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i
 								class="on md b-white bottom"></i>
-						</span> <span class="hidden-sm hidden-md"><s:property value="welcomename"/></span> <b class="caret"></b>
+						</span> <span class="hidden-sm hidden-md"><s:property value="loginfor"/></span> <b class="caret"></b>
 					</a> <!-- dropdown -->
 						<ul class="dropdown-menu animated fadeInRight w">
 							<!--               <li class="wrapper b-b m-b-sm bg-light m-t-n-xs"> -->
@@ -299,13 +299,13 @@
 							</a> <a href="#" data-toggle="dropdown"
 								class="dropdown-toggle hidden-folded"> <span class="clear">
 									<span class="block m-t-sm"> <strong
-										class="font-bold text-lt"><s:property value="welcomename"/></strong> <!-- 用户名字 --> <b
+										class="font-bold text-lt"><s:property value="hisname"/></strong> <!-- 用户名字 --> <b
 										class="caret"></b>
 								</span> <span class="text-muted text-xs block">送人头专家</span>
 							</span>
 							</a>
 							<!-- dropdown -->
-							<ul class="dropdown-menu animated fadeInRight w hidden-folded">
+							<!--  <ul class="dropdown-menu animated fadeInRight w hidden-folded">
 								<li class="wrapper b-b m-b-sm bg-info m-t-n-xs"><span
 									class="arrow top hidden-folded arrow-info"></span>
 									<div>
@@ -327,6 +327,8 @@
 								<li class="divider"></li>
 								<li><a ui-sref="access.signin">注销</a></li>
 							</ul>
+							-->
+							
 							<!-- / dropdown -->
 						</div>
 						<div class="line dk hidden-folded"></div>
@@ -463,15 +465,12 @@
 									<li class="nav-sub-header"><a href> <span
 											translate="aside.nav.components.ui_kits.UI_KITS">做点什么</span>
 									</a></li>
-									<li ui-sref-active="active"><a ui-sref="app.ui.buttons">
-											<span translate="aside.nav.components.ui_kits.BUTTONS">新建问卷</span>
-									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.buttons" id="myques">
-											<span translate="aside.nav.components.ui_kits.BUTTONS">我的问卷</span>
+											<span translate="aside.nav.components.ui_kits.BUTTONS">他的问卷</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.icons">
 											<!--  <b class="badge bg-info pull-right">3</b> --><span
-											translate="aside.nav.components.ui_kits.ICONS" onclick="goindex.action?welcomename=<s:property value="welcomename"/>&password=<s:property value="loginpassword"/>">随便看看</span>
+											translate="aside.nav.components.ui_kits.ICONS" onclick="goindex.action?welcomename=<s:property value="loginfor"/>&password=<s:property value="loginpassword"/>">随便看看</span>
 									</a></li>
 									<!--                   <li ui-sref-active="active"> -->
 									<!--                     <a ui-sref="app.ui.grid"> -->
@@ -532,7 +531,7 @@
 										class="fa fa-fw fa-angle-down text-active"></i>
 								</span>  <!-- 提示个数信息 --> <i
 									class="glyphicon glyphicon-list"></i> <span
-									translate="aside.nav.components.table.TABLE" >我的好友</span>
+									translate="aside.nav.components.table.TABLE" >他的好友</span>
 							</a>
 								<ul class="nav nav-sub dk">
 									<li class="nav-sub-header"><a href> <span
@@ -735,9 +734,9 @@
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold"><s:property value="beiguanzhu"/></span> <small>关注我的</small>
+												class="h3 block font-bold"><s:property value="beiguanzhu"/></span> <small>关注他的</small>
 											</a> <a href class="m-b-md inline m"> <span
-												class="h3 block font-bold"><s:property value="guanzhushuliang"/></span> <small>我关注的</small>
+												class="h3 block font-bold"><s:property value="guanzhushuliang"/></span> <small>他关注的</small>
 											</a>
 										</div>
 									</div>
@@ -770,7 +769,7 @@
 									<div class="col-sm-5">
 										<div class="pull-right pull-none-xs text-center">
 											<a href class="m-b-md inline m"> <span
-												class="h3 block font-bold"><s:property value="beiguanzhu"/></span> <small>关注我的</small>
+												class="h3 block font-bold"><s:property value="beiguanzhu"/></span> <small>关注他的</small>
 											</a> <a href class="m-b-md inline m"> <span
 												class="h3 block font-bold"><s:property value="guanzhushuliang"/></span> <small>我关注的</small>
 											</a>
@@ -781,7 +780,7 @@
 						</div>
 						<div class="wrapper bg-white b-b"  id="userDy">
 							<ul class="nav nav-pills nav-sm">
-								<li class="active"><a>我的问卷</a></li>
+								<li class="active"><a>他的问卷</a></li>
 								<!--                   <li><a href>Profile</a></li> -->
 								<!--                   <li><a href>Messages</a></li> -->
 							</ul>
@@ -818,7 +817,7 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" name=<s:property value="#st.index"/>>查看排名</button> <button class="btn-danger" >删除</button> </span> 问卷名称：<s:property />  问卷链接:<a href='<s:property value="linklist[#st.index]"/>'><s:property value="linklist[#st.index]"/></a>
+												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" name=<s:property value="#st.index"/>>查看排名</button>  </span> 问卷名称：<s:property />  问卷链接:<a href='<s:property value="linklist[#st.index]"/>'><s:property value="linklist[#st.index]"/></a>
 												
 										</div>
 									</div>
@@ -933,7 +932,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends1"/>"><s:property value="friends1"/></a>
+												<a><s:property value="friends1"/></a>
 											</div>
 											<small class="text-muted">做面包的</small>
 										</div></li>
@@ -944,7 +943,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends2"/>"><s:property value="friends2"/></a>
+												<a><s:property value="friends2"/></a>
 											</div>
 											<small class="text-muted">写字的</small>
 										</div></li>
@@ -955,7 +954,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends3"/>"><s:property value="friends3"/></a>
+												<a><s:property value="friends3"/></a>
 											</div>
 											<small class="text-muted">画画的</small>
 										</div></li>
@@ -966,7 +965,7 @@
 									</a>
 										<div class="clear">
 											<div>
-												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends4"/>"><s:property value="friends4"/></a>
+												<a><s:property value="friends4"/></a>
 											</div>
 											<small class="text-muted">弹吉他的</small>
 										</div></li>
