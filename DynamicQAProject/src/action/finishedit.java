@@ -6,6 +6,7 @@ import java.util.List;
 
 public class finishedit 
 {
+	private List<String>listTmp= new ArrayList<String>();
 	private String welcomename;
 	private String authorname;
 	private String name;//系统生成的问卷号
@@ -45,6 +46,15 @@ public class finishedit
 		
 		return num;
 	}
+	
+	public void see(List<String> list)
+	{
+		for(int x=0;x<list.size();x++)
+		{
+			System.out.println(list.get(x));
+		}
+	}
+	
 	public void deletetable(Connection conn,String tablename)
 	{
 		try{
@@ -66,6 +76,17 @@ public class finishedit
     	catch (SQLException e) 
 		{
 			e.printStackTrace();
+		}
+	}
+	
+	public void chuli(List<String> list)
+	{
+		String a = list.get(0);
+		String[] b = a.split(",");
+		list.clear();
+		for(int x=0;x<b.length;x++)
+		{
+			list.add(b[x]);
 		}
 	}
 	public void inserttixing(int min,int max,int n,Connection conn,String insertablename,String oritablename)//插入某种题型
@@ -94,6 +115,23 @@ public class finishedit
 	
 	public String back()//回到登录界面，并且生成问卷号码,把新生成的问卷号加入到用户属性中,把新生成的问卷号加入到问卷总列表和各个类型的分列表中，设置问卷的类别（大学、生活、情感）
 	{
+		chuli(this.ansA);
+		chuli(this.ansB);
+		chuli(this.ansC);
+		chuli(this.ansD);
+		chuli(this.blanknum);
+		
+		chuli(this.choiceans);
+		chuli(this.choiceques);
+		chuli(this.choicescore);
+		chuli(this.fillans);
+		chuli(this.fillques);
+		
+		chuli(this.fillscore);
+		chuli(this.ques);
+		chuli(this.quesans);
+		chuli(this.queskey);
+		chuli(this.quesscore);
 		this.welcomename = this.authorname;//用于回去的
 		this.name = this.editname;//问卷号
 		//先把问卷放到数据库中。
@@ -341,9 +379,27 @@ public class finishedit
 			}
 		}
 		
-		
-		
-		
+		//下面出现所有的东西
+		System.out.println("safvdsfgdrt:");
+		System.out.println(this.authorname);
+		System.out.println(this.editname);
+		System.out.println(this.wenjuanclass);
+		System.out.println(this.wenjuanname);
+		see(this.ansA);
+		see(this.ansB);
+		see(this.ansC);
+		see(this.ansD);
+		see(this.blanknum);
+		see(this.choiceans);
+		see(this.choiceques);
+		see(this.choicescore);
+		see(this.fillans);
+		see(this.fillques);
+		see(this.fillscore);
+		see(this.ques);
+		see(this.quesans);
+		see(this.queskey);
+		see(this.quesscore);
 		
 		
 		
@@ -547,6 +603,12 @@ public class finishedit
 		x.setQuesscore(quesscore);
 		x.back();
 		System.out.println("wancheng!");
+	}
+	public List<String> getListTmp() {
+		return listTmp;
+	}
+	public void setListTmp(List<String> listTmp) {
+		this.listTmp = listTmp;
 	}
 	
 }

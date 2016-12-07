@@ -17,7 +17,7 @@
 		</action>
 		
 		<action name="addnewqa" class = "action.initialize_QA" method = "buildbase">
-			<result name="successbuild">/edit.jsp</result>
+			<result name="successbuild">/editnew.jsp</result>
 		</action>
 		
 		<action name="editcancel" class = "action.delete_base" method = "delete">
@@ -37,7 +37,7 @@
 		</action>
 		
 		<action name="finishedit" class = "action.finishedit" method = "back">
-			<result name="successback">/index.jsp</result>
+			<result name="successback">/test.jsp</result>
 		</action>
 		
 		<action name="huida" class = "action.showtest" method = "maketest">
@@ -68,5 +68,8 @@
 		<action name="seefriends" class = "action.seefriends" method = "login_user">
 			<result name="loginsuccess">/qitayonghu.jsp</result>
 		</action>
+		
+		
+		
 	</package>
 </struts>

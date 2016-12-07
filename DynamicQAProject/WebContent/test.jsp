@@ -463,8 +463,8 @@
 									<li class="nav-sub-header"><a href> <span
 											translate="aside.nav.components.ui_kits.UI_KITS">做点什么</span>
 									</a></li>
-									<li ui-sref-active="active"><a ui-sref="app.ui.buttons">
-											<span translate="aside.nav.components.ui_kits.BUTTONS">新建问卷</span>
+									<li ui-sref-active="active"><a ui-sref="app.ui.buttons" id="newQA">
+											<span translate="aside.nav.components.ui_kits.BUTTONS" >新建问卷</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.buttons" id="myques">
 											<span translate="aside.nav.components.ui_kits.BUTTONS">我的问卷</span>
@@ -757,7 +757,7 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black"><s:property value="welcomename"/></span> <small class="m-l">送人头专家</small>
+												<span class="h3 text-black" id="welcomename" ><s:property value="welcomename"/></span> <small class="m-l">送人头专家</small>
 											</div>
 											<!--                         <p class="m-b"> -->
 											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->

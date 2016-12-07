@@ -5,6 +5,24 @@ $(document).ready(function() {
 	var friendsNum = document.getElementById("friendsNum");
 	var questionsNum = document.getElementById("questionsNum");
 	var addNum=0;
+	
+	var newQA = document.createElement("form");
+	document.body.appendChild(newQA);
+	newQA.action="addnewqa.action";
+	newQA.method="post";
+	
+	$("#newQA").on("click", function() {
+	var welcomename = $("#welcomename").text();
+	//alert(welcomename);
+	
+	var tmp = document.createElement("input");
+	tmp.setAttribute("name", "authorname");
+	tmp.setAttribute("type", "hidden");
+	tmp.setAttribute("value", welcomename); //有可能只是一个内存地址，解决办法，拼接字符串即可，待定
+	newQA.appendChild(tmp);
+	newQA.submit();
+	});
+	
 	for (var i = 0; i < friendsNum.value; i++) {
 		var friend = "friend";
 		var block = "block";
@@ -117,7 +135,6 @@ $(document).ready(function() {
 //		"<small class='block text-muted'><iclass='fa fa-fw fa-clock-o'></i> 两分钟前</small></li>";
 //	 listGroup.innerHTML=li;	
 	var orderTmp=$("#orderList").val();
-	alert(orderTmp);
 	orderTmp=orderTmp.substring(1,orderTmp.length-1);
 	var orderList = new Array();
 	var n=0;

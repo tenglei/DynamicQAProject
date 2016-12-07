@@ -22,7 +22,7 @@ html {
 }
 
 body {
-	background: url(../img/strip-bg.jpg);
+	background: url(../images/home.jpg);
 	color: rgba(255, 255, 255, 0.95);
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	padding-left: 60px;
@@ -63,7 +63,7 @@ p:last-child {
 }
 
 .navbar-container {
-	background-color: #cc9900;
+	background-color: #40ff9f;/*  ±³¾°*/
 	font-size: 1em;
 	position: absolute;
 	display: -webkit-flex;
@@ -86,7 +86,7 @@ p:last-child {
 }
 
 .navbar-container.sticky {
-	background-color: rgba(204, 153, 0, 0.9);
+	/*background-color: rgba(204, 153, 0, 0.9);*/
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -130,7 +130,7 @@ p:last-child {
 }
 
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-	background-color: #9a6600;
+	background-color: #75ff75;  /*µã»÷Ìõ*/
 	color: white;
 	text-decoration: none;
 }
@@ -500,7 +500,7 @@ p:last-child {
 		position: absolute;
 		right: 0;
 		top: 77px;
-		background-color: #cc9900;
+		background-color: #bdffbd;  
 		text-align: right;
 		width: 20em;
 	}
