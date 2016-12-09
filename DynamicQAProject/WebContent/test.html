@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="UserHome/css/app.css" type="text/css" />
 </head>
 <body>
+	<input type="hidden" id="orderList" value="[[aa,bb,cc],[dd,ee,ff]]">
 	<input type="hidden" id="friendsNum" value="4">
 	<input type="hidden" id="questionsNum" value="4">
 	<div class="app app-header-fixed" id="app">
@@ -271,7 +272,7 @@
 							<!--                 </a> -->
 							<!--               </li> -->
 							<li class="divider"></li>
-							<li><a ui-sref="access.signin">注销</a></li>
+							<li><a ui-sref="access.signin" id="logout1">注销</a></li>
 						</ul> <!-- / dropdown --></li>
 				</ul>
 				<!-- / navbar right -->
@@ -1071,10 +1072,7 @@
 							<div class="panel b-a">
 								<h4 class="font-thin padder">好友圈子排名</h4>
 								<ul class="list-group" id="listGroup">
-									<li class="list-group-item">
-										<p id=numberFirst></p> <small class="block text-muted"><i
-											class="fa fa-fw fa-clock-o"></i> 两分钟前</small>
-									</li>
+									
 
 								</ul>
 							</div>

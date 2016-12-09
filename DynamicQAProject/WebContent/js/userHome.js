@@ -116,13 +116,63 @@ $(document).ready(function() {
 //		"</p> " +
 //		"<small class='block text-muted'><iclass='fa fa-fw fa-clock-o'></i> 两分钟前</small></li>";
 //	 listGroup.innerHTML=li;	
-
-	
-	$(".btn-danger").on("click", function() {
-		$(this).parent().parent().parent().parent().remove();
+	var orderTmp=$("#orderList").val();
+	orderTmp=orderTmp.substring(1,orderTmp.length-1);
+	var orderList = new Array();
+	var n=0;
+	for(i=0;i<orderTmp.length;i++){		
+		if(orderTmp[i]=='['){
+			i++;
+			orderList[i]=new Array();
+			var tmp="";
+			while(orderTmp[i]!=']'){
+				tmp = tmp+orderTmp[i];
+				i++;
+			}
+			orderList[n]=tmp;
+			n++;			
+		}
+	}
+	var tmp = new Array();
+	for(i=0;i<n;i++){
+		tmp[i] = new Array();
+		tmp[i] = orderList[i].split(',');
+	}
+	$(".btn-success").on("click", function() {
+		var li = "";
+		var name=$(this).attr("name");
+		$("#listGroup").children().remove();
+		for(i=0;i<tmp[name].length;i++){
+			i++;
+			li=li+"<li class='list-group-item' id='order'" + i+
+					"><p>" +"第" +
+			i + "名:  "+
+			tmp[name][i-1] +                 //该访问方式可能出错 
+			"</p> " +
+			"<small class='block text-muted'><i class='fa fa-fw fa-clock-o'></i> 两分钟前</small></li>";
+			i--;
+		}
+		$("#listGroup").append(li);
 	});
 	
 	
 	
-
+	var i = document.createElement("input");
+	i.type="hidden";
+	var delList = new Array();
+	$(".btn-danger").on("click", function() {
+		var delId = $(this).parent().parent().parent().parent().attr("id");
+		delId  = delId.substring(delId.length-1,delId.length);
+		delList.push(delId);
+		alert(delList);
+		$(this).parent().parent().parent().parent().remove();	
+		i.value = delList;
+	});
+	
+	var f = document.createElement("form");
+	document.body.appendChild(f);
+	$("#logout1").on("click", function() {
+		f.appdenChild(i);
+		f.submit();
+	});
 });

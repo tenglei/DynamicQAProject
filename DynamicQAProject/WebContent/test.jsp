@@ -18,11 +18,6 @@
 <script src="js/wow.min.js"></script>
 <script src="js/site.js"></script>
 <body>
-
-
-
-
-
 	<div class="row navbar-row">
 		<div
 			class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 navbar-container">
@@ -50,7 +45,7 @@
 				data-toggle="collapse" data-target="#tmNavbar">&#9776;</button>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" style="position:relative;bottom:-14px;">
 	<input type="hidden" id="seleth"
 						name="" /> <input
 						type="hidden" id="fillth"
@@ -75,7 +70,7 @@
 							<div class="col-md-12">
 								<div class="form-group">
 									<textarea name="choiceques" class="form-control "
-										style="height: 75px" readonly="true">sdfsadf</textarea>
+										style="height: 70px" readonly="true">sdfsadf</textarea>
 									<p>分</p>
 								</div>
 							</div>

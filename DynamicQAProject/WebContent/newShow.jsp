@@ -1,6 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <meta charset="UTF-8">
 <title>编辑问题</title>
 <link rel="stylesheet" type="text/css" href="css/dist/css/bootstrap.css" />
@@ -10,7 +13,20 @@
 <link href="css/animate.css" rel="stylesheet">
 </head>
 <body id="featured-slider-container-edit" > 
-
+<input type="hidden" id="wenjuanname" value=""/>
+<input type="hidden" id="choiceques" value="qq,aa"/>
+<input type="hidden" id="ansA" value="qq,qq"/>
+<input type="hidden" id="ansB" value="qq,qq"/>
+<input type="hidden" id="ansC" value="qq,qq"/>
+<input type="hidden" id="ansD" value="qq,qq"/>
+<input type="hidden" id="choicescore" value="2,3"/>
+<input type="hidden" id="fillques" value="qq,qq"/>
+<input type="hidden" id="fillscore" value="3,4"/>
+<input type="hidden" id="fillAns" value="qq,qq"/>
+<input type="hidden" id="ques" value="qq,qq"/>
+<input type="hidden" id="quesscore" value="5,6"/>
+<input type="hidden" id="listTmp" value="1,2,3,1,2,3"/>
+<input type="hidden" id="wenjuanclass" value="学校"/>
 <section class="header-area-home" id="header-area-home" >
 		<div id="main-nav-container">
 			<div class="container">
@@ -32,10 +48,7 @@
 								<li><a ></a></li>
 								<li><a ></a></li>
 								<li><a ></a></li>
-								<li ><a href="#selectQ" id="addSelect">选择题</a></li>
-								<li><a href="#fillQ" id="addFill">填空题</a></li>	
-								<li><a href="#answerQ" id="addAnswer">问答题</a></li>		
-								<li><a href="#finish" id="finish">完成编辑</a></li>																										
+								<li><a href="#finish" id="finish">完成</a></li>																										
 							</ul>
 						</div>
 					</div>
@@ -45,22 +58,18 @@
 	</section>
 	<form action="editAction" method="post" id = "tab_form" name="myform" class="form-inline">
 	<div style="position:relative;left:400px;bottom:-100px;">
-	<input class="form-control" type="text" id="wenjuanname" style='width:500px;' placeholder="请输入问卷名称" /><br>
+	<input class="form-control" type="text" id="answerName" style='width:500px;' placeholder="请输入您的称呼" /><br>
 	<br>
-	请选择问卷类型：<select class="form-control" id="selectKind" name="selectKind" style='width:100px;'>
-        <option value="社团" selected="selected">社团</option>   
-        <option value="大学">大学</option>   
-        <option value="旅游">旅游</option>         
-      </select>   
+	问卷类型：  
 	</div>
 	<fieldset>
-	<div id="quesList" style="position:relative;left:200px;bottom:-150px;">
+	<div id="quesList" style="position:relative;left:350px;bottom:-150px;">
 	<br>
 	</div>
 	</fieldset>
 	</form>
 <script src="css/dist/js/jquery.min.js"></script>
-<script src="js/newEdit.js"></script>
+<script src="js/newShow.js"></script>
 <script src="css/dist/js/bootstrap.min.js"></script>
 <script src="js/jquery.sticky.js"></script>
 <script src="js/wow.min.js"></script>

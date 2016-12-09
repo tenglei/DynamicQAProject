@@ -44,7 +44,7 @@ button.navbar-toggle{
 #featured-slider-container-edit {
 	padding-top: 20px;
     background-image: url(images/home.jpg); /*之前设置的背景滚动*/
-    background-repeat:no-repeat;
+    background-repeat:repeat-y;
   	background-size: 100% ;
 
    

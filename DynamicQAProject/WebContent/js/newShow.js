@@ -30,64 +30,63 @@ $(document).ready(function() {
 	
 	var wenjuanclass;
 	
-	$("#addSelect").on("click", function() {		
+	
+	
+	var addSel= function() {		
 		addNum++;
-		selNum++;
 		listTmp[addNum]=1;
 		
 		selectdiv="<div "+ "name='select'> " +"第"+ addNum +"题、"+
-		"<input class='form-control' style='width:500px;'  type='text' id='selQ"+selNum+"' placeholder='请输入选择题题目' />"+"*"+
-		"<input class='form-control' style='width:100px;' type='text' placeholder='请输入分值' id='selS"+selNum+"'/>"+"*"+
-		"<button  class='btn btn-danger'>删除</button>"+"<br>"+
-		"<br>"+"A:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='A'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel1'/>"+"*"+"<br>"+
-		"<br>"+"B:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='B'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel2'/>"+"*"+"<br>"+
-		"<br>"+"C:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='C'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel3'/>"+"*"+"<br>"+
-		"<br>"+"D:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='D'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel4'/>"+"*"+"<br>"+
+		"<input readonly='true' class='form-control' style='width:500px;'  type='text' id='selQ"+selNum+"' value='"+choiceques[selNum]+"' />"+"&nbsp;&nbsp;"+
+		"分值：  "+choicescore[selNum]+"<br>"+
+		"<br>"+"A:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='A'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel1' value='"+ansA[selNum]+"'/>"+"*"+"<br>"+
+		"<br>"+"B:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='B'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel2' value='"+ansB[selNum]+"'/>"+"*"+"<br>"+
+		"<br>"+"C:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='C'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel3' value='"+ansC[selNum]+"'/>"+"*"+"<br>"+
+		"<br>"+"D:"+"&nbsp<input  class='radio-inline' type='radio' name=" +selNum+" value='D'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel4' value='"+ansD[selNum]+"'/>"+"*"+"<br>"+
 		" </div>"+"<br>";
 		$("#quesList").append(selectdiv);
+		selNum++;
 		$(".btn-danger").on("click", function() {
 			$(this).parent().remove();
 			addNum--;
 			selNum--;
 		});
-	});
-	$("#addFill").on("click", function() {
+	}
+	var addFill= function() {
 		addNum++;
-		fillNum++;
 		listTmp[addNum]=2;
 		
 		filldiv="<div name='fill'>" +"第" + addNum+"题、"+
-		"<input class='form-control' style='width:500px;' type='text' id='fillQ"+fillNum+"' placeholder='请输入填空题'/>"+"*" +"<input type='text' id='blockNum"+fillNum +"'"+
-		"placeholder='请输入空格数量' class='form-control' style='width:100px;'/>"+"*"+"<input class='form-control' style='width:100px;' type='text' placeholder='请输入分值' id='fillS"+fillNum+"'/>"+"*"+"<button class='btn btn-danger'>删除</button>"+"<br>"+
+		"<input readonly='true' class='form-control' style='width:500px;' type='text' id='fillQ"+fillNum+"' value='"+fillques[fillNum]+"'/>"+"&nbsp;&nbsp;"+"分值： " +fillscore[fillNum]+"<br>"+
 		"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' id='blockAns"+fillNum +"'"+
-		"placeholder='请输入答案，用空格分隔' class='form-control' style='width:500px;'/>"+"*"+
+		"placeholder='请输入答案' class='form-control' style='width:500px;'/>"+"*"+
 		" </div>"+"<br>";
 		$("#quesList").append(filldiv);
+		fillNum++;
 		$(".btn-danger").on("click", function() {
 			$(this).parent().remove();
 			addNum--;
 			fillNum--;
 		});
 		
-	});
-	$("#addAnswer").on("click", function() {
+	}
+	var addAns = function() {
 		addNum++;
-		ansNum++;
 		listTmp[addNum]=3;
 		
 		ansdiv="<div name='ans'>" +"第" + addNum+"题、"+
-		"<input class='form-control' style='width:500px;' type='text' id='ansQ"+ansNum+"' placeholder='请输入问答题题目'/>"+"*"+
-		"<input class='form-control' style='width:200px;' type='text' id='keyQ"+ansNum+"' placeholder='请输入关键词'/>"+"*"+
-		"<input class='form-control' style='width:100px;' type='text' id='desS"+ansNum+"' placeholder='请输入分值'/>"+"*"+"<button class='btn btn-danger'>删除</button>"+"<br>"+
-		"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;height:300px;' type='text' id='desQ"+ansNum+"' placeholder='问答题描述'/>"+"*"+"<br>"+
+		"<input class='form-control' readonly='true' style='width:500px;' type='text' id='ansQ"+ansNum+"' value='"+ques[ansNum]+"'/>"+"&nbsp;&nbsp;分值： "+
+		quesscore[ansNum]+"<br>"+
+		"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;height:300px;' type='text' id='desQ"+ansNum+"' placeholder='在此回答'/>"+"*"+"<br>"+
 		"</div><br>"
 		$("#quesList").append(ansdiv);
+		ansNum++;
 		$(".btn-danger").on("click", function() {
 			$(this).parent().remove();
 			addNum--;
 			ansNum--;
 		});
-	});
+	}
 	$("#finish").on("click", function() {
 		$("#quesList div").each(function(){
 			var divTmp = $(this).attr("name");
@@ -101,7 +100,7 @@ $(document).ready(function() {
 				var choiceB= $("[name='sel2']").val();
 				var choiceC= $("[name='sel3']").val();
 				var choiceD= $("[name='sel4']").val();
-				
+				addTmp--;
 				choiceques[addTmp]=selQ;
 				choicescore[addTmp]=selS;
 				choiceAns[addTmp]=selA;
@@ -109,7 +108,7 @@ $(document).ready(function() {
 				ansB[addTmp]=choiceB;
 				ansC[addTmp]=choiceC;
 				ansD[addTmp]=choiceD;
-				
+				addTmp++;
 				
 				
 //				alert(choiceques[addTmp]);
@@ -127,11 +126,12 @@ $(document).ready(function() {
 				var blockAns=$("#blockAns"+selTmp).val();
 				var blockNum=$("#blockNum"+selTmp).val();
 				var fillS = $("#fillS"+selTmp).val();
-				
+				selTmp--;
 				fillques[selTmp]=fillQ;
 				fillAns[selTmp]=blockAns;
 				blanknum[selTmp]=blockNum;
 				fillscore[selTmp]=fillS;
+				selTmp++;
 //				alert(fillques[selTmp]);
 //				alert(fillAns[selTmp]);
 //				alert(blanknum[selTmp]);
@@ -143,12 +143,12 @@ $(document).ready(function() {
 				var keyQ = $("#keyQ"+fillTmp).val();
 				var desS = $("#desS"+fillTmp).val();
 				var desQ = $("#desQ"+fillTmp).val();
-				
+				fillTmp--;
 				ques[fillTmp]=ansQ;
 				quesKey[fillTmp]=keyQ;
 				quesscore[fillTmp]=desS;
 				quesDes[fillTmp]=desQ;
-				
+				fillTmp++;
 //				alert(ques[fillTmp]);
 //				alert(quesKey[fillTmp]);
 //				alert(quesscore[fillTmp]);
@@ -172,6 +172,18 @@ $(document).ready(function() {
 //		var quesscore=new Array();
 //		var quesKey=new Array();
 //		var quesDes = new Array();
+		
+//		ansA={qq,qq};
+//		ansB={qq,qq};
+//		ansC={qq,qq};
+//		ansD={qq,qq};
+//		choiceques={qq,qq};
+//		choicescore=[1,2];
+//		addSel();
+		
+		
+		
+		
 		
 		var myform= $("#tab_form")[0];
 		//选择题
@@ -281,10 +293,108 @@ $(document).ready(function() {
 		myform.appendChild(tmp17);
 		myform.submit();
 	});
+//	var wenjuanname=new Array();
+//	var choiceques=new Array();
+//	var ansA=new Array();
+//	var ansB=new Array();
+//	var ansC=new Array();
+//	var ansD=new Array();
+//	var choicescore=new Array();
+//	var choiceAns=new Array();
+//	var fillques=new Array();
+//	var fillscore=new Array();
+//	var fillAns=new Array();
+//	var blanknum=new Array();
+//	var ques=new Array();
+//	var quesscore=new Array();
+//	var quesKey=new Array();
+//	var quesDes = new Array();
+//	
+//	var wenjuanclass;
+
+	
+	
+	
 	$("#selectKind").on("click", function() {
 	 wenjuanclass=$("#selectKind").val();
 	});
 	wenjuanclass=$("#selectKind").val();
 	var editname=$("#wenjuanname").val();
-
+	
+	
+		var tmp1=$("#wenjuanname").val();
+		var tmp2=$("#choiceques").val();
+		var tmp3=$("#ansA").val();
+		var tmp4=$("#ansB").val();
+		var tmp5=$("#ansC").val();
+		var tmp6=$("#ansD").val();
+		var tmp7=$("#choicescore").val();
+		var tmp8=$("#fillques").val();
+		var tmp9=$("#fillscore").val();
+		var tmp10=$("#fillAns").val();
+		var tmp11=$("#ques").val();
+		var tmp12=$("#quesscore").val();
+		var tmp13=$("#listTmp").val();
+		var tmp14=$("#wenjuanclass").val();
+		
+		
+		wenjuanname=tmp1;
+		choiceques=tmp2.split(",");
+		ansA=tmp3.split(",");
+		ansB=tmp4.split(",");
+		ansC=tmp5.split(",");
+		ansD=tmp6.split(",");
+		choicescore=tmp7.split(",");
+		fillques=tmp8.split(",");
+		fillscore=tmp9.split(",");
+		fillAns=tmp10.split(",");
+		ques=tmp11.split(",");
+		quesscore=tmp12.split(",");
+		listTmp=tmp13.split(",");
+		wenjuanclass=tmp14;
+		alert(listTmp);
+		alert(listTmp.length);
+		alert(listTmp[0]);
+//		addSel();
+//		addFill();
+//		addAns();
+//		addSel();
+//		addFill();
+//		addAns();
+		var li = 0;
+		for( li=0;li<listTmp.length;li++){
+			if(listTmp[li]=='1'){
+				alert("asdf");
+				addSel();
+			}
+			else if(listTmp[li]=='2'){
+				addFill();
+			}
+			else if(listTmp[li]=='3'){
+				addAns();
+			}
+		}
+		
+	
+//	
+	
+//	var s= "qq,aa";
+//	var t= "1,2";
+//	choiceques=s.split(",");
+//	ansA=s.split(",");
+//	ansB=s.split(",");
+//	ansC=s.split(",");
+//	ansD=s.split(",");
+//	choicescore=t.split(",");
+//	fillques=s.split(",");
+//	fillscore=t.split(",");
+//	ques=s.split(",");
+//	quesscore=t.split(",");
+//	addSel();
+//	addSel();
+//	addFill();
+//	addFill();
+//	addAns();
+//	addAns();
+//	initShow();
 });
