@@ -216,15 +216,23 @@ public class checkans
 			Statement stat7 = conn.createStatement();
 			ResultSet rs7 = stat7.executeQuery(sql7);
 			int xc = 0;
+			String wenjuanclass = "";
 			while(rs7.next()!=false)
 			{
+				wenjuanclass = rs7.getString(3);
 				xc = rs7.getInt(8)+1;
 				break;
 			}
 			stat7.close();
 			rs7.close();
 			Statement stat8 = conn.createStatement();
+			Connection conn2 = new initialize().getlink("project");
+			Statement stat20 = conn2.createStatement();
 			String sql8 = "update property set totalans="+String.valueOf(xc)+" where QAid="+"\""+this.QAnum+"\"";
+			String sql20 = "update "+wenjuanclass+" set num="+String.valueOf(xc)+" where paper="+"\""+this.QAnum+"\"";
+			String sql21 = "update allpaper set num="+String.valueOf(xc)+" where paper="+"\""+this.QAnum+"\"";
+			stat20.executeUpdate(sql20);
+			stat20.executeUpdate(sql21);
 			stat8.executeUpdate(sql8);
 			stat8.close();
 			this.huidacishu = String.valueOf(xc);

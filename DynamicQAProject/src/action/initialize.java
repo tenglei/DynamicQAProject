@@ -6,7 +6,7 @@ public class initialize {
 	public Connection getlink(String name)
 	{
 		Connection conn = null;
-		try
+		try 
 		{
 			Class.forName("com.mysql.jdbc.Driver");
 		}

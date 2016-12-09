@@ -2,6 +2,7 @@
  * 
  */
 $(document).ready(function() {
+	
 	var friendsNum = document.getElementById("friendsNum");
 	var questionsNum = document.getElementById("questionsNum");
 	var addNum=0;
@@ -32,7 +33,9 @@ $(document).ready(function() {
 		$("#block"+i).css("display", "none");
 		
 	}
+	$("#circleQues").css("display", "none");
 	$("#myques").on("click", function() {
+		$("#circleQues").css("display", "none");
 		for (var i = 0; i < friendsNum.value; i++) {
 			var friend = "friend";
 			var block = "block";
@@ -44,18 +47,18 @@ $(document).ready(function() {
 		$("#userHome").css("display", "block");
 		$("#userDy").css("display", "block");
 		$("#mypadder").css("display", "block");
-		for (var i = 0; i < questionsNum.value; i++) {
+		for (var i = 0; i <=questionsNum.value; i++) {
 			var userQ = "userQ";
 			userQ = userQ + i;
 			$("#userQ"+i).css("display", "block");
 		}
 	});
 	$("#myfriends").on("click", function() {
-
+		$("#circleQues").css("display", "none");
 		$("#userHome").css("display", "none");
 		$("#userDy").css("display", "none");
 		$("#mypadder").css("display", "none");
-		for (var i = 0; i < questionsNum.value; i++) {
+		for (var i = 0; i <=questionsNum.value; i++) {
 			var userQ = "userQ";
 			userQ = userQ + i;
 			$("#userQ"+i).css("display", "none");
@@ -71,6 +74,7 @@ $(document).ready(function() {
 
 	});
 	$("#myCircle").on("click", function() {
+		alert("sss");
 		for (var i = 0; i < friendsNum.value; i++) {
 			var friend = "friend";
 			var block = "block";
@@ -79,7 +83,7 @@ $(document).ready(function() {
 			$("#friend"+i).css("display", "none");
 			$("#block"+i).css("display", "none");
 		}
-		for (var i = 0; i < questionsNum.value; i++) {
+		for (var i = 0; i <= questionsNum.value; i++) {
 			var userQ = "userQ";
 			userQ = userQ + i;
 			$("#userQ"+i).css("display", "none");
@@ -87,8 +91,8 @@ $(document).ready(function() {
 		$("#userHome").css("display", "block");
 		$("#userDy").css("display", "block");
 		$("#mypadder").css("display", "block");
-		
-		
+		$("#circleQues").css("display", "block");
+		alert("ppp");
 
 	});
 	//排名，需调整放入循环
@@ -135,6 +139,7 @@ $(document).ready(function() {
 //		"<small class='block text-muted'><iclass='fa fa-fw fa-clock-o'></i> 两分钟前</small></li>";
 //	 listGroup.innerHTML=li;	
 	var orderTmp=$("#orderList").val();
+	
 	orderTmp=orderTmp.substring(1,orderTmp.length-1);
 	var orderList = new Array();
 	var n=0;
@@ -175,16 +180,19 @@ $(document).ready(function() {
 	
 	
 	
-	var i = document.createElement("input");
-	i.type="hidden";
-	var delList = new Array();
+	
+	
 	$(".btn-danger").on("click", function() {
-		var delId = $(this).parent().parent().parent().parent().attr("id");
-		delId  = delId.substring(delId.length-1,delId.length);
-		delList.push(delId);
-		alert(delList);
+		var delName = $(this).attr("name");
+		alert(delName);
 		$(this).parent().parent().parent().parent().remove();	
-		i.value = delList;
+		$.ajax({
+			type:"post",
+			url:"deleteqa.action",//需要用来处理ajax请求的action,excuteAjax为处理的方法名，JsonAction为action名
+			data:{
+				name:delName
+  				}
+		});
 	});
 	
 	var f = document.createElement("form");
@@ -192,5 +200,21 @@ $(document).ready(function() {
 	$("#logout1").on("click", function() {
 		f.appdenChild(i);
 		f.submit();
+	});
+	
+	$("#lookAround").on("click", function() {
+		alert("in lookAround");
+		var user = document.createElement("form");
+		var welcomename=$("#welcomename").val();
+		document.body.appendChild(user);
+		user.method = 'post';
+		user.action = 'goindex.action';
+		var tmp = document.createElement("input");
+		tmp.setAttribute("name", "welcomename");
+		tmp.setAttribute("type", "hidden");
+		tmp.setAttribute("value", welcomename); //有可能只是一个内存地址，解决办法，拼接字符串即可，待定
+		alert(welcomename);
+		user.appendChild(tmp);
+		user.submit()
 	});
 });

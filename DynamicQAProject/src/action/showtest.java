@@ -5,7 +5,9 @@ import java.util.*;
 public class showtest 
 {
 	private String wenjuanhao;//获得问卷的依据
-	private String author;
+	private String author;//作者
+	private String wenjuanming;//问卷名字
+	private String tixingshunxu;//题型的顺序
 	private List<String> choiceques = new ArrayList<String>();
 	private List<String> ansA = new ArrayList<String>(); 
 	private List<String> ansB = new ArrayList<String>();
@@ -40,6 +42,8 @@ public class showtest
 			while(rs.next()!=false)
 			{
 				authorid = rs.getString(2);
+				this.wenjuanming = rs.getString(10);
+				this.tixingshunxu = rs.getString(12);
 			}
 		}
 		catch (SQLException e) 
@@ -234,4 +238,28 @@ public class showtest
 		s.maketest();
 	}
 	*/
+
+
+
+	public String getTixingshunxu() {
+		return tixingshunxu;
+	}
+
+
+
+	public void setTixingshunxu(String tixingshunxu) {
+		this.tixingshunxu = tixingshunxu;
+	}
+
+
+
+	public String getWenjuanming() {
+		return wenjuanming;
+	}
+
+
+
+	public void setWenjuanming(String wenjuanming) {
+		this.wenjuanming = wenjuanming;
+	}
 }

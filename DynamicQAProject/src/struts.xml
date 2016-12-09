@@ -28,6 +28,10 @@
 			<result name="successinsert">/edit.jsp</result>
 		</action>
 		
+		<action name="deleteqa" class = "action.deleteqa" method = "excuteAjax">
+			<result name="SUCCESS">/test.jsp</result>
+		</action>
+		
 		<action name="xuanze" class = "action.insert_choice" method = "insert_cho">
 			<result name="successinsert">/edit.jsp</result>
 		</action>
@@ -36,12 +40,16 @@
 			<result name="successinsert">/edit.jsp</result>
 		</action>
 		
+		
+		
+		
+		
 		<action name="finishedit" class = "action.finishedit" method = "back">
 			<result name="successback">/test.jsp</result>
 		</action>
 		
 		<action name="huida" class = "action.showtest" method = "maketest">
-			<result name="successmake">/show.jsp</result>
+			<result name="successmake">/newShow.jsp</result>
 		</action>
 		
 		<action name="tijiao" class = "action.checkans" method = "checkanswer">
@@ -69,7 +77,9 @@
 			<result name="loginsuccess">/qitayonghu.jsp</result>
 		</action>
 		
-		
+		<action name="add" class = "action.addfriends" method = "excuteAjax">
+ 			<result name="SUCCESS">/index.jsp</result> 
+		</action>
 		
 	</package>
 </struts>

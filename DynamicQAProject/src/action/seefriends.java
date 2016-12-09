@@ -1,5 +1,5 @@
 package action;
-
+//用于跳转到“随便看看”界面
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

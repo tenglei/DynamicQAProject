@@ -6,7 +6,7 @@ import java.sql.*;//跳转到“随便看看”界面
 public class goindex {
 	
 	private String welcomename;
-	private String password;
+	//private String password;
 	private List<String> yonghu = new ArrayList<String>();
 	private String newf1;
 	private String newf2;
@@ -301,11 +301,11 @@ public class goindex {
 	public void setLife(String life) {
 		this.life = life;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+//	public String getPassword() {
+//		return password;
+//	}
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
 	
 }

@@ -20,9 +20,11 @@
 <link rel="stylesheet" href="UserHome/css/app.css" type="text/css" />
 </head>
 <body>
-<input tpye="hidden" id="orderList" value="<s:property value="suoyoupaiming"/>" >
-<input type="hidden" id="friendsNum" value="4">
-	<input type="hidden" id="questionsNum" value="4">
+<input tpye="hidden" id="orderList" value="<s:property value="suoyoupaiming"/>" />
+<input type="hidden" id="friendsNum" value="<s:property value="friends.size"/>"/>
+<input type="hidden" id="welcomename" value="<s:property value="welcomename"/>"/>
+
+	<input type="hidden" id="questionsNum" value="<s:property value="myquestion.size"/>"/>
 	<div class="app app-header-fixed" id="app">
 		<!-- navbar -->
 		<div class="app-header navbar">
@@ -471,7 +473,7 @@
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.icons">
 											<!--  <b class="badge bg-info pull-right">3</b> --><span
-											translate="aside.nav.components.ui_kits.ICONS" onclick="goindex.action?welcomename=<s:property value="welcomename"/>&password=<s:property value="loginpassword"/>">随便看看</span>
+											translate="aside.nav.components.ui_kits.ICONS" id="lookAround">随便看看</span>
 									</a></li>
 									<!--                   <li ui-sref-active="active"> -->
 									<!--                     <a ui-sref="app.ui.grid"> -->
@@ -811,19 +813,31 @@
 								<!--                   </div> -->
 								<!-- .comment-reply -->
 								<s:iterator value="myquestion" status="st">
-								<div class="m-l-lg" id="userQ1">
+								<div class="m-l-lg" id="userQ<s:property value="#st.count"/>">
 									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
 										alt="...">
 									</a>
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" name=<s:property value="#st.index"/>>查看排名</button> <button class="btn-danger" >删除</button> </span> 问卷名称：<s:property />  问卷链接:<a href='<s:property value="linklist[#st.index]"/>'><s:property value="linklist[#st.index]"/></a>
+												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" name=<s:property value="#st.index"/>>查看排名</button> <button class="btn-danger" name="<s:property />" >删除</button> </span> 问卷名称：<s:property />  问卷链接:<a href='<s:property value="linklist[#st.index]"/>'><s:property value="linklist[#st.index]"/></a>
 												
 										</div>
 									</div>
 								</div>
 								</s:iterator>
+								<div class="m-l-lg" id="circleQues">
+									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
+										alt="...">
+									</a>
+									<div class="m-l-xxl panel b-a">
+										<div class="panel-heading pos-rlt">
+											<span class="arrow left pull-up"></span> <span
+												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" >查看排名</button>  </span>圈子共有问卷 问卷链接:<a href='http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao=gongyou'>点此进入共有测试</a>
+												
+										</div>
+									</div>
+								</div>
 								<!-- / .comment-reply -->
 								<!--                   <div> -->
 								<!--                     <a class="pull-left thumb-sm avatar m-l-n-md"> -->

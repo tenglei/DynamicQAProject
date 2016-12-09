@@ -380,30 +380,39 @@ public class finishedit
 		}
 		
 		//下面出现所有的东西
-		System.out.println("safvdsfgdrt:");
-		System.out.println(this.authorname);
-		System.out.println(this.editname);
-		System.out.println(this.wenjuanclass);
-		System.out.println(this.wenjuanname);
-		see(this.ansA);
-		see(this.ansB);
-		see(this.ansC);
-		see(this.ansD);
-		see(this.blanknum);
-		see(this.choiceans);
-		see(this.choiceques);
-		see(this.choicescore);
-		see(this.fillans);
-		see(this.fillques);
-		see(this.fillscore);
-		see(this.ques);
-		see(this.quesans);
-		see(this.queskey);
-		see(this.quesscore);
+//		System.out.println("safvdsfgdrt:");
+//		System.out.println(this.authorname);
+//		System.out.println(this.editname);
+//		System.out.println(this.wenjuanclass);
+//		System.out.println(this.wenjuanname);
+//		see(this.ansA);
+//		see(this.ansB);
+//		see(this.ansC);
+//		see(this.ansD);
+//		see(this.blanknum);
+//		see(this.choiceans);
+//		see(this.choiceques);
+//		see(this.choicescore);
+//		see(this.fillans);
+//		see(this.fillques);
+//		see(this.fillscore);
+//		see(this.ques);
+//		see(this.quesans);
+//		see(this.queskey);
+//		see(this.quesscore);
 		
-		
-		
-		
+		//下面更新问卷题目顺序
+		Connection conn10 = new initialize().getlink(this.name);
+		try
+		{
+			Statement stat10 = conn10.createStatement();
+			String sql10 = "update property set tixing="+"\""+this.listTmp.get(0)+"\""+" where QAid="+"\""+this.name+"\"";
+			stat10.executeUpdate(sql10);
+		}
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
 		return "successback";
 	}
 	public String getname() {
@@ -533,7 +542,7 @@ public class finishedit
 	public void setQueskey(List<String> queskey) {
 		this.queskey = queskey;
 	}
-	
+	/*
 	public static void main(String[] args)
 	{
 		 List<String> choiceques = new ArrayList<String>();
@@ -604,11 +613,13 @@ public class finishedit
 		x.back();
 		System.out.println("wancheng!");
 	}
+	*/
 	public List<String> getListTmp() {
 		return listTmp;
 	}
 	public void setListTmp(List<String> listTmp) {
 		this.listTmp = listTmp;
 	}
+	
 	
 }

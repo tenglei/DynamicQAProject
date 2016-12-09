@@ -21,7 +21,7 @@
 
 
 <body data-spy="scroll" data-target="#topnav" id="top">
-
+<input type="hidden" id="welcomename" value="<s:property value="welcomename"/>"/>
 	<section class="header-area-home" id="header-area-home">
 		<div id="main-nav-container">
 			<div class="container">
@@ -363,9 +363,9 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href=""><s:property value="newf1"/></a>
+								<a class="user"><s:property value="newf1"/></a>
 							</h4>
-							<small>用户一介绍</small>
+							
 						</div>
 						<div class="panel-thumbnails">
 							<hr />
@@ -402,9 +402,9 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href=""><s:property value="newf2"/></a>
+								<a class="user"><s:property value="newf2"/></a>
 							</h4>
-							<small>用户二介绍</small>
+							
 						</div>
 						<div class="panel-thumbnails">
 							<hr />
@@ -441,9 +441,9 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href=""><s:property value="newf3"/></a>
+								<a class="user"><s:property value="newf3"/></a>
 							</h4>
-							<small>用户三介绍</small>
+							
 						</div>
 						<div class="panel-thumbnails">
 							<hr />
@@ -480,9 +480,9 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href=""><s:property value="newf4"/></a>
+								<a class="user"><s:property value="newf4"/></a>
 							</h4>
-							<small>用户四介绍</small>
+							
 						</div>
 						<div class="panel-thumbnails">
 							<hr />
@@ -519,9 +519,9 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href=""><s:property value="newf5"/></a>
+								<a class="user"><s:property value="newf5"/></a>
 							</h4>
-							<small>用户五介绍</small>
+							
 						</div>
 						<div class="panel-thumbnails">
 							<hr />
@@ -558,9 +558,9 @@
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
-								<a href=""><s:property value="newf6"/></a>
+								<a class="user"><s:property value="newf6"/></a>
 							</h4>
-							<small>用户六介绍</small>
+							
 						</div>
 						<div class="panel-thumbnails">
 							<hr />
@@ -732,6 +732,7 @@
 	<script src="js/jquery.sticky.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script src="js/site.js"></script>
+	<script src="js/addFriend.js"></script>
 
 </body>
 </html>

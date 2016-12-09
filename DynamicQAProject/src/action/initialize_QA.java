@@ -57,7 +57,7 @@ public class initialize_QA
 			Connection conn2 = new initialize().getlink(this.authorname+String.valueOf(QAnum));
 			try{
 				Statement stat2 = conn2.createStatement();
-				stat2.executeUpdate("create table property(QAid varchar(30),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(200),papername varchar(30),state int)");
+				stat2.executeUpdate("create table property(QAid varchar(30),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(200),papername varchar(30),state int,tixing varchar(30)");
 				stat2.executeUpdate("create table choice(question varchar(255),Ach varchar(80),Bch varchar(80),Cch varchar(80),Dch varchar(80), answer varchar(1),score float)");
 				stat2.executeUpdate("create table fill(blanknum int,question varchar(255),answer varchar(80),score float)");
 				stat2.executeUpdate("create table QA(question varchar(255),answer varchar(255),keywords varchar(80),score float)");
@@ -76,6 +76,7 @@ public class initialize_QA
 				ps.setString(9, "该部分尚未完成开发！");
 				ps.setString(10, "");
 				ps.setInt(11,1);//1代表问卷开放了
+				ps.setString(12, "");
 				ps.executeUpdate();
 				stat2.close();
 				conn2.close();
