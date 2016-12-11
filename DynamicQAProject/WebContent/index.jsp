@@ -39,10 +39,10 @@
 						<div class="collapse navbar-collapse" id="main-menu">
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#top">信息主页</a></li>
-								<li><a href="#personalcenter">个人中心</a></li>	
+								<li><a href="backwithout.action?logininfor=<s:property value="welcomename"/>">个人中心</a></li>	
 								<li><a>您好，<s:property value="welcomename"/></a></li>
 								
-								<li><a><input type="text" placeholder="搜索问卷"/><input type="button" class="btn-success" value="搜索"></a></li> 
+<!-- 								<li><a><input type="text" placeholder="搜索问卷"/><input type="button" class="btn-success" value="搜索"></a></li>  -->
 								
 								
 							</ul>
@@ -102,10 +102,11 @@
 											</ul>
 										</div>
 										<div class="meta">
-											<button class="btn btn-primary inv slide-btn btn-lg"
+											<button class="btn inv btn-success slide-btn btn-lg"
 												data-animation="animated fadeInUp" data-delay="3s"
 												data-duration="2s">
-												点击查看最火问卷<i class="tn-arrow-right"></i>
+												<a href="huida.action?wenjuanhao=<s:property value="college"/>">点击查看最火问卷</a>
+											<i class="tn-arrow-right"></i> 
 											</button>
 										</div>
 
@@ -146,7 +147,8 @@
 											<button class="btn btn-info inv slide-btn btn-lg"
 												data-animation="animated lightSpeedIn" data-delay="3s"
 												data-duration="2s">
-												点击查看最火问卷<i class="tn-arrow-right"></i>
+												<a href="huida.action?wenjuanhao=<s:property value="emotion"/>">点击查看最火问卷</a>
+												<i class="tn-arrow-right"></i>
 											</button>
 										</div>
 
@@ -187,7 +189,8 @@
 											<button class="btn btn-danger inv slide-btn btn-lg"
 												data-animation="animated fadeInUp" data-delay="3s"
 												data-duration="2s">
-												点击查看最火问卷 <i class="tn-arrow-right"></i>
+												<a href="huida.action?wenjuanhao=<s:property value="life"/>">点击查看最火问卷</a>
+												<i class="tn-arrow-right"></i>
 											</button>
 										</div>
 
@@ -283,7 +286,7 @@
 
 							<h3><s:property value="wenjuan1"/></h3>
 							
-							<button class="btn btn-warning">查看更多</button>
+							<button class="btn btn-warning"><a href="huida.action?wenjuanhao=<s:property value="wenjuan1"/>">查看更多</a></button>
 						</div>
 					</div>
 					<div class="col-md-4 wow zoomIn" data-wow-delay="100ms">
@@ -292,7 +295,7 @@
 
 							<h3><s:property value="wenjuan2"/></h3>
 							
-							<button class="btn btn-info">查看更多</button>
+							<button class="btn btn-info"><a href="huida.action?wenjuanhao=<s:property value="wenjuan2"/>">查看更多</a></button>
 						</div>
 					</div>
 					<div class="col-md-4 wow fadeInRight" data-wow-delay="500ms">
@@ -301,7 +304,7 @@
 
 							<h3><s:property value="wenjuan3"/></h3>
 							
-							<button class="btn btn-primary">查看更多</button>
+							<button class="btn btn-primary"><a href="huida.action?wenjuanhao=<s:property value="wenjuan3"/>">查看更多</a></button>
 						</div>
 					</div>
 					<div class="col-md-4 wow fadeInUp">
@@ -310,7 +313,7 @@
 
 							<h3><s:property value="wenjuan4"/></h3>
 							
-							<button class="btn btn-danger">查看更多</button>
+							<button class="btn btn-danger"><a href="huida.action?wenjuanhao=<s:property value="wenjuan4"/>">查看更多</a></button>
 						</div>
 					</div>
 					<div class="col-md-4 wow fadeInUp" data-wow-delay="300ms">
@@ -319,16 +322,16 @@
 
 							<h3><s:property value="wenjuan5"/></h3>
 							
-							<button class="btn btn-warning">查看更多</button>
+							<button class="btn btn-warning"><a href="huida.action?wenjuanhao=<s:property value="wenjuan5"/>">查看更多</a></button>
 						</div>
 					</div>
 					<div class="col-md-4 wow fadeInUp" data-wow-delay="600ms">
 						<div class="featured-content-box text-center">
 							<i class="tn-dashboard ico-lg text-info"></i>
 
-							<h3><s:property value="wenjuan5"/></h3>
+							<h3><s:property value="wenjuan6"/></h3>
 							
-							<button class="btn btn-info">查看更多</button>
+							<button class="btn btn-info"><a href="huida.action?wenjuanhao=<s:property value="wenjuan6"/>">查看更多</a></button>
 						</div>
 					</div>
 				</div>
@@ -651,61 +654,61 @@
 			<div class="row">
 				<div class="col-md-12 text-center section-intro">
 					<h2 class="header-boxed wow zoomIn" data-wow-iteration="1">
-						<span>想要留言？</span>
+						<span>联系我们</span>
 					</h2>
-					<p class="lead">简洁而又实用，问者为您而生</p>
+					<p class="lead">欢迎提出宝贵意见！联系方式：邮箱：yaobingkun2008@126.com 电话：110</p>
 				</div>
-				<div class="col-md-6">
-					<div class="contact-form wow fadeInLeft">
-						<form class="row" method="get" action="">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>请输入您的姓名<i class="fa fa-asterisk"></i></label> <input
-										type="text" name="name" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>请输入您的邮件<i class="fa fa-asterisk"></i></label> <input
-										type="email" name="email" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<label>请输入您的留言</label>
-									<textarea name="message" rows="6" class="form-control"></textarea>
-								</div>
-								<div class="send_result"></div>
-							</div>
-							<div class="col-md-12">
-								<input type="submit" value="提交"
-									class="btn btn-primary btn-lg btn-block" name="submit">
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="featured-content-box text-center wow fadeInDown">
-						<div class="circle feature-icon">
-							<i class="tn-mobile"></i>
-						</div>
+<!-- 				<div class="col-md-6"> -->
+<!-- 					<div class="contact-form wow fadeInLeft"> -->
+<!-- 						<form class="row" method="get" action=""> -->
+<!-- 							<div class="col-md-6"> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<label>请输入您的姓名<i class="fa fa-asterisk"></i></label> <input -->
+<!-- 										type="text" name="name" class="form-control"> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 							<div class="col-md-6"> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<label>请输入您的邮件<i class="fa fa-asterisk"></i></label> <input -->
+<!-- 										type="email" name="email" class="form-control"> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 							<div class="col-md-12"> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<label>请输入您的留言</label> -->
+<!-- 									<textarea name="message" rows="6" class="form-control"></textarea> -->
+<!-- 								</div> -->
+<!-- 								<div class="send_result"></div> -->
+<!-- 							</div> -->
+<!-- 							<div class="col-md-12"> -->
+<!-- 								<input type="submit" value="提交" -->
+<!-- 									class="btn btn-primary btn-lg btn-block" name="submit"> -->
+<!-- 							</div> -->
+<!-- 						</form> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+				
+<!-- 					<div class="featured-content-box text-center wow fadeInDown"> -->
+<!-- 						<div class="circle feature-icon"> -->
+<!-- 							<i class="tn-mobile"></i> -->
+<!-- 						</div> -->
 
-						<h3>联系我们</h3>
-						<p>18946036722</p>
+<!-- 						<h3>联系我们</h3> -->
+<!-- 						<p>18946036722</p> -->
 
-					</div>
+<!-- 					</div> -->
 
-					<div class="featured-content-box text-center wow fadeInUp">
-						<div class="circle feature-icon">
-							<i class="tn-email"></i>
-						</div>
+<!-- 					<div class="featured-content-box text-center wow fadeInUp"> -->
+<!-- 						<div class="circle feature-icon"> -->
+<!-- 							<i class="tn-email"></i> -->
+<!-- 						</div> -->
 
-						<h3>邮箱</h3>
-						<p>yaobingkun2008@126.com</p>
+<!-- 						<h3>邮箱</h3> -->
+<!-- 						<p>yaobingkun2008@126.com</p> -->
 
-					</div>
+<!-- 					</div> -->
 
-				</div>
+				
 			</div>
 		</div>
 	</section>
@@ -718,7 +721,7 @@
 					<h2>
 						<img src="images/indexlogo.png" />
 					</h2>
-					Copyright &copy; 2016.HIT All rights reserved. 
+					Copyright &copy;HIT 2016 All Rights Reserved.
 				</div>
 			</div>
 		</div>

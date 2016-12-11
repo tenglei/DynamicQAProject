@@ -108,12 +108,18 @@ public class checkans
 				String[] biaozhun = rs2.getString(3).split(" ");//标准答案
 				String[] zuoda = fillans1.get(x2).split(" ");//回答者的回答
 				int y = -1;
-				for(int z=0;z<biaozhun.length;z++)
+				if(zuoda.length!=biaozhun.length)
 				{
-					y++;
-					if(zuoda[y].equals(biaozhun[z]))
+					correct = 0;
+				}
+				else
+				{
+					for(int z=0;z<biaozhun.length;z++)
 					{
-						correct++;
+						if(zuoda[y].equals(biaozhun[z]))
+						{
+							correct++;
+						}
 					}
 				}
 				total = total + correct*dange;
@@ -344,8 +350,4 @@ public class checkans
 	public void setQAnumlianjie(String qAnumlianjie) {
 		QAnumlianjie = qAnumlianjie;
 	}
-	
-	
-	
-	
 }

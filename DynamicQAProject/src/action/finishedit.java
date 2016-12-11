@@ -11,6 +11,7 @@ public class finishedit
 	private String authorname;
 	private String name;//系统生成的问卷号
 	private String editname;
+	private String lianjie;
 	private String wenjuanclass;//问卷类型
 	private String wenjuanname;//作者自定义的问卷的名字，可以用于查找
 	private List<String> choiceques = new ArrayList<String>();
@@ -288,7 +289,15 @@ public class finishedit
 			rs2.close();
 			stat2.close();
 			Statement stat3 = conn2.createStatement();
-			String sql3 = "update user set wenjuanhao="+"\""+temp+" "+this.name+"\""+" where Name="+"\""+this.authorname+"\"";
+			String sql3 = "";
+			if(temp.length()!=0)
+			{
+				sql3 = "update user set wenjuanhao="+"\""+temp+" "+this.name+"\""+" where Name="+"\""+this.authorname+"\"";
+			}
+			else
+			{
+				sql3 = "update user set wenjuanhao="+"\""+temp+this.name+"\""+" where Name="+"\""+this.authorname+"\"";
+			}
 			stat3.executeUpdate(sql3);
 			stat3.close();
 			//conn2.close();
@@ -413,6 +422,7 @@ public class finishedit
 		{
 			e.printStackTrace();
 		}
+		this.lianjie = "http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao=" + this.editname;
 		return "successback";
 	}
 	public String getname() {
@@ -619,6 +629,14 @@ public class finishedit
 	}
 	public void setListTmp(List<String> listTmp) {
 		this.listTmp = listTmp;
+	}
+
+	public String getLianjie() {
+		return lianjie;
+	}
+
+	public void setLianjie(String lianjie) {
+		this.lianjie = lianjie;
 	}
 	
 	

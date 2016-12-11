@@ -5,16 +5,22 @@ $(document).ready(function() {
 	
 	var friendsNum = document.getElementById("friendsNum");
 	var questionsNum = document.getElementById("questionsNum");
+	var circleTmp=$("#circleTmp").val();
+	circleTmp = circleTmp.substring(1,circleTmp.length-1);
+	//alert("circleTmp");
+	//alert(circleTmp);
 	var addNum=0;
-	
+	var myQuesNum =$("#myQuesNum").val();
+	//alert(myQuesNum);
 	var newQA = document.createElement("form");
 	document.body.appendChild(newQA);
 	newQA.action="addnewqa.action";
 	newQA.method="post";
-	
+	////alert("ready");
 	$("#newQA").on("click", function() {
-	var welcomename = $("#welcomename").text();
-	//alert(welcomename);
+	////alert("inqa");
+	var welcomename = $("#comename").text();
+//	////alert(welcomename);
 	
 	var tmp = document.createElement("input");
 	tmp.setAttribute("name", "authorname");
@@ -33,24 +39,59 @@ $(document).ready(function() {
 		$("#block"+i).css("display", "none");
 		
 	}
-	$("#circleQues").css("display", "none");
-	$("#myques").on("click", function() {
-		$("#circleQues").css("display", "none");
-		for (var i = 0; i < friendsNum.value; i++) {
-			var friend = "friend";
-			var block = "block";
-			friend = friend + i;
-			block = block + 1;
-			$("#friend"+i).css("display", "none");
-			$("#block"+i).css("display", "none");
-		}
-		$("#userHome").css("display", "block");
-		$("#userDy").css("display", "block");
-		$("#mypadder").css("display", "block");
+	if(myQuesNum==0){
+		//alert("hidden");
 		for (var i = 0; i <=questionsNum.value; i++) {
 			var userQ = "userQ";
 			userQ = userQ + i;
-			$("#userQ"+i).css("display", "block");
+			$("#userQ"+i).css("display", "none");
+		}
+	}
+	else{
+		$("#initQues").css("display", "none");
+	}
+	$("#circleQues").css("display", "none");
+	$("#myques").on("click", function() {
+		if(myQuesNum==1){		
+			$("#circleQues").css("display", "none");
+			for (var i = 0; i < friendsNum.value; i++) {
+				var friend = "friend";
+				var block = "block";
+				friend = friend + i;
+				block = block + 1;
+				$("#friend"+i).css("display", "none");
+				$("#block"+i).css("display", "none");
+			}
+			$("#initQues").css("display", "none");
+			$("#userHome").css("display", "block");
+			$("#userDy").css("display", "block");
+			$("#mypadder").css("display", "block");
+			for (var i = 0; i <=questionsNum.value; i++) {
+				var userQ = "userQ";
+				userQ = userQ + i;
+				$("#userQ"+i).css("display", "block");
+			}
+		}
+		else{
+			$("#circleQues").css("display", "none");
+			for (var i = 0; i < friendsNum.value; i++) {
+				var friend = "friend";
+				var block = "block";
+				friend = friend + i;
+				block = block + 1;
+				$("#friend"+i).css("display", "none");
+				$("#block"+i).css("display", "none");
+			}
+			$("#userHome").css("display", "block");
+			$("#userDy").css("display", "block");
+			$("#mypadder").css("display", "block");
+			for (var i = 0; i <=questionsNum.value; i++) {
+				var userQ = "userQ";
+				userQ = userQ + i;
+				$("#userQ"+i).css("display", "none");
+			}
+			$("#initQues").css("display", "block");
+		
 		}
 	});
 	$("#myfriends").on("click", function() {
@@ -63,6 +104,7 @@ $(document).ready(function() {
 			userQ = userQ + i;
 			$("#userQ"+i).css("display", "none");
 		}
+		$("#initQues").css("display", "none");
 		for (var i = 0; i < friendsNum.value; i++) {
 			var friend = "friend";
 			var block = "block";
@@ -74,7 +116,7 @@ $(document).ready(function() {
 
 	});
 	$("#myCircle").on("click", function() {
-		alert("sss");
+//		//alert("sss");
 		for (var i = 0; i < friendsNum.value; i++) {
 			var friend = "friend";
 			var block = "block";
@@ -91,8 +133,14 @@ $(document).ready(function() {
 		$("#userHome").css("display", "block");
 		$("#userDy").css("display", "block");
 		$("#mypadder").css("display", "block");
-		$("#circleQues").css("display", "block");
-		alert("ppp");
+		if(myQuesNum==1){
+			$("#circleQues").css("display", "block");
+			$("#initQues").css("display", "none");
+		}
+		else{
+			$("#initQues").css("display", "block");
+		}
+//		//alert("ppp");
 
 	});
 	//排名，需调整放入循环
@@ -161,21 +209,48 @@ $(document).ready(function() {
 		tmp[i] = new Array();
 		tmp[i] = orderList[i].split(',');
 	}
+	var mycircleTmp= new Array();
+	mycircleTmp=circleTmp.split(',');
+	//alert(mycircleTmp);
 	$(".btn-success").on("click", function() {
 		var li = "";
 		var name=$(this).attr("name");
-		$("#listGroup").children().remove();
-		for(i=0;i<tmp[name].length;i++){
-			i++;
-			li=li+"<li class='list-group-item' id='order'" + i+
-					"><p>" +"第" +
-			i + "名:  "+
-			tmp[name][i-1] +                 //该访问方式可能出错 
-			"</p> " +
-			"<small class='block text-muted'><i class='fa fa-fw fa-clock-o'></i> 两分钟前</small></li>";
-			i--;
+		
+		if(name=="circleOrder"){
+			$("#listGroup").children().remove();
+			for(i=0;i<mycircleTmp.length;i++){
+				i++;
+				li=li+"<li class='list-group-item' id='order'" + i+
+				"><p>" +"第" +
+				i + "名:  "+
+				mycircleTmp[i-1] +                 //该访问方式可能出错 
+				"</p> " +
+				"</li>";
+				i--;
+			}
+			$("#listGroup").append(li);
 		}
-		$("#listGroup").append(li);
+		else{	
+			$("#listGroup").children().remove();
+			//alert(tmp[name]);
+			if(tmp[name]==""){
+				$("#listGroup").children().remove();
+			}
+			else{
+				
+				for(i=0;i<tmp[name].length;i++){
+					i++;
+					li=li+"<li class='list-group-item' id='order'" + i+
+					"><p>" +"第" +
+					i + "名:  "+
+					tmp[name][i-1] +                 //该访问方式可能出错 
+					"</p> " +
+					"</li>";
+					i--;
+				}
+				$("#listGroup").append(li);
+			}
+		}
 	});
 	
 	
@@ -184,7 +259,7 @@ $(document).ready(function() {
 	
 	$(".btn-danger").on("click", function() {
 		var delName = $(this).attr("name");
-		alert(delName);
+//		//alert(delName);
 		$(this).parent().parent().parent().parent().remove();	
 		$.ajax({
 			type:"post",
@@ -203,7 +278,7 @@ $(document).ready(function() {
 	});
 	
 	$("#lookAround").on("click", function() {
-		alert("in lookAround");
+		////alert("in lookAround");
 		var user = document.createElement("form");
 		var welcomename=$("#welcomename").val();
 		document.body.appendChild(user);
@@ -213,7 +288,7 @@ $(document).ready(function() {
 		tmp.setAttribute("name", "welcomename");
 		tmp.setAttribute("type", "hidden");
 		tmp.setAttribute("value", welcomename); //有可能只是一个内存地址，解决办法，拼接字符串即可，待定
-		alert(welcomename);
+		////alert(welcomename);
 		user.appendChild(tmp);
 		user.submit()
 	});

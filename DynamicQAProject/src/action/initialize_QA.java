@@ -57,13 +57,13 @@ public class initialize_QA
 			Connection conn2 = new initialize().getlink(this.authorname+String.valueOf(QAnum));
 			try{
 				Statement stat2 = conn2.createStatement();
-				stat2.executeUpdate("create table property(QAid varchar(30),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(200),papername varchar(30),state int,tixing varchar(30)");
+				stat2.executeUpdate("create table property(QAid varchar(30),authorid varchar(4),classname varchar(10),totalscore float,choicenum int,fillnum int,QAnum int,totalans int,testlink varchar(200),papername varchar(30),state int,tixing varchar(30))");
 				stat2.executeUpdate("create table choice(question varchar(255),Ach varchar(80),Bch varchar(80),Cch varchar(80),Dch varchar(80), answer varchar(1),score float)");
 				stat2.executeUpdate("create table fill(blanknum int,question varchar(255),answer varchar(80),score float)");
 				stat2.executeUpdate("create table QA(question varchar(255),answer varchar(255),keywords varchar(80),score float)");
 				stat2.executeUpdate("create table list(mingci int,name varchar(80),score float)");
 				//以下插入第一个表的初始化信息
-				String sql4="insert into property(QAid,authorid,classname,totalscore,choicenum,fillnum,QAnum,totalans,testlink,papername,state) values(?,?,?,?,?,?,?,?,?,?,?)";
+				String sql4="insert into property(QAid,authorid,classname,totalscore,choicenum,fillnum,QAnum,totalans,testlink,papername,state,tixing) values(?,?,?,?,?,?,?,?,?,?,?,?)";
 				PreparedStatement ps=conn2.prepareStatement(sql4);
 				ps.setString(1,this.authorname+String.valueOf(QAnum));
 				ps.setString(2,this.authorid);

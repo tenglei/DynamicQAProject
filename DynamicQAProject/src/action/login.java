@@ -19,6 +19,8 @@ public class login
 	private String guanzhushuliang;
 	private String beiguanzhu;
 	private List<List<String>> suoyoupaiming = new ArrayList<List<String>>();
+	private List<String> gongyoupaiming = new ArrayList<String>();
+	private String isempty;
 	public void addlist(Connection conn,List<List<String>> suoyou)//加入问卷的排名
 	{
 		List<String> list = new ArrayList<String>();
@@ -42,6 +44,7 @@ public class login
 	}
 	public String login_user() 
 	{
+		this.isempty = "1";
 		String truepassword = "";
 		if(this.getLogininfor().length()!=0 && this.getLoginpassword().length()!=0)//全部非空，开始判断
 		{
@@ -110,8 +113,9 @@ public class login
 				}
 				if(x.length()==0)//没有任何问卷
 				{
+					this.isempty = "0";
 					this.myquestion.add("天啦噜，你还没有问卷，快快添加吧！");
-					this.linklist.add(" ");
+					this.linklist.add("这里还没有问卷链接。。。");
 				}
 				else
 				{
@@ -179,15 +183,18 @@ public class login
 				}
 				//下面载入我被关注的数量和我关注的数量
 				//下面生成所有问卷的排名
-				for(int j=0;j<this.myquestion.size();j++)//对于每个问卷，生成它的排名
+				if(x.length()!=0)
 				{
-					Connection p = new initialize().getlink(this.myquestion.get(j));
-					addlist(p,this.suoyoupaiming);
-					try {
-						p.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					for(int j=0;j<this.myquestion.size();j++)//对于每个问卷，生成它的排名
+					{
+						Connection p = new initialize().getlink(this.myquestion.get(j));
+						addlist(p,this.suoyoupaiming);
+						try {
+							p.close();
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
 //				for(int y1 =0;y1<this.suoyoupaiming.size();y1++)
@@ -198,11 +205,21 @@ public class login
 //					}
 //				}
 				
-				
-				
-				
-				
-				
+				Connection b1 = new initialize().getlink("gongyou");//调用函数进行初始化
+				String sql10 = "select * from list";//先按照姓名搜索
+				try
+				{
+					Statement stmt10 = b1.createStatement();
+					ResultSet rs10 = stmt10.executeQuery(sql10);
+					while(rs10.next()!=false)
+					{
+						this.gongyoupaiming.add(rs10.getString(2));
+					}
+				}
+				catch (SQLException e1)
+				{
+					e1.printStackTrace();
+				}
 				return "loginsuccess";//匹配，成功
 			}
 			else
@@ -327,5 +344,17 @@ public class login
 	}
 	public void setLoginpassword(String loginpassword) {
 		this.loginpassword = loginpassword;
+	}
+	public List<String> getGongyoupaiming() {
+		return gongyoupaiming;
+	}
+	public void setGongyoupaiming(List<String> gongyoupaiming) {
+		this.gongyoupaiming = gongyoupaiming;
+	}
+	public String getIsempty() {
+		return isempty;
+	}
+	public void setIsempty(String isempty) {
+		this.isempty = isempty;
 	}
 }

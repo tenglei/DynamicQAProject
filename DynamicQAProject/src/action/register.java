@@ -75,7 +75,7 @@ public class register
 			/*得到了类型为int的编号*/
 			try
 	        {
-	        	String sql4="insert into user(Name,PassWord,Email,UserID) values(?,?,?,?)";
+	        	String sql4="insert into user(Name,PassWord,Email,UserID,Friends,wenjuanhao,guanzhurenshu,fensishu) values(?,?,?,?,?,?,?,?)";
 	            PreparedStatement ps=a1.prepareStatement(sql4);
 	            
 	           // System.out.println(this.name);
@@ -86,6 +86,10 @@ public class register
 	            ps.setString(2, this.password);
 	            ps.setString(3, this.email);
 	            ps.setString(4,	String.valueOf(idnum));
+	            ps.setString(5, "");
+	            ps.setString(6, "");
+	            ps.setInt(7, 0);
+	            ps.setInt(8, 0);
 	            ps.executeUpdate();
 	        }
 	        catch(Exception e3)

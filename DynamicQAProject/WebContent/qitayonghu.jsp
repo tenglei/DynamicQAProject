@@ -20,9 +20,12 @@
 <link rel="stylesheet" href="UserHome/css/app.css" type="text/css" />
 </head>
 <body>
-<input tpye="hidden" id="orderList" value="<s:property value="suoyoupaiming"/>" >
-<input type="hidden" id="friendsNum" value="4">
-	<input type="hidden" id="questionsNum" value="4">
+<input tpye="hidden" id="orderList" value="<s:property value="suoyoupaiming"/>" />
+<input type="hidden" id="friendsNum" value="<s:property value="friends.size"/>"/>
+<input type="hidden" id="welcomename" value="<s:property value="welcomename"/>"/>
+<input type="hidden" id="myQuesNum" value="<s:property value="isempty"/>"/>
+<input type="hidden" id="questionsNum" value="<s:property value="myquestion.size"/>"/>
+<input type="hidden" id="circleTmp" value="<s:property value="gongyoupaiming"/>"/>
 	<div class="app app-header-fixed" id="app">
 		<!-- navbar -->
 		<div class="app-header navbar">
@@ -192,65 +195,65 @@
 				<!-- / link and dropdown -->
 
 				<!-- search form -->
-				<form class="navbar-form navbar-form-sm navbar-left shift"
-					ui-shift="prependTo" data-target=".navbar-collapse" role="search"
-					ng-controller="TypeaheadDemoCtrl">
-					<div class="form-group">
-						<div class="input-group">
-							<input type="text" ng-model="selected"
-								typeahead="state for state in states | filter:$viewValue | limitTo:8"
-								class="form-control input-sm bg-light no-border rounded padder"
-								placeholder="搜索问卷"> <span class="input-group-btn">
-								<button type="submit" class="btn btn-sm bg-light rounded">
-									<i class="fa fa-search"></i>
-								</button>
-							</span>
-						</div>
-					</div>
-				</form>
+<!-- 				<form class="navbar-form navbar-form-sm navbar-left shift" -->
+<!-- 					ui-shift="prependTo" data-target=".navbar-collapse" role="search" -->
+<!-- 					ng-controller="TypeaheadDemoCtrl"> -->
+<!-- 					<div class="form-group"> -->
+<!-- 						<div class="input-group"> -->
+<!-- 							<input type="text" ng-model="selected" -->
+<!-- 								typeahead="state for state in states | filter:$viewValue | limitTo:8" -->
+<!-- 								class="form-control input-sm bg-light no-border rounded padder" -->
+<%-- 								placeholder="搜索问卷"> <span class="input-group-btn"> --%>
+<!-- 								<button type="submit" class="btn btn-sm bg-light rounded"> -->
+<!-- 									<i class="fa fa-search"></i> -->
+<!-- 								</button> -->
+<%-- 							</span> --%>
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 				</form> -->
 				<!-- / search form -->
 
 				<!-- nabar right -->
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a href="#" data-toggle="dropdown"
-						class="dropdown-toggle"> <i class="icon-bell fa-fw"></i> <span
-							class="visible-xs-inline">通知</span> <span
-							class="badge badge-sm up bg-danger pull-right-xs">2</span> <!-- 通知个数 -->
-					</a> <!-- dropdown -->
-						<div class="dropdown-menu w-xl animated fadeInUp">
-							<div class="panel bg-white">
-								<div class="panel-heading b-light bg-light">
-									<strong>你有 <span>1</span> 个通知
-									</strong>
-									<!-- 通知栏 -->
-								</div>
-								<div class="list-group">
-									<a class="media list-group-item"> <!--                     <span class="pull-left thumb-sm"> -->
-										<!--                       <img src="img/a0.jpg" alt="..." class="img-circle"> -->
-										<!--                     </span> --> <span
-										class="media-body block m-b-none"> <!--                       Use awesome animate.css<br> -->
-											<small class="text-muted">XXX已经添加您为好友</small>
-									</span>
-									</a>
-									<!--                   <a href class="media list-group-item"> -->
-									<!--                     <span class="media-body block m-b-none"> -->
-									<!--                       1.0 initial released<br> -->
-									<!--                       <small class="text-muted">1 hour ago</small> -->
-									<!--                     </span> -->
-									<!--                   </a> -->
-								</div>
-								<!--                 <div class="panel-footer text-sm"> -->
-								<!--                   <a href class="pull-right"><i class="fa fa-cog"></i></a> -->
-								<!--                   <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a> -->
-								<!--                 </div> -->
-							</div>
-						</div> <!-- / dropdown --></li>
+<!-- 					<li class="dropdown"><a href="#" data-toggle="dropdown" -->
+<%-- 						class="dropdown-toggle"> <i class="icon-bell fa-fw"></i> <span --%>
+<%-- 							class="visible-xs-inline">通知</span> <span --%>
+<%-- 							class="badge badge-sm up bg-danger pull-right-xs">2</span> <!-- 通知个数 --> --%>
+<!-- 					</a> dropdown -->
+<!-- 						<div class="dropdown-menu w-xl animated fadeInUp"> -->
+<!-- 							<div class="panel bg-white"> -->
+<!-- 								<div class="panel-heading b-light bg-light"> -->
+<%-- 									<strong>你有 <span>1</span> 个通知 --%>
+<%-- 									</strong> --%>
+<!-- 									通知栏 -->
+<!-- 								</div> -->
+<!-- 								<div class="list-group"> -->
+<!-- 									<a class="media list-group-item">                     <span class="pull-left thumb-sm"> -->
+<!-- 										                      <img src="img/a0.jpg" alt="..." class="img-circle"> -->
+<%-- 										<!--                     </span> --> <span --%>
+<%-- 										class="media-body block m-b-none"> <!--                       Use awesome animate.css<br> --> --%>
+<%-- 											<small class="text-muted">XXX已经添加您为好友</small> --%>
+<%-- 									</span> --%>
+<!-- 									</a> -->
+<!-- 									                  <a href class="media list-group-item"> -->
+<!-- 									                    <span class="media-body block m-b-none"> -->
+<!-- 									                      1.0 initial released<br> -->
+<!-- 									                      <small class="text-muted">1 hour ago</small> -->
+<!-- 									                    </span> -->
+<!-- 									                  </a> -->
+<!-- 								</div> -->
+<!-- 								                <div class="panel-footer text-sm"> -->
+<!-- 								                  <a href class="pull-right"><i class="fa fa-cog"></i></a> -->
+<!-- 								                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a> -->
+<!-- 								                </div> -->
+<!-- 							</div> -->
+<!-- 						</div> / dropdown</li> -->
 					<li class="dropdown"><a href="#" data-toggle="dropdown"
 						class="dropdown-toggle clear" data-toggle="dropdown"> <span
 							class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
 								<img src="img/a0.jpg" alt="..."> <i
 								class="on md b-white bottom"></i>
-						</span> <span class="hidden-sm hidden-md"><s:property value="loginfor"/></span> <b class="caret"></b>
+						</span> <span class="hidden-sm hidden-md" id="mylookAround"><s:property value="myname"/></span> <b class="caret"></b>
 					</a> <!-- dropdown -->
 						<ul class="dropdown-menu animated fadeInRight w">
 							<!--               <li class="wrapper b-b m-b-sm bg-light m-t-n-xs"> -->
@@ -274,8 +277,8 @@
 							<!--                   Help -->
 							<!--                 </a> -->
 							<!--               </li> -->
-							<li class="divider"></li>
-							<li><a ui-sref="access.signin">注销</a></li>
+<!-- 							<li class="divider"></li> -->
+							<li><a ui-sref="access.signin" href="welcome.jsp">注销</a></li>
 						</ul> <!-- / dropdown --></li>
 				</ul>
 				<!-- / navbar right -->
@@ -290,49 +293,47 @@
 			<div class="aside-wrap">
 				<div class="navi-wrap">
 					<!-- user -->
-					<div class="clearfix hidden-xs text-center hide" id="aside-user">
-						<div class="dropdown wrapper">
-							<a ui-sref="app.page.profile"> <span
-								class="thumb-lg w-auto-folded avatar m-t-sm"> <img
-									src="img/a0.jpg" class="img-full" alt="...">
-							</span>
-							</a> <a href="#" data-toggle="dropdown"
-								class="dropdown-toggle hidden-folded"> <span class="clear">
-									<span class="block m-t-sm"> <strong
-										class="font-bold text-lt"><s:property value="hisname"/></strong> <!-- 用户名字 --> <b
-										class="caret"></b>
-								</span> <span class="text-muted text-xs block">送人头专家</span>
-							</span>
-							</a>
-							<!-- dropdown -->
-							<!--  <ul class="dropdown-menu animated fadeInRight w hidden-folded">
-								<li class="wrapper b-b m-b-sm bg-info m-t-n-xs"><span
-									class="arrow top hidden-folded arrow-info"></span>
-									<div>
-										<p>账号状态：已登陆</p>
-									</div> <progressbar value="60" type="white"
-										class="progress-xs m-b-none dker"></progressbar></li>
-								<!--                 <li> -->
-								<!--                   <a href>Settings</a> -->
-								<!--                 </li> -->
-								<!--                 <li> -->
-								<!--                   <a ui-sref="app.page.profile">Profile</a> -->
-								<!--                 </li> -->
-								<!--                 <li> -->
-								<!--                   <a href> -->
-								<!--                     <span class="badge bg-danger pull-right">3</span> -->
-								<!--                     Notifications -->
-								<!--                   </a> -->
-								<!--                 </li> -->
-								<li class="divider"></li>
-								<li><a ui-sref="access.signin">注销</a></li>
-							</ul>
-							-->
-							
-							<!-- / dropdown -->
-						</div>
-						<div class="line dk hidden-folded"></div>
-					</div>
+<!-- 					<div class="clearfix hidden-xs text-center hide" id="aside-user"> -->
+<!-- 						<div class="dropdown wrapper"> -->
+<%-- 							<a ui-sref="app.page.profile"> <span --%>
+<%-- 								class="thumb-lg w-auto-folded avatar m-t-sm"> <img --%>
+<!-- 									src="img/a0.jpg" class="img-full" alt="..."> -->
+<%-- 							</span> --%>
+<!-- 							</a> <a href="#" data-toggle="dropdown" -->
+<%-- 								class="dropdown-toggle hidden-folded"> <span class="clear"> --%>
+<%-- 									<span class="block m-t-sm"> <strong --%>
+<%-- 										class="font-bold text-lt"><s:property value="welcomename"/></strong> <!-- 用户名字 --> <b --%>
+<!-- 										class="caret"></b> -->
+<%-- 								</span> <span class="text-muted text-xs block"> </span> --%>
+<%-- 							</span> --%>
+<!-- 							</a> -->
+<!-- 							dropdown -->
+<!-- 							<ul class="dropdown-menu animated fadeInRight w hidden-folded"> -->
+<%-- 								<li class="wrapper b-b m-b-sm bg-info m-t-n-xs"><span --%>
+<%-- 									class="arrow top hidden-folded arrow-info"></span> --%>
+<!-- 									<div> -->
+<!-- 										<p>账号状态：已登陆</p> -->
+<!-- 									</div> <progressbar value="60" type="white" -->
+<!-- 										class="progress-xs m-b-none dker"></progressbar></li> -->
+<!-- 								                <li> -->
+<!-- 								                  <a href>Settings</a> -->
+<!-- 								                </li> -->
+<!-- 								                <li> -->
+<!-- 								                  <a ui-sref="app.page.profile">Profile</a> -->
+<!-- 								                </li> -->
+<!-- 								                <li> -->
+<!-- 								                  <a href> -->
+<!-- 								                    <span class="badge bg-danger pull-right">3</span> -->
+<!-- 								                    Notifications -->
+<!-- 								                  </a> -->
+<!-- 								                </li> -->
+<!-- 								<li class="divider"></li> -->
+<!-- 								<li><a ui-sref="access.signin">注销</a></li> -->
+<!-- 							</ul> -->
+<!-- 							/ dropdown -->
+<!-- 						</div> -->
+<!-- 						<div class="line dk hidden-folded"></div> -->
+<!-- 					</div> -->
 					<!-- / user -->
 
 					<!-- nav -->
@@ -465,12 +466,15 @@
 									<li class="nav-sub-header"><a href> <span
 											translate="aside.nav.components.ui_kits.UI_KITS">做点什么</span>
 									</a></li>
+<!-- 									<li ui-sref-active="active"><a ui-sref="app.ui.buttons" id="newQA"> -->
+<%-- 											<span translate="aside.nav.components.ui_kits.BUTTONS" >新建问卷</span> --%>
+<!-- 									</a></li> -->
 									<li ui-sref-active="active"><a ui-sref="app.ui.buttons" id="myques">
 											<span translate="aside.nav.components.ui_kits.BUTTONS">他的问卷</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.ui.icons">
 											<!--  <b class="badge bg-info pull-right">3</b> --><span
-											translate="aside.nav.components.ui_kits.ICONS" onclick="goindex.action?welcomename=<s:property value="loginfor"/>&password=<s:property value="loginpassword"/>">随便看看</span>
+											translate="aside.nav.components.ui_kits.ICONS" id="lookAround">随便看看</span>
 									</a></li>
 									<!--                   <li ui-sref-active="active"> -->
 									<!--                     <a ui-sref="app.ui.grid"> -->
@@ -525,45 +529,45 @@
 									<!--                     </a> -->
 									<!--                   </li> -->
 								</ul></li>
-							<li ng-class="{active:$state.includes('app.table')}"><a href
-								class="auto"> <span class="pull-right text-muted"> <i
-										class="fa fa-fw fa-angle-right text"></i> <i
-										class="fa fa-fw fa-angle-down text-active"></i>
-								</span>  <!-- 提示个数信息 --> <i
-									class="glyphicon glyphicon-list"></i> <span
-									translate="aside.nav.components.table.TABLE" >他的好友</span>
-							</a>
-								<ul class="nav nav-sub dk">
-									<li class="nav-sub-header"><a href> <span
-											translate="aside.nav.components.table.TABLE">我的好友</span>
-									</a></li>
-									<li ui-sref-active="active"><a ui-sref="app.table.static" id="myfriends">
-											<span translate="aside.nav.components.table.TABLE_STATIC">好友列表</span>
-									</a></li>
-									<!--  <li ui-sref-active="active"><a
-										ui-sref="app.table.datatable"> <span
-											translate="aside.nav.components.table.DATATABLE">新增好友</span>
-									</a></li>-->
-									<!--<li ui-sref-active="active"><a
-										ui-sref="app.table.footable"> <span
-											translate="aside.nav.components.table.FOOTABLE">黑名单</span>
-									</a></li>-->
-									<!--                   <li ui-sref-active="active"> -->
-									<!--                     <a ui-sref="app.table.grid"> -->
-									<!--                       <span>ngGrid</span> -->
-									<!--                     </a> -->
-									<!--                   </li> -->
-								</ul></li>
+<!-- 							<li ng-class="{active:$state.includes('app.table')}"><a href -->
+<%-- 								class="auto"> <span class="pull-right text-muted"> <i --%>
+<!-- 										class="fa fa-fw fa-angle-right text"></i> <i -->
+<!-- 										class="fa fa-fw fa-angle-down text-active"></i> -->
+<%-- 								</span>  <!-- 提示个数信息 --> <i --%>
+<%-- 									class="glyphicon glyphicon-list"></i> <span --%>
+<%-- 									translate="aside.nav.components.table.TABLE" >他的好友</span> --%>
+<!-- 							</a> -->
+<!-- 								<ul class="nav nav-sub dk"> -->
+<%-- 									<li class="nav-sub-header"><a href> <span --%>
+<%-- 											translate="aside.nav.components.table.TABLE">的好友</span> --%>
+<!-- 									</a></li> -->
+<!-- 									<li ui-sref-active="active"><a ui-sref="app.table.static" id="myfriends"> -->
+<%-- 											<span translate="aside.nav.components.table.TABLE_STATIC">好友列表</span> --%>
+<!-- 									</a></li> -->
+<!-- 									 <li ui-sref-active="active"><a
+<!-- 										ui-sref="app.table.datatable"> <span -->
+<!-- 											translate="aside.nav.components.table.DATATABLE">新增好友</span> -->
+<!-- 									</a></li>--> 
+<!-- 									<li ui-sref-active="active"><a
+<!-- 										ui-sref="app.table.footable"> <span -->
+<!-- 											translate="aside.nav.components.table.FOOTABLE">黑名单</span> -->
+<!-- 									</a></li>-->
+<!-- 									                  <li ui-sref-active="active"> -->
+<!-- 									                    <a ui-sref="app.table.grid"> -->
+<!-- 									                      <span>ngGrid</span> -->
+<!-- 									                    </a> -->
+<!-- 									                  </li> -->
+<!-- 								</ul></li> -->
 							<li ng-class="{active:$state.includes('app.form')}"><a href
 								class="auto"> <span class="pull-right text-muted"> <i
 										class="fa fa-fw fa-angle-right text"></i> <i
 										class="fa fa-fw fa-angle-down text-active"></i>
 								</span> <i class="glyphicon glyphicon-edit"></i> <span
-									translate="aside.nav.components.form.FORM" >我的圈子</span>
+									translate="aside.nav.components.form.FORM" >他的圈子</span>
 							</a>
 								<ul class="nav nav-sub dk">
 									<li class="nav-sub-header"><a href> <span
-											translate="aside.nav.components.form.FORM" >我的圈子</span>
+											translate="aside.nav.components.form.FORM" >他的圈子</span>
 									</a></li>
 									<li ui-sref-active="active"><a ui-sref="app.form.elements">
 											<span translate="aside.nav.components.form.FORM_ELEMENTS" id="myCircle">共同问卷</span>
@@ -721,7 +725,7 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black" ><s:property /></span> <small class="m-l">送人头专家</small>
+												<span class="h3 text-black" ><a href="seefriends.action?logininfor=<s:property value="welcomename"/>&hisname=<s:property />"><s:property /></a></span> <small class="m-l"> </small>
 											</div>
 											<!--                         <p class="m-b"> -->
 											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
@@ -756,7 +760,7 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black"><s:property value="welcomename"/></span> <small class="m-l">送人头专家</small>
+												<span class="h3 text-black" id="comename" ><s:property value="welcomename"/></span> <small class="m-l"> </small>
 											</div>
 											<!--                         <p class="m-b"> -->
 											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->
@@ -771,7 +775,7 @@
 											<a href class="m-b-md inline m"> <span
 												class="h3 block font-bold"><s:property value="beiguanzhu"/></span> <small>关注他的</small>
 											</a> <a href class="m-b-md inline m"> <span
-												class="h3 block font-bold"><s:property value="guanzhushuliang"/></span> <small>我关注的</small>
+												class="h3 block font-bold"><s:property value="guanzhushuliang"/></span> <small>他关注的</small>
 											</a>
 										</div>
 									</div>
@@ -810,7 +814,7 @@
 								<!--                   </div> -->
 								<!-- .comment-reply -->
 								<s:iterator value="myquestion" status="st">
-								<div class="m-l-lg" id="userQ1">
+								<div class="m-l-lg" id="userQ<s:property value="#st.count"/>">
 									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
 										alt="...">
 									</a>
@@ -823,6 +827,31 @@
 									</div>
 								</div>
 								</s:iterator>
+								<div class="m-l-lg" id="circleQues">
+									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
+										alt="...">
+									</a>
+									<div class="m-l-xxl panel b-a">
+										<div class="panel-heading pos-rlt">
+											<span class="arrow left pull-up"></span> <span
+												class="text-muted m-l-sm pull-right">十分钟之前  <button class="btn-success" name="circleOrder">查看排名</button> </span>圈子共有问卷 问卷链接:<a href='http://localhost:8080/DynamicQAProject/seegongyou.action'>点此进入共有测试</a>
+												
+										</div>
+									</div>
+								</div>
+								<div class="m-l-lg" id="initQues">
+									<a class="pull-left thumb-sm avatar"> <img src="img/a5.jpg"
+										alt="...">
+									</a>
+									<div class="m-l-xxl panel b-a">
+										<div class="panel-heading pos-rlt">
+											<span class="arrow left pull-up"></span> <span
+												class="text-muted m-l-sm pull-right">  </span>他还没有添加任何问卷，赶紧让他添加吧！
+												
+										</div>
+									</div>
+								</div>
+								
 								<!-- / .comment-reply -->
 								<!--                   <div> -->
 								<!--                     <a class="pull-left thumb-sm avatar m-l-n-md"> -->
@@ -922,55 +951,55 @@
 					</div>
 					<div class="col w-lg bg-light lter b-l bg-auto">
 						<div class="wrapper">
-							<div class="">
-								<h4 class="m-t-xs m-b-xs">关注：</h4>
-								<ul class="list-group no-bg no-borders pull-in">
-									<li class="list-group-item"><a herf
-										class="pull-left thumb-sm avatar m-r"> <img
-											src="img/a4.jpg" alt="..." class="img-circle"> <i
-											class="on b-white bottom"></i>
-									</a>
-										<div class="clear">
-											<div>
-												<a><s:property value="friends1"/></a>
-											</div>
-											<small class="text-muted">做面包的</small>
-										</div></li>
-									<li class="list-group-item"><a herf
-										class="pull-left thumb-sm avatar m-r"> <img
-											src="img/a5.jpg" alt="..." class="img-circle"> <i
-											class="on b-white bottom"></i>
-									</a>
-										<div class="clear">
-											<div>
-												<a><s:property value="friends2"/></a>
-											</div>
-											<small class="text-muted">写字的</small>
-										</div></li>
-									<li class="list-group-item"><a herf
-										class="pull-left thumb-sm avatar m-r"> <img
-											src="img/a6.jpg" alt="..." class="img-circle"> <i
-											class="busy b-white bottom"></i>
-									</a>
-										<div class="clear">
-											<div>
-												<a><s:property value="friends3"/></a>
-											</div>
-											<small class="text-muted">画画的</small>
-										</div></li>
-									<li class="list-group-item"><a herf
-										class="pull-left thumb-sm avatar m-r"> <img
-											src="img/a7.jpg" alt="..." class="img-circle"> <i
-											class="away b-white bottom"></i>
-									</a>
-										<div class="clear">
-											<div>
-												<a><s:property value="friends4"/></a>
-											</div>
-											<small class="text-muted">弹吉他的</small>
-										</div></li>
-								</ul>
-							</div>
+<!-- 							<div class=""> -->
+<!-- 								<h4 class="m-t-xs m-b-xs">关注：</h4> -->
+<!-- 								<ul class="list-group no-bg no-borders pull-in"> -->
+<!-- 									<li class="list-group-item"><a herf -->
+<!-- 										class="pull-left thumb-sm avatar m-r"> <img -->
+<!-- 											src="img/a4.jpg" alt="..." class="img-circle"> <i -->
+<!-- 											class="on b-white bottom"></i> -->
+<!-- 									</a> -->
+<!-- 										<div class="clear"> -->
+<!-- 											<div> -->
+<%-- 												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends1"/>"><s:property value="friends1"/></a> --%>
+<!-- 											</div> -->
+<%-- 											<small class="text-muted">做面包的</small> --%>
+<!-- 										</div></li> -->
+<!-- 									<li class="list-group-item"><a herf -->
+<!-- 										class="pull-left thumb-sm avatar m-r"> <img -->
+<!-- 											src="img/a5.jpg" alt="..." class="img-circle"> <i -->
+<!-- 											class="on b-white bottom"></i> -->
+<!-- 									</a> -->
+<!-- 										<div class="clear"> -->
+<!-- 											<div> -->
+<%-- 												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends2"/>"><s:property value="friends2"/></a> --%>
+<!-- 											</div> -->
+<%-- 											<small class="text-muted">写字的</small> --%>
+<!-- 										</div></li> -->
+<!-- 									<li class="list-group-item"><a herf -->
+<!-- 										class="pull-left thumb-sm avatar m-r"> <img -->
+<!-- 											src="img/a6.jpg" alt="..." class="img-circle"> <i -->
+<!-- 											class="busy b-white bottom"></i> -->
+<!-- 									</a> -->
+<!-- 										<div class="clear"> -->
+<!-- 											<div> -->
+<%-- 												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends3"/>"><s:property value="friends3"/></a> --%>
+<!-- 											</div> -->
+<%-- 											<small class="text-muted">画画的</small> --%>
+<!-- 										</div></li> -->
+<!-- 									<li class="list-group-item"><a herf -->
+<!-- 										class="pull-left thumb-sm avatar m-r"> <img -->
+<!-- 											src="img/a7.jpg" alt="..." class="img-circle"> <i -->
+<!-- 											class="away b-white bottom"></i> -->
+<!-- 									</a> -->
+<!-- 										<div class="clear"> -->
+<!-- 											<div> -->
+<%-- 												<a href="seefriends.action?logininfor=<s:property value="welcomename"/>&loginpassword=<s:property value="loginpassword"/>&hisname=<s:property value="friends4"/>"><s:property value="friends4"/></a> --%>
+<!-- 											</div> -->
+<%-- 											<small class="text-muted">弹吉他的</small> --%>
+<!-- 										</div></li> -->
+<!-- 								</ul> -->
+<!-- 							</div> -->
 							<div class="panel b-a">
 								<h4 class="font-thin padder">问卷得分排名</h4>
 								<ul class="list-group" id="listGroup">
@@ -1178,6 +1207,6 @@
 		}(jQuery);
 	</script>
 	
-	<script src="js/userHome.js"></script>
+	<script src="js/friendshome.js"></script>
 </body>
 </html>

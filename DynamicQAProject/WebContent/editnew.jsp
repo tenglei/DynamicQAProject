@@ -34,7 +34,7 @@
 
 						<div class="collapse navbar-collapse" id="main-menu">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#top">您好<s:property value="authorname"/></a></li>
+								<li class="active"><a href="#top">您好,<s:property value="authorname"/></a></li>
 								<li><a ></a></li>
 								<li><a ></a></li>
 								<li><a ></a></li>
@@ -52,7 +52,7 @@
 	</section>
 	<form action="finishedit.action" method="post" id = "tab_form" name="myform" class="form-inline">
 	<div style="position:relative;left:400px;bottom:-100px">
-	<input class="form-control" type="text" name="wenjuanname" placeholder="请输入问卷名称" style="width:500px;" /><br>
+	<input class="form-control" type="text" name="wenjuanname" placeholder="请输入问卷名称" id="quesName" style="width:500px;" /><br>
 	<br>
 	请选择问卷类型：<select class="form-control" id="selectKind" name="selectKind" style='width:100px;'>
         <option value="college" selected="selected">大学</option>   

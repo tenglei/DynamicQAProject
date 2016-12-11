@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>404 error page</title>
+<title>问卷编辑成功</title>
 <link rel="stylesheet" href="assets/css/main.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,15 +22,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-----start-logo--------->
 			<div class="logo">
 				<h1><a href="#"><img src="images/logo.png"/></a></h1>
-				<span><img src="images/signal.png"/>哎呀~您想访问的页面找不到啦！</span>
+				<span><img src="images/signal.png"/>问卷编辑成功，可以邀请朋友来回答！</span>
 			</div>
 			<!-----end-logo--------->
 			<!-----start-search-bar-section--------->
 			<div class="buttom">
 				<div class="seach_bar">
-					<p>转回主页</p>
+					<p>问卷回答链接：<s:property value="name"/></p>
 					<!-----start-sear-box--------->								
-					   <button onclick="location='index.html' "  class="button style2 scrolly-middle">Go！</button>
+					   <button onclick="location.href='backwithout.action?logininfor=<s:property value="name"/>'"  class="button style2 scrolly-middle">回到主页</button>
 				</div>
 			</div>
 			<!-----end-sear-bar--------->

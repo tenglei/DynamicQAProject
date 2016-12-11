@@ -5,81 +5,104 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<constant name="struts.devMode" value="true" />
-	
+
 	<package name="struts2" namespace="/" extends="struts-default">
-		<action name="registe" class = "action.register" method = "insert_user">
-			<result name="over">/welcome.html</result>
+		<action name="registe" class="action.register" method="insert_user">
+			<result name="over">/welcome.jsp</result>
 		</action>
-		
-		<action name="login" class = "action.login" method = "login_user">
-			<result name="loginfailed">/welcome.html</result>
+
+
+
+		<action name="backwithout" class="action.backwithoutpass"
+			method="login_user">
 			<result name="loginsuccess">/test.jsp</result>
 		</action>
-		
-		<action name="addnewqa" class = "action.initialize_QA" method = "buildbase">
-			<result name="successbuild">/editnew.jsp</result>
-		</action>
-		
-		<action name="editcancel" class = "action.delete_base" method = "delete">
-			<result name="deletesuccess">/index.jsp</result>
-		</action>
-		
-		<action name="wenda" class = "action.insert_QA" method = "insert_wenda">
-			<result name="successinsert">/edit.jsp</result>
-		</action>
-		
-		<action name="deleteqa" class = "action.deleteqa" method = "excuteAjax">
-			<result name="SUCCESS">/test.jsp</result>
-		</action>
-		
-		<action name="xuanze" class = "action.insert_choice" method = "insert_cho">
-			<result name="successinsert">/edit.jsp</result>
-		</action>
-		
-		<action name="tiankong" class = "action.insert_fill" method = "insert_fi">
-			<result name="successinsert">/edit.jsp</result>
-		</action>
-		
-		
-		
-		
-		
-		<action name="finishedit" class = "action.finishedit" method = "back">
-			<result name="successback">/test.jsp</result>
-		</action>
-		
-		<action name="huida" class = "action.showtest" method = "maketest">
+
+		<action name="seegongyou" class="action.gongyouchengxian"
+			method="maketest">
 			<result name="successmake">/newShow.jsp</result>
 		</action>
-		
-		<action name="tijiao" class = "action.checkans" method = "checkanswer">
+
+		<action name="login" class="action.login" method="login_user">
+			<result name="loginfailed">/welcome.jsp</result>
+			<result name="loginsuccess">/test.jsp</result>
+		</action>
+
+		<action name="addnewqa" class="action.initialize_QA" method="buildbase">
+			<result name="successbuild">/editnew.jsp</result>
+		</action>
+
+		<action name="editcancel" class="action.delete_base" method="delete">
+			<result name="deletesuccess">/index.jsp</result>
+		</action>
+
+		<action name="wenda" class="action.insert_QA" method="insert_wenda">
+			<result name="successinsert">/edit.jsp</result>
+		</action>
+
+		<action name="deleteqa" class="action.deleteqa" method="excuteAjax">
+			<result name="SUCCESS">/test.jsp</result>
+		</action>
+
+		<action name="xuanze" class="action.insert_choice" method="insert_cho">
+			<result name="successinsert">/edit.jsp</result>
+		</action>
+
+		<action name="tiankong" class="action.insert_fill" method="insert_fi">
+			<result name="successinsert">/edit.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="finishedit" class="action.finishedit" method="back">
+			<result name="successback">/bianjichenggong.jsp</result>
+		</action>
+
+		<action name="huida" class="action.showtest" method="maketest">
+			<result name="successmake">/newShow.jsp</result>
+		</action>
+
+		<action name="tijiao" class="action.checkans" method="checkanswer">
 			<result name="checkover">/ranking.jsp</result>
 		</action>
-		
-		<action name="chakanwenjuan" class = "action.wenjuanchengxian" method = "getwenjuan">
+
+		<action name="chakanwenjuan" class="action.wenjuanchengxian"
+			method="getwenjuan">
 			<result name="getsuccess">/home.jsp</result>
 			<result name="getfailed">/nopaper.jsp</result>
 		</action>
-		
-		<action name="backto" class = "action.backtotheindex" method = "back">
+
+		<action name="backto" class="action.backtotheindex" method="back">
 			<result name="back">/index.jsp</result>
 		</action>
-		
-		<action name="ranking" class = "action.checkans" method = "checkanswer">
+
+		<action name="ranking" class="action.checkans" method="checkanswer">
 			<result name="checkover">/ranking.jsp</result>
 		</action>
-		
-		<action name="goindex" class = "action.goindex" method = "getinfor">
+
+		<action name="goindex" class="action.goindex" method="getinfor">
 			<result name="successget">/index.jsp</result>
 		</action>
-		
-		<action name="seefriends" class = "action.seefriends" method = "login_user">
+
+		<action name="seefriends" class="action.seefriends" method="login_user">
 			<result name="loginsuccess">/qitayonghu.jsp</result>
 		</action>
-		
-		<action name="add" class = "action.addfriends" method = "excuteAjax">
- 			<result name="SUCCESS">/index.jsp</result> 
+
+		<action name="add" class="action.addfriends" method="excuteAjax">
+			<result name="SUCCESS">/index.jsp</result>
 		</action>
-		
+
+<!-- 		<action name="newregiste" class="action.newregister" method="excuteAjax"> -->
+<!-- 			<result type="json"> -->
+<!-- 				<param name="root">result</param> -->
+<!-- 			</result> -->
+<!-- 		</action> -->
+
 	</package>
+
+
+
+
 </struts>

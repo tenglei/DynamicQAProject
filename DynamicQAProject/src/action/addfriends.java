@@ -65,7 +65,15 @@ public class addfriends extends ActionSupport implements ServletRequestAware{
 				rs.close();
 				stat.close();
 				Statement stat2 = conn.createStatement();
-				String sql2 = "update user set Friends="+"\""+temp+" "+name+"\""+" where Name="+"\""+author+"\"";
+				String sql2 ="";
+				if(temp.length()==0)
+				{
+					sql2 = "update user set Friends="+"\""+temp+name+"\""+" where Name="+"\""+author+"\"";
+				}
+				else
+				{
+					sql2 = "update user set Friends="+"\""+temp+" "+name+"\""+" where Name="+"\""+author+"\"";
+				}
 				stat2.executeUpdate(sql2);
 				stat2.close();
 				Statement stat3 = conn.createStatement();
