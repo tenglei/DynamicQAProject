@@ -124,29 +124,29 @@
 			<div class="row 50%">
 
 				<div class="6u 12u$(mobile)" style="align:center">
-					<input type="text" class="text" name="name" placeholder="请输入姓名" style="text-align:center"/>
+					<input type="text" class="text" name="name" placeholder="请输入姓名" id="loginName" style="text-align:center"/>
 				</div>
 				<div class="6u$ 12u$(mobile)">
-					<input type="text" class="text" name="email" placeholder="请输入邮箱" style="text-align:center"/>
+					<input type="text" class="text" name="email" placeholder="请输入邮箱" id="loginEmail"style="text-align:center"/>
 				</div>
 				<div class="6u 12u$(mobile)">
-					<input type="text" class="text" name="password" placeholder="请输入密码" style="text-align:center"/>
+					<input type="text" class="text" name="password" placeholder="请输入密码" id="loginPW" style="text-align:center"/>
 				</div>
 				<div class="6u$ 12u$(mobile)">
-					<input type="text" class="text" name="confirmpassword"
+					<input type="text" class="text" name="confirmpassword" id="repeatPW"
 						placeholder="再次输入确认密码" style="text-align:center"/>
 				</div>
 			</div>
 			<p></p>
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="注册" /></li>
+					<li><input type="button" id="submitBtn" value="注册" /></li>
 				</ul>
 
 				<p></p>
 				<p></p>
 				<ul class="actions">
-					<a href="#login" class="button scrolly">已有账号？</a>
+					<a href="#login" class="button scrolly" id="signUp">已有账号？</a>
 				</ul>
 
 			
@@ -165,16 +165,16 @@
 			<div class="row 50%">
 
 				<div class="6u 12u$(mobile)" style="align:center">
-					<input type="text" class="text" name="name" placeholder="请输入姓名或邮箱" style="text-align:center"/>
+					<input type="text" class="text" name="name" id="signName" placeholder="请输入姓名或邮箱" style="text-align:center"/>
 				</div>
 				<div class="6u$ 12u$(mobile)">
-					<input type="text" class="text" name="password" placeholder="请输入密码" style="text-align:center"/>
+					<input type="text" class="text" name="password" id="signPW" placeholder="请输入密码" style="text-align:center"/>
 				</div>
 			</div>
 			<p></p>
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="登录" /></li>
+					<li><input type="button" id="signBtn" value="登录" /></li>
 				</ul>
 			</div>
 			
@@ -377,6 +377,6 @@
 	<script src="assets/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
-
+	<script src="js/login.js"></script>
 </body>
 </html>
