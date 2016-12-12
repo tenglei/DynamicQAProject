@@ -107,7 +107,7 @@ public class checkans
 				int dange = Integer.parseInt(rs2.getString(4))/kongshu;//单个题的分值
 				String[] biaozhun = rs2.getString(3).split(" ");//标准答案
 				String[] zuoda = fillans1.get(x2).split(" ");//回答者的回答
-				int y = -1;
+//				int y = -1;
 				if(zuoda.length!=biaozhun.length)
 				{
 					correct = 0;
@@ -116,7 +116,7 @@ public class checkans
 				{
 					for(int z=0;z<biaozhun.length;z++)
 					{
-						if(zuoda[y].equals(biaozhun[z]))
+						if(zuoda[z].equals(biaozhun[z]))
 						{
 							correct++;
 						}

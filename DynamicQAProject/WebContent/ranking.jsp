@@ -34,7 +34,7 @@
 					<li class="nav-item"><a class="nav-link" href="#tm-section-1"
 						id="ath">您的姓名：<s:property value="huidazhe"/></a></li>
 					<li class="nav-item"><a class="nav-link" id="back"
-						href="#tm-section-1" onclick="window.close();">关闭页面</a></li>
+						href="#">关闭页面</a></li>
 				</ul>
 			</div>
 			</nav>

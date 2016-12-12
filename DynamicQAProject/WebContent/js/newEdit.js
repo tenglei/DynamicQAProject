@@ -39,10 +39,10 @@ $(document).ready(function() {
 		"<input class='form-control' style='width:500px;'  type='text' id='selQ"+selNum+"' placeholder='请输入选择题题目' />"+"*"+
 		"<input class='form-control' style='width:100px;' type='text' placeholder='请输入分值' id='selS"+selNum+"'/>"+"*"+
 		"<button  class='btn btn-danger'>删除</button>"+"<br>"+
-		"<br>"+"A:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='A'/>"+"<input class='form-control' style='width:500px;' type='text' name='sel1'/>"+"*"+"<br>"+
-		"<br>"+"B:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='B'/>"+"<input class='form-control' style='width:500px;' type='text' name='sel2'/>"+"*"+"<br>"+
-		"<br>"+"C:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='C'/>"+"<input class='form-control' style='width:500px;' type='text' name='sel3'/>"+"*"+"<br>"+
-		"<br>"+"D:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='D'/>"+"<input class='form-control' style='width:500px;' type='text' name='sel4'/>"+"*"+"<br>"+
+		"<br>"+"A:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='A'/>"+"&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel1'/>"+"*"+"<br>"+
+		"<br>"+"B:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='B'/>"+"&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel2'/>"+"*"+"<br>"+
+		"<br>"+"C:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='C'/>"+"&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel3'/>"+"*"+"<br>"+
+		"<br>"+"D:"+"<input  class='radio-inline' type='radio' name=" +selNum+" value='D'/>"+"&nbsp;&nbsp;<input class='form-control' style='width:500px;' type='text' name='sel4'/>"+"*"+"<br>"+
 		" </div>"+"<br>";
 		$("#quesList").append(selectdiv);
 		$(".btn-danger").on("click", function() {

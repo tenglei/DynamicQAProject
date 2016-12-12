@@ -43,40 +43,73 @@ public class deleteqa extends ActionSupport implements ServletRequestAware{
 			System.out.println(QAname);
 			Connection conn = new initialize().getlink(QAname);
 			//下面做参考
-			String sql = "select * from user where Name="+"\""+QAname+"\"";
-//				Statement stat = conn.createStatement();
-//				ResultSet rs = stat.executeQuery(sql);
-//				while(rs.next()!=false)
-//				{
-//					temp = rs.getString(5);
-//					guanzhu = rs.getInt(7);
-//				}
-//				rs.close();
-//				stat.close();
-//				Statement stat2 = conn.createStatement();
-//				String sql2 = "update user set Friends="+"\""+temp+" "+name+"\""+" where Name="+"\""+author+"\"";
-//				stat2.executeUpdate(sql2);
-//				stat2.close();
-//				Statement stat3 = conn.createStatement();
-//				String sql3 = "update user set guanzhurenshu="+String.valueOf(guanzhu+1)+" where Name="+"\""+author+"\"";
-//				stat3.executeUpdate(sql3);
-//				stat3.close();
-//				String sql4 = "select * from user where Name="+"\""+name+"\"";
-//				Statement stat4 = conn.createStatement();
-//				ResultSet rs4 = stat4.executeQuery(sql4);
-//				while(rs4.next()!=false)
-//				{
-//					guanzhu = rs4.getInt(8);
-//				}
-//				Statement stat5 = conn.createStatement();
-//				String sql5 = "update user set fensishu="+String.valueOf(guanzhu+1)+" where Name="+"\""+name+"\"";
-//				stat5.executeUpdate(sql5);
-//				stat5.close();
-			
-			
-			
-			
-			
+			String sql = "select * from property";
+			Statement stat = conn.createStatement();
+			ResultSet rs = stat.executeQuery(sql);
+			String classname = "";
+			String authorid = "";
+			String author = "";
+			while(rs.next()!=false)
+			{
+				classname = rs.getString(3);
+				authorid = rs.getString(2);
+			}
+			//下面找作者
+			Connection conn2 = new initialize().getlink("project");
+			//下面做参考
+			String sql2 = "select * from user where UserID="+"\""+authorid+"\"";
+			Statement stat2 = conn2.createStatement();
+			ResultSet rs2 = stat2.executeQuery(sql2);
+			while(rs2.next()!=false)
+			{
+				author = rs2.getString(1);
+			}
+			//删除数据库
+			Statement stat3 = conn2.createStatement();
+			String sql3 = "drop database "+QAname;
+			stat3.executeUpdate(sql3);
+			//删除allpaper中内容
+			String sql4 = "delete from allpaper where paper="+"\""+QAname+"\"";
+			Statement stat4 = conn2.createStatement();
+			stat4.executeUpdate(sql4);
+			//删除该问卷中类。。。
+			String sql5 = "delete from "+classname+" where paper="+"\""+QAname+"\"";
+			Statement stat5 = conn2.createStatement();
+			stat5.executeUpdate(sql5);
+			//去作者中删除
+			String temp = "";
+			StringBuffer x =new StringBuffer("");
+			String yuan = "";
+			String sql6 = "select * from user where Name="+"\""+author+"\"";
+			Statement stat6 = conn2.createStatement();
+			ResultSet rs6 = stat6.executeQuery(sql6);
+			while(rs6.next()!=false)
+			{
+				yuan = rs6.getString(6);
+			}
+			String t[] = yuan.split(" ");
+			int cishu = 0;
+			for(int i=0;i<t.length;i++)
+			{
+				if(t[i].equals(QAname)==false)
+				{
+					if(cishu==0)
+					{
+						x.append(t[i]);
+					}
+					else 
+					{
+						x.append(" ");
+						x.append(t[i]);
+					}
+					cishu++;
+				}
+			}
+			temp = x.toString();
+			String sql7 = "update user set wenjuanhao="+"\""+temp+"\""+" where Name="+"\""+author+"\"";
+			Statement stat7 = conn2.createStatement();
+			stat7.executeUpdate(sql7);
+			System.out.println("wancheng!");
 			//将数据存储在map里，再转换成json类型数据，也可以自己手动构造json类型数据
 //			Map<String,Object> map = new HashMap<String,Object>();
 //			map.put("name", name);

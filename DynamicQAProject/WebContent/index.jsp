@@ -362,7 +362,7 @@
 						</div>
 						<div class="panel-figure">
 							<img class="img-responsive img-circle"
-								src="http://lorempixel.com/120/120/people/1/" />
+								src="img/a0.jpg" />
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
@@ -370,26 +370,26 @@
 							</h4>
 							
 						</div>
-						<div class="panel-thumbnails">
-							<hr />
-							<div class="row">
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/mzwlj/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/yboaj/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/gv3bp/80x60" />
-									</div>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="panel-thumbnails"> -->
+<!-- 							<hr /> -->
+<!-- 							<div class="row"> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/mzwlj/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/yboaj/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/gv3bp/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4">
@@ -401,7 +401,7 @@
 						</div>
 						<div class="panel-figure">
 							<img class="img-responsive img-circle"
-								src="http://lorempixel.com/120/120/people/2/" />
+								src="img/a0.jpg" />
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
@@ -409,26 +409,26 @@
 							</h4>
 							
 						</div>
-						<div class="panel-thumbnails">
-							<hr />
-							<div class="row">
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/dstb9/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/2lsao/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/urcon/80x60" />
-									</div>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="panel-thumbnails"> -->
+<!-- 							<hr /> -->
+<!-- 							<div class="row"> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/dstb9/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/2lsao/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/urcon/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4">
@@ -440,7 +440,7 @@
 						</div>
 						<div class="panel-figure">
 							<img class="img-responsive img-circle"
-								src="http://lorempixel.com/120/120/people/3/" />
+								src="img/a0.jpg" />
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
@@ -448,26 +448,26 @@
 							</h4>
 							
 						</div>
-						<div class="panel-thumbnails">
-							<hr />
-							<div class="row">
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/7an8e/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/wntpb/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/jrzxa/80x60" />
-									</div>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="panel-thumbnails"> -->
+<!-- 							<hr /> -->
+<!-- 							<div class="row"> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/7an8e/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/wntpb/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/jrzxa/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4">
@@ -479,7 +479,7 @@
 						</div>
 						<div class="panel-figure">
 							<img class="img-responsive img-circle"
-								src="http://lorempixel.com/120/120/people/9/" />
+								src="img/a0.jpg" />
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
@@ -487,26 +487,26 @@
 							</h4>
 							
 						</div>
-						<div class="panel-thumbnails">
-							<hr />
-							<div class="row">
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/sqfuk/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/71mf8/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/1pdrw/80x60" />
-									</div>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="panel-thumbnails"> -->
+<!-- 							<hr /> -->
+<!-- <!-- 							<div class="row"> --> 
+<!-- <!-- 								<div class="col-xs-4"> --> 
+<!-- <!-- 									<div class="thumbnail"> --> 
+<!-- <!-- 										<img src="http://placemi.com/sqfuk/80x60" /> --> 
+<!-- <!-- 									</div> --> 
+<!-- <!-- 								</div> --> 
+<!-- <!-- 								<div class="col-xs-4"> --> 
+<!-- <!-- 									<div class="thumbnail"> --> 
+<!-- <!-- 										<img src="http://placemi.com/71mf8/80x60" /> --> 
+<!-- <!-- 									</div> --> 
+<!-- <!-- 								</div> --> 
+<!-- <!-- 								<div class="col-xs-4"> --> 
+<!-- <!-- 									<div class="thumbnail"> --> 
+<!-- <!-- 										<img src="http://placemi.com/1pdrw/80x60" /> --> 
+<!-- <!-- 									</div> --> 
+<!-- <!-- 								</div> --> 
+<!-- <!-- 							</div> --> 
+<!-- 						</div> -->
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4">
@@ -518,7 +518,7 @@
 						</div>
 						<div class="panel-figure">
 							<img class="img-responsive img-circle"
-								src="http://lorempixel.com/120/120/people/5/" />
+								src="img/a0.jpg" />
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
@@ -526,26 +526,26 @@
 							</h4>
 							
 						</div>
-						<div class="panel-thumbnails">
-							<hr />
-							<div class="row">
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/7an8e/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/wntpb/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/jrzxa/80x60" />
-									</div>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="panel-thumbnails"> -->
+<!-- 							<hr /> -->
+<!-- 							<div class="row"> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/7an8e/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/wntpb/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/jrzxa/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</div>
 				</div>
 				<div class="col-sm-6 col-md-4">
@@ -557,7 +557,7 @@
 						</div>
 						<div class="panel-figure">
 							<img class="img-responsive img-circle"
-								src="http://lorempixel.com/120/120/people/6/" />
+								src="img/a0.jpg" />
 						</div>
 						<div class="panel-body text-center">
 							<h4 class="panel-header">
@@ -565,26 +565,26 @@
 							</h4>
 							
 						</div>
-						<div class="panel-thumbnails">
-							<hr />
-							<div class="row">
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/7an8e/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/wntpb/80x60" />
-									</div>
-								</div>
-								<div class="col-xs-4">
-									<div class="thumbnail">
-										<img src="http://placemi.com/jrzxa/80x60" />
-									</div>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="panel-thumbnails"> -->
+<!-- 							<hr /> -->
+<!-- 							<div class="row"> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/7an8e/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/wntpb/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-xs-4"> -->
+<!-- 									<div class="thumbnail"> -->
+<!-- 										<img src="http://placemi.com/jrzxa/80x60" /> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</div>
 				</div>
 

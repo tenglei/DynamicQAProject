@@ -41,7 +41,11 @@
 								<li><a ></a></li>
 								<li ><a href="#selectQ" id="addSelect">选择题</a></li>
 								<li><a href="#fillQ" id="addFill">填空题</a></li>	
-								<li><a href="#answerQ" id="addAnswer">问答题</a></li>		
+								<li><a href="#answerQ" id="addAnswer">问答题</a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
 								<li><a href="#finish" id="finish">完成编辑</a></li>																										
 							</ul>
 						</div>

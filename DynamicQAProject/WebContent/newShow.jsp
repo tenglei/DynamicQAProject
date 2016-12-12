@@ -5,7 +5,7 @@
 <head>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <meta charset="UTF-8">
-<title>编辑问题</title>
+<title>回答问卷</title>
 <link rel="stylesheet" type="text/css" href="css/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="skins/eden.css" media="screen">
 <link rel="stylesheet" href="style.css" media="screen">
@@ -48,6 +48,17 @@
 								<li><a ></a></li>
 								<li><a ></a></li>
 								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								<li><a ></a></li>
+								
 								<li><a href="#finish" id="finish">完成</a></li>																										
 							</ul>
 						</div>

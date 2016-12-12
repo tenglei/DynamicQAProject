@@ -43,8 +43,8 @@ button.navbar-toggle{
 }
 #featured-slider-container-edit {
 	padding-top: 20px;
-    background-image: url(images/home.jpg); /*之前设置的背景滚动*/
-    background-repeat:repeat-y;
+    background-image: url(images/beijing.jpg); /*之前设置的背景滚动*/
+    background-repeat:repeat-y repeat-x;
   	background-size: 100% ;
 
    

@@ -1,4 +1,4 @@
-@import url(http://fonts.useso.com/css?family=Montserrat:400,700|Source+Sans+Pro:600,300,300italic);
+/* @import url(http://fonts.useso.com/css?family=Montserrat:400,700|Source+Sans+Pro:600,300,300italic); */
 
 
 
@@ -3018,24 +3018,24 @@ a.list-group-item-danger.active:focus {
 }
 
 
-.panel.panel-card:hover .panel-heading {
-    height: 55px;
+/* .panel.panel-card:hover .panel-heading { */
+/*     height: 55px; */
 
-    -webkit-transition: height 400ms ease-in-out;
-    transition: height 400ms ease-in-out;
-}
-.panel.panel-card:hover .panel-figure {
-    opacity: 0;
+/*     -webkit-transition: height 400ms ease-in-out; */
+/*     transition: height 400ms ease-in-out; */
+/* } */
+/* .panel.panel-card:hover .panel-figure { */
+/*     opacity: 0; */
 
-    -webkit-transition: opacity 400ms ease-in-out;
-    transition: opacity 400ms ease-in-out;
-}
-.panel.panel-card:hover .panel-body {
-    padding-top: 20px;
+/*     -webkit-transition: opacity 400ms ease-in-out; */
+/*     transition: opacity 400ms ease-in-out; */
+/* } */
+/* .panel.panel-card:hover .panel-body { */
+/*     padding-top: 20px; */
 
-    -webkit-transition: padding 400ms ease-in-out;
-    transition: padding 400ms ease-in-out;
-}
+/*     -webkit-transition: padding 400ms ease-in-out; */
+/*     transition: padding 400ms ease-in-out; */
+/* } */
  
 
 /** Feature Slider **/

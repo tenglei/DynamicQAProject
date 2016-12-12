@@ -22,7 +22,9 @@ html {
 }
 
 body {
-	background: url(../images/home.jpg);
+	background: url(../images/caoping.jpg);
+	background-repeat:repeat-x;
+  	background-size: 100% ;
 	color: rgba(255, 255, 255, 0.95);
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	padding-left: 60px;
@@ -63,7 +65,7 @@ p:last-child {
 }
 
 .navbar-container {
-	background-color: #40ff9f;/*  ±³¾°*/
+	background-color: #c5fcfc;/*  ±³¾°*/
 	font-size: 1em;
 	position: absolute;
 	display: -webkit-flex;

@@ -760,7 +760,7 @@
 										</a>
 										<div class="clear m-b">
 											<div class="m-b m-t-sm">
-												<span class="h3 text-black" id="comename" ><s:property value="welcomename"/></span> <small class="m-l"> 专家</small>
+												<span class="h3 text-black" id="comename" ><s:property value="welcomename"/></span> <small class="m-l"> </small>
 											</div>
 											<!--                         <p class="m-b"> -->
 											<!--                           <a href class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a> -->

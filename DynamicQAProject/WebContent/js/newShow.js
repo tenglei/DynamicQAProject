@@ -2,7 +2,7 @@
  * 
  */
 $(document).ready(function() {
-	alert("third newShow.js");
+	//alert("third newShow.js");
 	var addNum=0;
 	var selNum=0;
 	var fillNum=0;
@@ -41,10 +41,10 @@ $(document).ready(function() {
 		selectdiv="<div "+ "name='select'> " +"第"+ addNum +"题、"+
 		"<input readonly='true' class='form-control' style='width:500px;'  type='text' id='selQ"+selNum+"' value='"+choiceques[selNum]+"' />"+"&nbsp;&nbsp;"+
 		"分值：  "+choicescore[selNum]+"<br>"+
-		"<br>"+"A:"+"&nbsp<input  class='radio-inline' type='radio' name='" +selNum+"' value='A'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel1' value='"+ansA[selNum]+"'/>"+"*"+"<br>"+
-		"<br>"+"B:"+"&nbsp<input  class='radio-inline' type='radio' name='" +selNum+"' value='B'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel2' value='"+ansB[selNum]+"'/>"+"*"+"<br>"+
-		"<br>"+"C:"+"&nbsp<input  class='radio-inline' type='radio' name='" +selNum+"' value='C'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel3' value='"+ansC[selNum]+"'/>"+"*"+"<br>"+
-		"<br>"+"D:"+"&nbsp<input  class='radio-inline' type='radio' name='" +selNum+"' value='D'/>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel4' value='"+ansD[selNum]+"'/>"+"*"+"<br>"+
+		"<br>"+"A:"+"<input  class='radio-inline' type='radio' name='" +selNum+"' value='A'/>"+"&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel1' value='"+ansA[selNum]+"'/>"+"*"+"<br>"+
+		"<br>"+"B:"+"<input  class='radio-inline' type='radio' name='" +selNum+"' value='B'/>"+"&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel2' value='"+ansB[selNum]+"'/>"+"*"+"<br>"+
+		"<br>"+"C:"+"<input  class='radio-inline' type='radio' name='" +selNum+"' value='C'/>"+"&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel3' value='"+ansC[selNum]+"'/>"+"*"+"<br>"+
+		"<br>"+"D:"+"<input  class='radio-inline' type='radio' name='" +selNum+"' value='D'/>"+"&nbsp;&nbsp;<input readonly='true' class='form-control' style='width:500px;' type='text' name='sel4' value='"+ansD[selNum]+"'/>"+"*"+"<br>"+
 		" </div>"+"<br>";
 		$("#quesList").append(selectdiv);
 		selNum++;
@@ -55,7 +55,7 @@ $(document).ready(function() {
 		
 		filldiv="<div name='fill'>" +"第" + addNum+"题、"+
 		"<input readonly='true' class='form-control' style='width:500px;' type='text' id='fillQ"+fillNum+"' value='"+fillques[fillNum]+"'/>"+"&nbsp;&nbsp;"+"分值： " +fillscore[fillNum]+"<br>"+
-		"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' id='blockAns"+fillNum +"'"+
+		"<br>&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' id='blockAns"+fillNum +"'"+
 		"placeholder='请输入答案' class='form-control' style='width:500px;'/>"+"*"+
 		" </div>"+"<br>";
 		$("#quesList").append(filldiv);
@@ -69,13 +69,13 @@ $(document).ready(function() {
 		ansdiv="<div name='ans'>" +"第" + addNum+"题、"+
 		"<input class='form-control' readonly='true' style='width:500px;' type='text' id='ansQ"+ansNum+"' value='"+ques[ansNum]+"'/>"+"&nbsp;&nbsp;分值： "+
 		quesscore[ansNum]+"<br>"+
-		"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;height:300px;' type='text' id='desQ"+ansNum+"' placeholder='在此回答'/>"+"*"+"<br>"+
+		"<br>&nbsp;&nbsp;&nbsp;&nbsp;<input class='form-control' style='width:500px;height:300px;' type='text' id='desQ"+ansNum+"' placeholder='在此回答'/>"+"*"+"<br>"+
 		"</div><br>"
 		$("#quesList").append(ansdiv);
 		ansNum++;
 	}
 	$("#finish").on("click", function() {
-		alert("finish click");
+		//alert("finish click");
 		var exit =1;
 		var addTmp=0;
 		var selTmp=0;
@@ -100,7 +100,7 @@ $(document).ready(function() {
 				var choiceC= $("[name='sel3']").val();
 				var choiceD= $("[name='sel4']").val();
 				
-				alert(selA);
+				//alert(selA);
 				if(typeof(selA)=="undefined"){
 					alert("选择题需选一个选项作为答案");
 					exit=0;
@@ -136,7 +136,7 @@ $(document).ready(function() {
 				//alert("blockAns");
 				//alert(blockAns);
 				//alert(selTmp);
-				alert(blockAns);
+				//alert(blockAns);
 				if(blockAns==""){
 					alert("填空题不能为空");
 					exit=0;
@@ -161,7 +161,7 @@ $(document).ready(function() {
 				//alert("desQ");
 				//alert(desQ);
 				//alert(fillTmp);
-				alert(desQ);
+				//alert(desQ);
 				if(desQ==""){
 					alert("问答题不能为空");
 					exit=0;
