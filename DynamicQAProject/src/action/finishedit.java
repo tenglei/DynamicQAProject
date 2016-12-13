@@ -1,5 +1,7 @@
 package action;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -256,12 +258,20 @@ public class finishedit
 		
 //		System.out.println(name);
 //		System.out.println(welcomename);
+		InetAddress ia = null;
+		String localname = "";
+		try {
+			ia = InetAddress.getLocalHost();
+			localname=ia.getHostAddress().toString();
+		} catch (UnknownHostException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		
 		
 		
 		
-		
-		String testlink = "http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+this.name;                     
+		String testlink = "http://"+localname+":8080/DynamicQAProject/huida.action?wenjuanhao="+this.name;                     
 		try
 		{
 			String sql = "update property set testlink="+"\""+testlink+"\""+" where QAid="+"\""+this.name+"\"";
@@ -422,7 +432,7 @@ public class finishedit
 		{
 			e.printStackTrace();
 		}
-		this.lianjie = "http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao=" + this.editname;
+		this.lianjie = "http://"+localname+":8080/DynamicQAProject/huida.action?wenjuanhao=" + this.editname;
 		return "successback";
 	}
 	public String getname() {

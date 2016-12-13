@@ -834,7 +834,7 @@
 									<div class="m-l-xxl panel b-a">
 										<div class="panel-heading pos-rlt">
 											<span class="arrow left pull-up"></span> <span
-												class="text-muted m-l-sm pull-right">   <button class="btn-success" name="circleOrder">查看排名</button>  </span>圈子共有问卷 问卷链接:<a href='http://localhost:8080/DynamicQAProject/seegongyou.action'>点此进入共有测试</a>
+												class="text-muted m-l-sm pull-right">   <button class="btn-success" name="circleOrder">查看排名</button>  </span>圈子共有问卷 问卷链接:<a href='http://192.168.1.108:8080/DynamicQAProject/seegongyou.action'>点此进入共有测试</a>
 												
 										</div>
 									</div>

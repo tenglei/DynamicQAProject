@@ -1,5 +1,7 @@
 package action;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,11 +38,20 @@ public class wenjuanchengxian
 			return "getfailed";
 		}
 		String[] h = x.split(" ");
+		InetAddress ia = null;
+		String localname = "";
+		try {
+			ia = InetAddress.getLocalHost();
+			localname=ia.getHostAddress().toString();
+		} catch (UnknownHostException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		for(int z=0;z<h.length;z++)
 		{
 			System.out.println(h[z]);
 			this.QAjihe.add(h[z]);//添加完成了相应信息
-			this.CLJjh.add("http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
+			this.CLJjh.add("http://"+localname+":8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
 		}
 		return "getsuccess";
 	}

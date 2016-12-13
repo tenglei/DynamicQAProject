@@ -1,9 +1,14 @@
 package action;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.net.InetAddress;  
+import java.net.UnknownHostException;  
+import java.util.Properties;  
+import java.util.Set; 
 public class backwithoutpass
 {
 	private String logininfor;
@@ -44,6 +49,15 @@ public class backwithoutpass
 	}
 	public String login_user() 
 	{
+		InetAddress ia = null;
+		String localname = "";
+		try {
+			ia = InetAddress.getLocalHost();
+			localname=ia.getHostAddress().toString();
+		} catch (UnknownHostException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		//String truepassword = "";
 //		if(this.getLogininfor().length()!=0 && this.getLoginpassword().length()!=0)//全部非空，开始判断
 //		{
@@ -122,7 +136,7 @@ public class backwithoutpass
 					for(int z=0;z<h.length;z++)
 					{
 						this.myquestion.add(h[z]);//添加完成了相应信息
-						this.linklist.add("http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
+						this.linklist.add("http://"+localname+":8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
 					}
 				}
 				//下面生成朋友的列表

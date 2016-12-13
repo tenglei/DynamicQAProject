@@ -1,5 +1,7 @@
 package action;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -119,11 +121,20 @@ public class seefriends
 				}
 				else
 				{
+					InetAddress ia = null;
+					String localname = "";
+					try {
+						ia = InetAddress.getLocalHost();
+						localname=ia.getHostAddress().toString();
+					} catch (UnknownHostException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
 					String[] h = x.split(" ");
 					for(int z=0;z<h.length;z++)
 					{
 						this.myquestion.add(h[z]);//添加完成了相应信息
-						this.linklist.add("http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
+						this.linklist.add("http://"+localname+":8080/DynamicQAProject/huida.action?wenjuanhao="+h[z]);
 					}
 				}
 				//下面生成朋友的列表

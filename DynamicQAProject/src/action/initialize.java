@@ -16,7 +16,7 @@ public class initialize {
 		}
 		try
 		{
-			String url = "jdbc:mysql://127.0.0.1:3306/"+name+"?useSSL=true&useUnicode=true&characterEncoding=UTF-8";
+			String url = "jdbc:mysql://localhost:3306/"+name+"?useSSL=true&useUnicode=true&characterEncoding=UTF-8";
 			conn = DriverManager.getConnection(url,"root","qweasd");
 		}
 		catch (SQLException e)

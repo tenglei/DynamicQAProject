@@ -3,6 +3,8 @@ package action;//用于检测答案
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 
 public class checkans 
@@ -31,7 +33,15 @@ public class checkans
 	{
 		//以下用于检测需要的值是否穿了进来
 		//传入的值是以逗号分隔的，先对传入的值做处理
-		
+		InetAddress ia = null;
+		String localname = "";
+		try {
+			ia = InetAddress.getLocalHost();
+			localname=ia.getHostAddress().toString();
+		} catch (UnknownHostException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		
 		//先处理传入的list
 		List<String> selectans1=new ArrayList<String>();
@@ -67,7 +77,7 @@ public class checkans
 		
 		//下面开始判定选择题
 		this.wenjuan = this.QAnum;
-		this.QAnumlianjie = "http://localhost:8080/DynamicQAProject/huida.action?wenjuanhao="+this.QAnum;
+		this.QAnumlianjie = "http://"+localname+":8080/DynamicQAProject/huida.action?wenjuanhao="+this.QAnum;
 		float total = 0;//起始算0分
 		Connection conn = new initialize().getlink(this.QAnum);
 		int x1 = -1;
